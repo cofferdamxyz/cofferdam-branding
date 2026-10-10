@@ -1,0 +1,1 @@
+Reference renders of the launch splash (v5 mark drawing on): `cofferdam-splash-preview.mp4` (light theme, phone frame) and `preview-keyframes.png` (eight keyframes from the native splash to the app). The animation itself is code in the repository's `motion/splash/`.

@@ -152,6 +152,24 @@ const accentReport = brand.accents.map((a) => {
   return { id: a.id, scheme, value, ratio, text: ratio >= 4.5, marks: ratio >= 3 };
 });
 
+// The splash source (motion/splash/) hard-codes its palette for the native first frame;
+// it must agree with the tokens so a token change can't silently diverge from the splash.
+if (colors.dark && fs.existsSync(path.join(ROOT, 'motion/splash/cofferdamMark.ts'))) {
+  const mark = fs.readFileSync(path.join(ROOT, 'motion/splash/cofferdamMark.ts'), 'utf8');
+  for (const m of mark.matchAll(/id: '([a-z-]+)'[\s\S]*?light: '(#[0-9A-Fa-f]{6})', dark: '(#[0-9A-Fa-f]{6})'/g)) {
+    for (const [theme, v] of [['light', m[2]], ['dark', m[3]]]) {
+      const want = colors[theme][`mark-${m[1]}`];
+      if (!want || want.toLowerCase() !== v.toLowerCase()) errors.push(`motion/splash/cofferdamMark.ts ${m[1]} ${theme} is ${v}, tokens say mark-${m[1]} = ${want}`);
+    }
+  }
+  const comp = fs.readFileSync(path.join(ROOT, 'motion/splash/CofferdamSplash.tsx'), 'utf8');
+  for (const theme of ['light', 'dark']) {
+    const m = new RegExp(`${theme}: \\{ base: '(#\\w+)', from: '(#\\w+)', to: '(#\\w+)'`).exec(comp);
+    const want = [colors[theme]['splash-bg'], colors[theme]['splash-gradient-from'], colors[theme]['splash-gradient-to']];
+    if (!m || m.slice(1).some((v, i) => v.toLowerCase() !== want[i].toLowerCase())) errors.push(`motion/splash/CofferdamSplash.tsx THEME.${theme} disagrees with splash-bg / splash-gradient-* tokens`);
+  }
+}
+
 if (errors.length) {
   console.error('✗ build failed\n  ' + errors.join('\n  '));
   process.exit(1);
@@ -248,6 +266,12 @@ ${rnType}
 export const motion = {
 ${Object.entries(effBrand.motion.duration).map(([k, v]) => `  ${k}: ${v},`).join('\n')}
   spring: ${JSON.stringify(effBrand.motion.spring).replace(/"(\w+)":/g, '$1: ')},
+} as const;
+
+/** Launch splash + app icon (v5 mark). Timings match motion/splash/splashMath.ts. */
+export const splash = {
+  timing: ${JSON.stringify(Object.fromEntries(Object.entries(effBrand.motion.splash).filter(([k]) => !k.startsWith('$')))).replace(/"(\w+)":/g, '$1: ')},
+${['dark', 'light'].map((th) => `  ${th}: { base: '${colors[th]['splash-bg'].toUpperCase()}', from: '${colors[th]['splash-gradient-from'].toUpperCase()}', to: '${colors[th]['splash-gradient-to'].toUpperCase()}', mark: { 'a-stem': '${colors[th]['mark-a-stem'].toUpperCase()}', 'a-arm': '${colors[th]['mark-a-arm'].toUpperCase()}', 'b-stem': '${colors[th]['mark-b-stem'].toUpperCase()}', 'b-arm': '${colors[th]['mark-b-arm'].toUpperCase()}' } },`).join('\n')}
 } as const;
 
 export const shadow = {

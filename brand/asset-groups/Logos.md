@@ -1,7 +1,10 @@
-Cofferdam marks. **Interim** coffer-and-seal mark until the v5 interlocking-brackets mark is added.
+The Cofferdam mark, v5 — interlocking brackets, 1024 viewBox.
 
-- `cofferdam-mark.svg` — Cerulean (#3C8AFF) ink, 256 viewBox. Proof moments and the app-icon source on dark only.
-- `cofferdam-mark-white.svg` — white ink, for dark grounds (`bg`, `web-bg`, `card`).
-- `cofferdam-mark-black.svg` — black ink, for light grounds.
+- `cofferdam-mark-v5.svg` — light tones, for the Cerulean icon/splash ground. Never on white.
+- `cofferdam-mark-v5-on-dark.svg` — dark tones, for black, `web-bg` and the navy splash.
+- `cofferdam-mark-v5-white.svg` — single white ink, for dark or Cerulean grounds when tones aren't possible.
+- `layer-1…4-*.svg` — the four pieces separately (A stem, A arm, B stem, B arm), for animation and icon tooling.
+- `preview-light-dark-mono.png`, `preview-sizes.png` — the icon in light, dark and mono, and at small sizes. Reference only.
+- `legacy/` — the retired coffer-and-seal mark. Don't use in new work.
 
-Clear space ≥ half the mark's width. Never recolour, outline, rotate or stretch. Single-ink SVGs can't inherit colour through `<img>` — pick the file by ground.
+Clear space: the canvas padding (about 1/8 of the size). No mono SVG exists yet.

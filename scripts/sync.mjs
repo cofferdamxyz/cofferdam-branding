@@ -25,6 +25,7 @@ const repos = {
 
 const wallpapers = fs.readdirSync(path.join(ROOT, 'assets/wallpapers')).filter((f) => f.endsWith('.png'));
 const textures = fs.readdirSync(path.join(ROOT, 'assets/textures')).filter((f) => f.endsWith('.webp'));
+const LOGOS = ['cofferdam-mark-v5.svg', 'cofferdam-mark-v5-on-dark.svg', 'cofferdam-mark-v5-white.svg'];
 const fonts = fs.readdirSync(path.join(ROOT, 'fonts')).filter((f) => /\.(woff2?|ttf|otf)$/.test(f));
 
 /** [repo, from (in this repo), to (in the consumer)] */
@@ -35,8 +36,9 @@ const TARGETS = [
   ...fonts.map((f) => ['app', `fonts/${f}`, `assets/fonts/${f}`]),
   ['pages', 'dist/pages/brand.generated.css', 'src/app/brand.generated.css'],
   ...textures.map((f) => ['pages', `assets/textures/${f}`, `public/textures/${f}`]),
-  ['pages', 'assets/logos/cofferdam-mark-white.svg', 'public/brand/cofferdam-mark-white.svg'],
-  ['pages', 'assets/logos/cofferdam-mark-black.svg', 'public/brand/cofferdam-mark-black.svg'],
+  ...['CofferdamSplash.tsx', 'splashMath.ts', 'cofferdamMark.ts'].map((f) => ['app', `motion/splash/${f}`, `src/components/brand/splash/${f}`]),
+  ...LOGOS.map((f) => ['app', `assets/logos/v5/${f}`, `assets/brand/${f}`]),
+  ...LOGOS.map((f) => ['pages', `assets/logos/v5/${f}`, `public/brand/${f}`]),
 ];
 
 const hash = (p) => (fs.existsSync(p) ? crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex') : null);

@@ -1,0 +1,8 @@
+<!-- @dsCard group="Brand" height=520 -->
+<div id="r" style="display:flex;gap:24px;justify-content:center"></div>
+<script>
+const {Splash}=window.Cofferdam, e=React.createElement;
+const bar=(h,o)=>e('div',{style:{height:h,borderRadius:16,background:'var(--card)',boxShadow:'inset 0 0 0 1px var(--card-border)',opacity:o}});
+ReactDOM.createRoot(document.getElementById('r')).render(
+  e(Splash,{width:220,id:'p1'}, bar(28,1), bar(120,1), bar(64,.8), bar(64,.6)));
+</script>

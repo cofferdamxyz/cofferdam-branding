@@ -27,7 +27,7 @@ Cofferdam's brand lives in the `cofferdam-branding` repository. Never copy value
 
 ## 3. Logo
 
-The primary mark is the v5 interlocking brackets once its file is in `assets/logos/`. Until then use `cofferdam-mark-white.svg` on dark, `cofferdam-mark-black.svg` on light, or `cofferdam-mark.svg` (Cerulean) for a proof moment. Clear space ≥ half the mark's width. "Built on Base." uses the Base lockup from `assets/partners/base/`.
+The mark is v5, the interlocking brackets (`assets/logos/v5/`): `cofferdam-mark-v5.svg` on the Cerulean icon/splash ground, `cofferdam-mark-v5-on-dark.svg` on dark grounds, `cofferdam-mark-v5-white.svg` as a single ink. Never the light-tone mark on white; there is no mono SVG yet. Keep the canvas padding as clear space. The coffer-and-seal mark in `assets/logos/legacy/` is retired. For anything that animates the mark, follow the splash grammar in `brand/sections/2-motion.md`: one piece at a time, A stem → A arm → B stem → B arm. "Built on Base." uses the Base lockup from `assets/partners/base/`.
 
 ## 4. Check before you hand over
 

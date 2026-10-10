@@ -6,7 +6,7 @@ Cofferdam is a work-matching app and website built on Base: workers find jobs, h
 
 - **Dark-first, monochrome canvas.** Pure black `bg` ground, white `fg`, greyscale structure (`surface`, `card`, `border`, `divider`). Every surface and CTA stays zero-chroma.
 - **One accent at a time, and it means something.** `accent` marks proof: verified ticks, the live/active state, the Ready chip, focus. Never eyebrows, links, headings or decoration. The moment the accent lands on decoration it stops reading as *proven*.
-- **The Square is the seed.** Base's Square is the atomic shape. Marks, avatars, tiles, cards and wallpapers rhyme with it through the `radius-*` scale.
+- **The Square is the seed.** Base's Square is the atomic shape. The v5 brackets close into a slanted rounded square; avatars, tiles, cards and wallpapers rhyme with it through the `radius-*` scale.
 - **Calm, physical motion.** Purposeful, with mass, on the UI thread. Never decorative jitter.
 - **Plain, punchy voice.** Brief, human, active. "Your face is your key." not "Biometric authentication enrolment."
 
@@ -37,20 +37,26 @@ Cofferdam is a work-matching app and website built on Base: workers find jobs, h
 
 ## Logo
 
-- Primary mark: the **interlocking brackets** (v5) — two point-symmetric slanted brackets with folded-corner tones. *File pending: add it under `assets/Logos/` when final.*
-- Interim mark in production: the rounded-square **coffer** (outer ring) with an offset solid **seal** (`cofferdam-mark.svg`, Cerulean; `cofferdam-mark-white.svg` on dark; `cofferdam-mark-black.svg` on light). Give it clear space of at least half its width; never stretch, rotate, outline or recolour it outside these inks.
-- The app icon currently in `cofferdam-app` is Expo's placeholder brandmark, not ours. Don't ship it.
+- The mark is **v5, the interlocking brackets**: two point-symmetric slanted brackets, A (top-left) and B (bottom-right), each a stem plus an arm with a folded-corner tone — the cofferdam's two sealed halves, linked but separate. 1024 viewBox, four pieces.
+- **On the Cerulean icon/splash ground** (`splash-bg` light): `cofferdam-mark-v5.svg` — tones `mark-a-stem` #DCEAFF, `mark-a-arm` white, `mark-b-stem` #7FB1FF, `mark-b-arm` #B4D2FF.
+- **On dark grounds** (`bg`, `web-bg`, navy `splash-bg`): `cofferdam-mark-v5-on-dark.svg` — the dark palette (#C9D8F2, white, #2F6FE0, #5EA2FF). B-stem is the deepest face; on pure black it still reads because the arm beside it is bright.
+- **Single ink:** `cofferdam-mark-v5-white.svg` on dark or on Cerulean when tones aren't possible (favicons below 32px, embossing, one-colour print). On light grounds use the greyscale (mono) treatment shown in `preview-light-dark-mono.png`; there is no mono SVG yet, so don't improvise one — ask for it.
+- Never use the light-tone mark on white: its pale faces vanish.
+- Keep the 1024 canvas padding as clear space (about one-eighth of the size on every side). Don't rotate, skew further, outline, add a glow, reorder the tones or separate the brackets. It holds down to 16px as a tile (see `preview-sizes.png`).
+- **App icon:** the mark on the `splash-bg` ground with the `splash-gradient-from` → `splash-gradient-to` sweep (top-left to bottom-right), in the iOS/macOS 27 rounded-square glass style; navy in dark mode, greyscale for the tinted/mono icon. The icon in `cofferdam-app` today is still Expo's placeholder — replace it with this.
+- **Splash:** the mark draws itself piece by piece (A stem → A arm → B stem → B arm, one at a time), settles with a small pulse, holds until the app is ready, then fades in. See *Motion*.
+- The previous coffer-and-seal mark is retired (`assets/logos/legacy/`). Don't use it in new work.
 - **Built on Base:** use the approved Base lockup or Basemark (white on dark, black or blue on light) with the copy "Built on Base." Never type the Base wordmark in our font.
 
 ## Imagery and texture
 
 - Wallpapers are stone and fibre textures, square and centre-cropped so they survive any aspect ratio: **Obsidian, Carbon, Graphite** on dark; **Marble, Sand, Ice** on light; plus flat Pure Black / Paper White (the defaults).
 - On the website, paint the texture as an `aria-hidden` layer behind content at `opacity-texture-dark` (0.5, Obsidian) or `opacity-texture-light` (0.4, Marble), faded with a mask. Never below 0.3 — the source art is low-contrast and disappears.
-- No illustrations, mascots, gradients or emoji decoration. Product footage and real app captures carry the story; crop personal data out.
+- No illustrations, mascots or emoji decoration. The one gradient in the brand is the icon/splash ground (`splash-gradient-from` → `splash-gradient-to`); nothing else gets one. Product footage and real app captures carry the story; crop personal data out.
 
 ## Iconography
 
-- **Lucide** line icons: single weight, 2px rounded stroke, 24px grid, monochrome (`fg` / `fg-muted`). Same DNA as the mark.
+- **Lucide** line icons: single weight, 2px rounded stroke, 24px grid, monochrome (`fg` / `fg-muted`). Rounded terminals echo the mark's soft corners.
 - An icon turns `accent` only for a verified, active or selected state. Container glyphs (documents, cards) stay square-cornered.
 - Every icon-only control has a label; tap targets are at least 44px.
 
@@ -71,6 +77,6 @@ Cofferdam is a work-matching app and website built on Base: workers find jobs, h
 
 ## Not synced
 
-- Components are **hand-written web renditions** of the React Native kit in cofferdam-app (`src/components/ui/`): Button, StatusChip, Avatar, ChainLogo, BottomChip, GlassSurface, plus the site's CofferdamMark. Not carried over: Icon (use Lucide directly), Numpad, TxSpinner, AppBackground, SelfLogo, and the site's shadcn Button.
+- Components are **hand-written web renditions** of the React Native kit in cofferdam-app (`src/components/ui/`): Button, StatusChip, Avatar, ChainLogo, BottomChip, GlassSurface, plus CofferdamMark (v5) and a web replay of the launch Splash. Not carried over: Icon (use Lucide directly), Numpad, TxSpinner, AppBackground, SelfLogo, and the site's shadcn Button.
 - Fonts are the Latin-subset Geist files the website ships; full-charset files are pending.
-- The v5 interlocking-brackets logo is pending; the Base Brand Guidelines PDF stays in cofferdam-app.
+- The v5 mark has no mono (greyscale) SVG yet — only the preview PNG. The Base Brand Guidelines PDF stays in cofferdam-app.

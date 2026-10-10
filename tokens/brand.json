@@ -1,56 +1,248 @@
 {
   "$comment": "Brand data that tokens.json has no family for: user-pickable accents, wallpapers, motion, and the active-season pointer. Edited by hand or by an agent; scripts/build.mjs merges it with tokens.json and any active seasonal overlay.",
-  "version": 1,
-  "accentAlpha": { "dim": 0.14, "border": 0.32 },
+  "version": 2,
+  "accentAlpha": {
+    "dim": 0.14,
+    "border": 0.32
+  },
   "defaults": {
     "scheme": "dark",
-    "accent": { "dark": "cerulean", "light": "base-blue-l" },
+    "accent": {
+      "dark": "cerulean",
+      "light": "base-blue-l"
+    },
     "homeBackground": "plain-dark",
     "lockBackground": "plain-dark"
   },
   "accents": [
-    { "id": "cerulean", "name": "Cerulean", "scheme": "dark", "token": "base-cerulean" },
-    { "id": "yellow", "name": "Yellow", "scheme": "dark", "token": "base-yellow" },
-    { "id": "green", "name": "Green", "scheme": "dark", "token": "base-green" },
-    { "id": "lime", "name": "Lime Green", "scheme": "dark", "token": "base-lime" },
-    { "id": "red", "name": "Red", "scheme": "dark", "token": "base-red" },
-    { "id": "pink", "name": "Pink", "scheme": "dark", "token": "base-pink" },
-    { "id": "tan", "name": "Tan", "scheme": "dark", "token": "base-tan" },
-    { "id": "teal", "name": "Self Teal", "scheme": "dark", "token": "self-teal" },
-    { "id": "base-blue-l", "name": "Base Blue", "scheme": "light", "token": "base-blue" },
-    { "id": "cerulean-l", "name": "Cerulean", "scheme": "light", "token": "base-cerulean" },
-    { "id": "yellow-l", "name": "Yellow", "scheme": "light", "token": "base-yellow" },
-    { "id": "green-l", "name": "Green", "scheme": "light", "token": "base-green" },
-    { "id": "red-l", "name": "Red", "scheme": "light", "token": "base-red" },
-    { "id": "pink-l", "name": "Pink", "scheme": "light", "token": "base-pink" },
-    { "id": "tan-l", "name": "Tan", "scheme": "light", "token": "base-tan" },
-    { "id": "teal-l", "name": "Self Teal", "scheme": "light", "token": "self-teal" }
+    {
+      "id": "cerulean",
+      "name": "Cerulean",
+      "scheme": "dark",
+      "token": "base-cerulean"
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "scheme": "dark",
+      "token": "base-yellow"
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "scheme": "dark",
+      "token": "base-green"
+    },
+    {
+      "id": "lime",
+      "name": "Lime Green",
+      "scheme": "dark",
+      "token": "base-lime"
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "scheme": "dark",
+      "token": "base-red"
+    },
+    {
+      "id": "pink",
+      "name": "Pink",
+      "scheme": "dark",
+      "token": "base-pink"
+    },
+    {
+      "id": "tan",
+      "name": "Tan",
+      "scheme": "dark",
+      "token": "base-tan"
+    },
+    {
+      "id": "teal",
+      "name": "Self Teal",
+      "scheme": "dark",
+      "token": "self-teal"
+    },
+    {
+      "id": "base-blue-l",
+      "name": "Base Blue",
+      "scheme": "light",
+      "token": "base-blue"
+    },
+    {
+      "id": "cerulean-l",
+      "name": "Cerulean",
+      "scheme": "light",
+      "token": "base-cerulean"
+    },
+    {
+      "id": "yellow-l",
+      "name": "Yellow",
+      "scheme": "light",
+      "token": "base-yellow"
+    },
+    {
+      "id": "green-l",
+      "name": "Green",
+      "scheme": "light",
+      "token": "base-green"
+    },
+    {
+      "id": "red-l",
+      "name": "Red",
+      "scheme": "light",
+      "token": "base-red"
+    },
+    {
+      "id": "pink-l",
+      "name": "Pink",
+      "scheme": "light",
+      "token": "base-pink"
+    },
+    {
+      "id": "tan-l",
+      "name": "Tan",
+      "scheme": "light",
+      "token": "base-tan"
+    },
+    {
+      "id": "teal-l",
+      "name": "Self Teal",
+      "scheme": "light",
+      "token": "self-teal"
+    }
   ],
   "backgrounds": [
-    { "id": "plain-dark", "name": "Pure Black", "scheme": "dark", "kind": "plain", "base": "#000000", "tone": "#000000" },
-    { "id": "obsidian", "name": "Obsidian", "scheme": "dark", "kind": "obsidian", "base": "#000000", "tone": "#1A1B20", "image": "assets/wallpapers/obsidian.png", "webTexture": "assets/textures/obsidian.webp" },
-    { "id": "carbon", "name": "Carbon", "scheme": "dark", "kind": "carbon", "base": "#08090A", "tone": "#15171A", "image": "assets/wallpapers/carbon.png" },
-    { "id": "graphite", "name": "Graphite", "scheme": "dark", "kind": "graphite", "base": "#000000", "tone": "#101216", "image": "assets/wallpapers/graphite.png" },
-    { "id": "plain-light", "name": "Paper White", "scheme": "light", "kind": "plain", "base": "#FFFFFF", "tone": "#FFFFFF" },
-    { "id": "marble", "name": "Marble", "scheme": "light", "kind": "marble", "base": "#FFFFFF", "tone": "#FFFFFF", "image": "assets/wallpapers/marble.png", "webTexture": "assets/textures/marble.webp" },
-    { "id": "sand", "name": "Sand", "scheme": "light", "kind": "sand", "base": "#FFFFFF", "tone": "#FFFFFF", "image": "assets/wallpapers/sand.png" },
-    { "id": "ice", "name": "Ice", "scheme": "light", "kind": "ice", "base": "#FFFFFF", "tone": "#FFFFFF", "image": "assets/wallpapers/ice.png" }
+    {
+      "id": "plain-dark",
+      "name": "Pure Black",
+      "scheme": "dark",
+      "kind": "plain",
+      "base": "#000000",
+      "tone": "#000000"
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "scheme": "dark",
+      "kind": "obsidian",
+      "base": "#000000",
+      "tone": "#1A1B20",
+      "image": "assets/wallpapers/obsidian.png",
+      "webTexture": "assets/textures/obsidian.webp"
+    },
+    {
+      "id": "carbon",
+      "name": "Carbon",
+      "scheme": "dark",
+      "kind": "carbon",
+      "base": "#08090A",
+      "tone": "#15171A",
+      "image": "assets/wallpapers/carbon.png"
+    },
+    {
+      "id": "graphite",
+      "name": "Graphite",
+      "scheme": "dark",
+      "kind": "graphite",
+      "base": "#000000",
+      "tone": "#101216",
+      "image": "assets/wallpapers/graphite.png"
+    },
+    {
+      "id": "plain-light",
+      "name": "Paper White",
+      "scheme": "light",
+      "kind": "plain",
+      "base": "#FFFFFF",
+      "tone": "#FFFFFF"
+    },
+    {
+      "id": "marble",
+      "name": "Marble",
+      "scheme": "light",
+      "kind": "marble",
+      "base": "#FFFFFF",
+      "tone": "#FFFFFF",
+      "image": "assets/wallpapers/marble.png",
+      "webTexture": "assets/textures/marble.webp"
+    },
+    {
+      "id": "sand",
+      "name": "Sand",
+      "scheme": "light",
+      "kind": "sand",
+      "base": "#FFFFFF",
+      "tone": "#FFFFFF",
+      "image": "assets/wallpapers/sand.png"
+    },
+    {
+      "id": "ice",
+      "name": "Ice",
+      "scheme": "light",
+      "kind": "ice",
+      "base": "#FFFFFF",
+      "tone": "#FFFFFF",
+      "image": "assets/wallpapers/ice.png"
+    }
   ],
   "web": {
-    "texture": { "dark": "obsidian", "light": "marble" },
-    "brandAccent": { "dark": "base-cerulean", "light": "base-blue" }
+    "texture": {
+      "dark": "obsidian",
+      "light": "marble"
+    },
+    "brandAccent": {
+      "dark": "base-cerulean",
+      "light": "base-blue"
+    }
   },
   "motion": {
-    "duration": { "fast": 180, "base": 260, "slow": 380, "slower": 520 },
+    "duration": {
+      "fast": 180,
+      "base": 260,
+      "slow": 380,
+      "slower": 520
+    },
     "spring": {
-      "snappy": { "damping": 18, "stiffness": 220, "mass": 0.8 },
-      "soft": { "damping": 22, "stiffness": 140, "mass": 1 },
-      "bouncy": { "damping": 12, "stiffness": 200, "mass": 0.7 }
+      "snappy": {
+        "damping": 18,
+        "stiffness": 220,
+        "mass": 0.8
+      },
+      "soft": {
+        "damping": 22,
+        "stiffness": 140,
+        "mass": 1
+      },
+      "bouncy": {
+        "damping": 12,
+        "stiffness": 200,
+        "mass": 0.7
+      }
     },
     "staggerCellMs": 40,
     "centerBurstHoldMs": 120,
     "pressScale": 0.03,
-    "pressOpacity": 0.1
+    "pressOpacity": 0.1,
+    "splash": {
+      "$comment": "From motion/splash/splashMath.ts (SPLASH_TIMING). Draw order a-stem → a-arm → b-stem → b-arm, one piece at a time.",
+      "start": 120,
+      "dur": 340,
+      "gap": 40,
+      "bumpDur": 350,
+      "bumpScale": 0.035,
+      "hold": 120,
+      "exitDur": 300,
+      "exitScale": 0.08,
+      "gradientFadeIn": 700,
+      "markScale": 0.74,
+      "order": [
+        "a-stem",
+        "a-arm",
+        "b-stem",
+        "b-arm"
+      ]
+    }
   },
   "season": {
     "$comment": "null = follow the date windows in themes/seasonal/*.json (only files with \"enabled\": true). A string id forces that season; \"none\" forces none.",

@@ -1,7 +1,7 @@
 {
-  "brandVersion": 1,
-  "tokensVersion": 1,
-  "commit": "uncommitted",
+  "brandVersion": 2,
+  "tokensVersion": 2,
+  "commit": "2e6af27",
   "season": null,
   "builtFor": "10-10",
   "colors": {
@@ -35,7 +35,14 @@
       "base-lime": "#b6f569",
       "base-red": "#fc401f",
       "base-pink": "#fea8cd",
-      "self-teal": "#00ffb6"
+      "self-teal": "#00ffb6",
+      "splash-bg": "#0a0f1f",
+      "splash-gradient-from": "#141c34",
+      "splash-gradient-to": "#060a18",
+      "mark-a-stem": "#c9d8f2",
+      "mark-a-arm": "#ffffff",
+      "mark-b-stem": "#2f6fe0",
+      "mark-b-arm": "#5ea2ff"
     },
     "light": {
       "bg": "#ffffff",
@@ -67,7 +74,14 @@
       "base-lime": "#b6f569",
       "base-red": "#fc401f",
       "base-pink": "#fea8cd",
-      "self-teal": "#00a37a"
+      "self-teal": "#00a37a",
+      "splash-bg": "#3c8aff",
+      "splash-gradient-from": "#60a6ff",
+      "splash-gradient-to": "#2262e8",
+      "mark-a-stem": "#dceaff",
+      "mark-a-arm": "#ffffff",
+      "mark-b-stem": "#7fb1ff",
+      "mark-b-arm": "#b4d2ff"
     }
   },
   "type": {
@@ -440,7 +454,26 @@
     "staggerCellMs": 40,
     "centerBurstHoldMs": 120,
     "pressScale": 0.03,
-    "pressOpacity": 0.1
+    "pressOpacity": 0.1,
+    "splash": {
+      "$comment": "From motion/splash/splashMath.ts (SPLASH_TIMING). Draw order a-stem → a-arm → b-stem → b-arm, one piece at a time.",
+      "start": 120,
+      "dur": 340,
+      "gap": 40,
+      "bumpDur": 350,
+      "bumpScale": 0.035,
+      "hold": 120,
+      "exitDur": 300,
+      "exitScale": 0.08,
+      "gradientFadeIn": 700,
+      "markScale": 0.74,
+      "order": [
+        "a-stem",
+        "a-arm",
+        "b-stem",
+        "b-arm"
+      ]
+    }
   },
   "accentAlpha": {
     "dim": 0.14,

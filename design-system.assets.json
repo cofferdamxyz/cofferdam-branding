@@ -1,23 +1,86 @@
 {
   "$comment": "Asset-store records of the Design System artifact (https://claude.ai/code/artifact/adcfadc5-b427-4d8d-aa1a-4d2d8fc10fc5). Re-upload a changed file and update its record here; build.mjs swaps {{asset:<path>}} in component previews for its blob url.",
   "files": {
-    "assets/logos/cofferdam-mark.svg": {
+    "assets/logos/v5/cofferdam-mark-v5.svg": {
       "group": "Logos",
-      "name": "cofferdam-mark.svg",
+      "name": "cofferdam-mark-v5.svg",
+      "blob": "01492d441b1f82f0583f4a0fb7db4f63",
+      "size": 10705,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/v5/cofferdam-mark-v5-on-dark.svg": {
+      "group": "Logos",
+      "name": "cofferdam-mark-v5-on-dark.svg",
+      "blob": "15558c8582c01d479a3bcee7d35997f8",
+      "size": 2931,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/v5/cofferdam-mark-v5-white.svg": {
+      "group": "Logos",
+      "name": "cofferdam-mark-v5-white.svg",
+      "blob": "c945b0af4716648a1f99f4eb9f626d8c",
+      "size": 10705,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/v5/layer-1-bracket-a-stem.svg": {
+      "group": "Logos",
+      "name": "layer-1-bracket-a-stem.svg",
+      "blob": "6dbf64d74afd287ae043e18c7ff67298",
+      "size": 8603,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/v5/layer-2-bracket-a-arm.svg": {
+      "group": "Logos",
+      "name": "layer-2-bracket-a-arm.svg",
+      "blob": "330ff183baf2074d5b1ede6c8b6a2e8c",
+      "size": 8601,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/v5/layer-3-bracket-b-stem.svg": {
+      "group": "Logos",
+      "name": "layer-3-bracket-b-stem.svg",
+      "blob": "13918f28349db3cd21794b8b04c38acc",
+      "size": 8603,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/v5/layer-4-bracket-b-arm.svg": {
+      "group": "Logos",
+      "name": "layer-4-bracket-b-arm.svg",
+      "blob": "c0af708b6f41f0acff6bd5e64f780adf",
+      "size": 8601,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/v5/preview-light-dark-mono.png": {
+      "group": "Logos",
+      "name": "preview-light-dark-mono.png",
+      "blob": "b0263507857ca8914c46a1ddb2b20499",
+      "size": 228161,
+      "type": "image/png"
+    },
+    "assets/logos/v5/preview-sizes.png": {
+      "group": "Logos",
+      "name": "preview-sizes.png",
+      "blob": "8e8a3407a86f643bbc4a5889618fd8f6",
+      "size": 107071,
+      "type": "image/png"
+    },
+    "assets/logos/legacy/cofferdam-mark.svg": {
+      "group": "Logos",
+      "name": "legacy/cofferdam-mark.svg",
       "blob": "b60f701eec9cc6f72ee6d2f19dc1008e",
       "size": 330,
       "type": "image/svg+xml"
     },
-    "assets/logos/cofferdam-mark-white.svg": {
+    "assets/logos/legacy/cofferdam-mark-white.svg": {
       "group": "Logos",
-      "name": "cofferdam-mark-white.svg",
+      "name": "legacy/cofferdam-mark-white.svg",
       "blob": "68de3ea8987b31bf52cb57a58cd34ae7",
       "size": 288,
       "type": "image/svg+xml"
     },
-    "assets/logos/cofferdam-mark-black.svg": {
+    "assets/logos/legacy/cofferdam-mark-black.svg": {
       "group": "Logos",
-      "name": "cofferdam-mark-black.svg",
+      "name": "legacy/cofferdam-mark-black.svg",
       "blob": "0720fd48ffb88bd16408baf5dbd9f9e7",
       "size": 288,
       "type": "image/svg+xml"
@@ -154,6 +217,20 @@
       "blob": "e592cece31ec13db6938cac0ccf383c0",
       "size": 2775,
       "type": "image/svg+xml"
+    },
+    "motion/splash/cofferdam-splash-preview.mp4": {
+      "group": "Motion",
+      "name": "cofferdam-splash-preview.mp4",
+      "blob": "0d9c743c136e111ca1b5fbeddecafa9a",
+      "size": 65634,
+      "type": "video/mp4"
+    },
+    "motion/splash/preview-keyframes.png": {
+      "group": "Motion",
+      "name": "preview-keyframes.png",
+      "blob": "ba913b0e1d31bcc3b2236cd2070f4c07",
+      "size": 84148,
+      "type": "image/png"
     }
   }
 }

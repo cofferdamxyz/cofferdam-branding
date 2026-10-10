@@ -15,7 +15,8 @@ The consumers never hold brand values of their own: they import generated files.
 | cofferdam-app | `src/lib/brand.resolved.json` | `dist/brand.resolved.json` |
 | cofferdam-app | `assets/wallpapers/*.png`, `assets/fonts/Geist*.woff2` | `assets/`, `fonts/` |
 | cofferdam-pages | `src/app/brand.generated.css` | `dist/pages/brand.generated.css` |
-| cofferdam-pages | `public/textures/*.webp`, `public/brand/*.svg` | `assets/` |
+| cofferdam-app | `src/components/brand/splash/{CofferdamSplash.tsx,splashMath.ts,cofferdamMark.ts}`, `assets/brand/cofferdam-mark-v5*.svg` | `motion/splash/`, `assets/logos/v5/` |
+| cofferdam-pages | `public/textures/*.webp`, `public/brand/cofferdam-mark-v5*.svg` | `assets/` |
 
 ## One-time wiring — cofferdam-app
 
@@ -23,6 +24,8 @@ The consumers never hold brand values of their own: they import generated files.
 2. `src/lib/customization.ts`: build `ACCENTS` from the generated `ACCENTS`, and `BACKGROUNDS` from the generated `BACKGROUNDS`, mapping `image` file names to `require('../../assets/wallpapers/<name>')` (Metro needs static requires — keep a small `{ 'obsidian.png': require(...) }` map). Take `DEFAULT_CUSTOMIZATION` and the 0.14/0.32 alphas from the generated file.
 3. Fonts: register `assets/fonts/Geist-Variable-latin.woff2` and `GeistMono-Variable-latin.woff2` in the `expo-font` plugin in `app.json` (and remove the stale Self faces), then gate the splash on fonts loaded. Check the API against the Expo SDK docs for the installed version first. The generated `type` already sets `fontFamily`.
 4. `src/constants/theme.ts` (Expo template leftovers): migrate its users to `@/lib/theme`, then delete it.
+5. Splash: mount `CofferdamSplash` from `src/components/brand/splash/` in the root layout as in `cofferdam-branding/motion/splash/App.example.tsx` (keep `SplashScreen.preventAutoHideAsync()`, hide the native splash in `onMounted`, pass `ready` once fonts and the session are loaded). Set the `expo-splash-screen` plugin to `backgroundColor` = light `splash-bg` (#3C8AFF) and `dark.backgroundColor` = dark `splash-bg` (#0A0F1F), no image. Replace `CofferdamMark.tsx` (the old coffer mark) with the v5 SVG.
+6. App icon: rebuild `assets/expo.icon` (iOS 26+/27 Icon Composer) from the four `layer-*.svg` files on the `splash-bg` gradient, and regenerate `icon.png` / Android adaptive layers — the current icon is Expo's placeholder.
 
 ## One-time wiring — cofferdam-pages
 
@@ -30,6 +33,7 @@ The consumers never hold brand values of their own: they import generated files.
 2. Delete the hand-written `--base-*`, `--self-teal`, `--brand*`, `--texture*` lines from `:root` and `.dark` (the generated file declares them).
 3. Point the shadcn variables at brand tokens, in both `:root` and `.dark`: `--background: var(--cd-web-bg); --foreground: var(--cd-fg); --card: var(--cd-card); --popover: var(--cd-card); --primary: var(--cd-fg); --primary-foreground: var(--cd-bg); --secondary: var(--cd-surface-2); --muted: var(--cd-card); --muted-foreground: var(--cd-fg-muted); --destructive: var(--cd-danger); --surface-strong: var(--cd-surface-2); --radius: var(--cd-radius-web);` — keep the alpha `--border`/`--input`/`--ring` values. This moves light mode from #fafafa to the canonical #ffffff and the dark brand accent from Lime to Cerulean (both decided in the brand).
 4. Set `viewport.themeColor` in `layout.tsx` to the dark `web-bg` (#0a0a0a) — it already is.
+5. Replace `src/components/landing/CofferdamMark.tsx` (the old coffer mark) with the v5 geometry — `currentColor` single ink for the nav, the dark-tone version for the SdkShowcase hero — and update the SdkShowcase mask SVG to the v5 polygons. Regenerate the favicon from `cofferdam-mark-v5-white.svg` on `splash-bg`.
 
 ## Reviewing a brand-sync PR
 

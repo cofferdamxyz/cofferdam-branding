@@ -30,6 +30,13 @@
   --base-red: #fc401f;
   --base-pink: #fea8cd;
   --self-teal: #00ffb6;
+  --splash-bg: #0a0f1f;
+  --splash-gradient-from: #141c34;
+  --splash-gradient-to: #060a18;
+  --mark-a-stem: #c9d8f2;
+  --mark-a-arm: #ffffff;
+  --mark-b-stem: #2f6fe0;
+  --mark-b-arm: #5ea2ff;
   --shadow-card-sm: 0 1px 4px rgba(0, 0, 0, 0.04);
   --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-card-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -66,6 +73,13 @@
   --base-red: #fc401f;
   --base-pink: #fea8cd;
   --self-teal: #00a37a;
+  --splash-bg: var(--base-cerulean);
+  --splash-gradient-from: #60a6ff;
+  --splash-gradient-to: #2262e8;
+  --mark-a-stem: #dceaff;
+  --mark-a-arm: #ffffff;
+  --mark-b-stem: #7fb1ff;
+  --mark-b-arm: #b4d2ff;
 }
 :root {
   --space-xxs: 2px;

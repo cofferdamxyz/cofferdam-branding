@@ -7,7 +7,8 @@ tokens/tokens.json        colours (dark + light), type, spacing, radii, shadows,
 tokens/brand.json         accent options, wallpapers, motion, defaults, website accent/texture
 themes/seasonal/*.json    dated overlays (Christmas example included, disabled)
 brand/                    the brand book (README.md + sections/)
-assets/                   logos, wallpapers, website textures, partner marks (Base, Self)
+assets/                   logos (v5 + legacy), wallpapers, website textures, partner marks (Base, Self)
+motion/splash/            the launch splash (Expo + Reanimated) and its preview renders
 fonts/                    Geist + Geist Mono
 components/               web reference renditions of the app's UI kit (for the design-system artifact)
 scripts/build.mjs         validate + generate dist/
@@ -49,7 +50,7 @@ Node 20+, no dependencies.
 - Neutral ladder: the app's — pure black / paper white. The website keeps `web-bg` #0a0a0a in dark as a documented exception (sticky-nav separation).
 - Dark default accent: **Cerulean** on app and website (the site moves off Lime). Light: **Base Blue**.
 - Typeface: **Geist + Geist Mono** everywhere (the app moves off the system font and drops the stale Self faces).
-- Logo: the v5 interlocking-brackets mark is primary once its file is added to `assets/logos/`; the coffer-and-seal mark is the interim.
+- Logo: the v5 interlocking-brackets mark (added the same day); the coffer-and-seal mark is retired.
 
 ## Design System artifact
 

@@ -1,13 +1,16 @@
-The interim Cofferdam mark — an outer rounded-square frame (the coffer) and an offset solid inset (the seal) — drawn in `currentColor`.
+The Cofferdam mark, v5: two interlocking slanted brackets with folded-corner tones, drawn from the official 1024 geometry.
 
 ## When to use
-Nav, footer, splash and anywhere the brand signs off, until the v5 interlocking-brackets mark lands. It rhymes with the Base Square on purpose: same corner family, single weight.
+Nav, footer, about screens, and anywhere the brand signs off. For the app icon and splash use the files in `assets/Logos` and the Splash component.
 
 ## The consumer provides
-`size` (default 32) and a colour: inherit `fg` (white on dark, near-black on light) or pass `color` — the accent only for a proof moment such as the logo glow.
+`size` (default 32) and `tone`:
+- `tones` (default) — each piece filled from `mark-a-stem`, `mark-a-arm`, `mark-b-stem`, `mark-b-arm`. In the dark theme these are the dark palette (works on `bg`); in the light theme they are the pale palette for the Cerulean `splash-bg` ground, so **place it on `splash-bg` in light**, never on white.
+- `ink` — all four pieces in one colour (`currentColor`, or `color`): `fg` on any surface, white on Cerulean.
 
 ## Rules
-- Clear space ≥ half the mark's width. No outlines, rotation, stretching or gradients.
-- Under Reduce Motion, skip the website's conic sweep and glow entirely.
+- Clear space: the 1024 canvas padding (about 1/8 of the size).
+- Don't rotate, outline, glow, reorder tones or pull the brackets apart.
+- Under Reduce Motion skip the website's sweep/glow effects.
 
-Hand-written from `cofferdam-pages/src/components/landing/CofferdamMark.tsx` (same geometry as `cofferdam-app/src/components/brand/CofferdamMark.tsx`).
+Hand-written from `cofferdam-branding/motion/splash/cofferdamMark.ts`; replaces the retired coffer-and-seal mark.

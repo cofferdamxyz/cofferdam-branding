@@ -67,10 +67,27 @@ export interface GlassSurfaceProps {
 export declare function GlassSurface(props: GlassSurfaceProps): JSX.Element;
 
 export interface CofferdamMarkProps {
-  /** Rendered size in px. Default 32. */
+  /** Rendered size in px (square, 1024 viewBox). Default 32. */
   size?: number;
-  /** CSS colour; defaults to currentColor. */
+  /** tones = mark-* token fills (default) · ink = single colour (currentColor / color). */
+  tone?: 'tones' | 'ink';
+  /** CSS colour for tone="ink". */
   color?: string;
   className?: string;
 }
 export declare function CofferdamMark(props: CofferdamMarkProps): JSX.Element;
+
+export interface SplashProps {
+  /** Frame width in px; height follows a phone ratio. Default 220. */
+  width?: number;
+  height?: number;
+  /** Mark width as a fraction of the frame width. Default 0.74. */
+  markScale?: number;
+  /** Replay forever. Default true. */
+  loop?: boolean;
+  /** Unique id for the gradient (several on one page). */
+  id?: string;
+  /** What appears underneath as the splash fades out. */
+  children?: React.ReactNode;
+}
+export declare function Splash(props: SplashProps): JSX.Element;
