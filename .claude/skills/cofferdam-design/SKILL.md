@@ -22,7 +22,7 @@ Cofferdam's brand lives in the `cofferdam-branding` repository. Never copy value
 - **Never Base Blue on dark.** The Base Square is white on dark, blue on light.
 - **Geist / Geist Mono** only. Hierarchy through size and weight from the type roles (`display`, `title`, `h1`, `h2`, `body`, `body-muted`, `label`, `caption`, `eyebrow`). Tabular figures for money.
 - **Rounded, Square-family shapes.** Radii from `radius-*`; pills for buttons and chips. Hairline borders over shadows.
-- **Textures, not illustrations.** Obsidian/Carbon/Graphite (dark), Marble/Sand/Ice (light). No gradients, mascots, emoji decoration, blue-purple glows.
+- **Textures, not illustrations.** Obsidian/Carbon/Graphite (dark), Marble/Sand/Ice (light). No mascots, emoji decoration or blue-purple glows; the only gradient is the icon/splash ground (`splash-gradient-*`).
 - **Voice:** brief, human, active. On the website, zero crypto jargon. Never "bank", "deposit", "APY", "guaranteed". Every number cites a source doc.
 
 ## 3. Logo
