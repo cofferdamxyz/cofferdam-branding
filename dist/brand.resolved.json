@@ -1,7 +1,7 @@
 {
   "brandVersion": 2,
-  "tokensVersion": 2,
-  "commit": "7a2b583",
+  "tokensVersion": 3,
+  "commit": "738666b",
   "season": null,
   "builtFor": "10-10",
   "colors": {
@@ -39,10 +39,10 @@
       "splash-bg": "#0a0f1f",
       "splash-gradient-from": "#141c34",
       "splash-gradient-to": "#060a18",
-      "mark-a-stem": "#c9d8f2",
-      "mark-a-arm": "#ffffff",
-      "mark-b-stem": "#2f6fe0",
-      "mark-b-arm": "#5ea2ff"
+      "mark-a-stem": "#b5cff7",
+      "mark-a-arm": "#dce9ff",
+      "mark-b-stem": "#5a97f2",
+      "mark-b-arm": "#7db2ff"
     },
     "light": {
       "bg": "#ffffff",
@@ -78,10 +78,10 @@
       "splash-bg": "#3c8aff",
       "splash-gradient-from": "#60a6ff",
       "splash-gradient-to": "#2262e8",
-      "mark-a-stem": "#dceaff",
-      "mark-a-arm": "#ffffff",
-      "mark-b-stem": "#7fb1ff",
-      "mark-b-arm": "#b4d2ff"
+      "mark-a-stem": "#cfe2ff",
+      "mark-a-arm": "#eaf3ff",
+      "mark-b-stem": "#a3c8ff",
+      "mark-b-arm": "#bdd7ff"
     }
   },
   "type": {
@@ -185,8 +185,8 @@
             "fontSize": "13px",
             "lineHeight": "18px",
             "fontWeight": 500,
-            "sample": "0xfb13…9de · Base",
-            "usage": "Metadata, captions, status chips. Set addresses in the `mono` family at this size."
+            "sample": "Job #4821 · Signed off",
+            "usage": "Metadata, captions, status chips. Set IDs and reference numbers in the `mono` family at this size."
           },
           {
             "name": "eyebrow",

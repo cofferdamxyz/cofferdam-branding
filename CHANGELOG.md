@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-10 — v3, brand statement and mark tones
+
+- Brand statement is now *Work that proves itself.* everywhere; "sealed crypto" is gone.
+- Zero crypto jargon on every surface (was website only). Copy samples, StatusChip labels ("Getting ready", "Setting up") and token notes rewritten.
+- Mark tones tightened (option A): no pure-white face; light #EAF3FF / #CFE2FF / #BDD7FF / #A3C8FF, dark #DCE9FF / #B5CFF7 / #7DB2FF / #5A97F2. Applied to the `mark-*` tokens, the v5 SVGs, the four layers and the splash source.
+- Design-system cover: one v5 mark on the icon ground with the new statement.
+
 ## 2026-10-10 — v2, the v5 mark and the launch splash
 
 - Logo: v5 interlocking brackets is now the mark (`assets/logos/v5/`, designer files verbatim, plus a generated on-dark variant). The coffer-and-seal mark moves to `assets/logos/legacy/`.

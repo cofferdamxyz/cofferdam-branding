@@ -1,10 +1,10 @@
-A pill that shows an in-flight process and its outcome: Reserving address → Deploying → Ready (or Failed).
+A pill that shows an in-flight process and its outcome: Getting ready → Setting up → Ready (or Failed).
 
 ## When to use
-Wallet deployment and other short, multi-step background work the person is waiting on. In-flight states are neutral (`fg-muted` on a `border` outline) with a pulsing dot; **Ready** takes the accent (`accent` text, `accent-dim` fill, `accent-border`); **Failed** takes `danger`.
+Account setup and other short, multi-step background work the person is waiting on. In-flight states are neutral (`fg-muted` on a `border` outline) with a pulsing dot; **Ready** takes the accent (`accent` text, `accent-dim` fill, `accent-border`); **Failed** takes `danger`.
 
 ## The consumer provides
-`status`: `'reserving' | 'deploying' | 'ready' | 'failed'`, and optionally a `label` to replace the default wording.
+`status`: `'reserving' | 'deploying' | 'ready' | 'failed'`, and optionally a `label` to replace the default wording. The app's current labels ("Reserving address", "Deploying") break the no-jargon rule; ship these instead.
 
 ## Do / don't
 - The dot pulses between 35% and 100% opacity on a 1.4s loop while in flight; it stops on Ready/Failed and under Reduce Motion.

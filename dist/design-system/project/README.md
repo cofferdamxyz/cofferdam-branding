@@ -1,6 +1,6 @@
-Cofferdam is a work-matching app and website built on Base: workers find jobs, hirers post them, the money is set aside before the job starts, and every finished job is signed off by someone who was there. The brand inherits Base's system — palette, the Square, motion grammar, voice — and adds one rule of its own: **colour is earned**. Everything is black, white and grey until something is proven.
+Cofferdam is a work-matching app and website: workers find jobs, hirers post them, the money is set aside before the job starts, and every finished job is signed off by someone who was there. The brand inherits Base's system — palette, the Square, motion grammar, voice — and adds one rule of its own: **colour is earned**. Everything is black, white and grey until something is proven.
 
-**Brand statement:** *Cofferdam — sealed crypto, built on Base.* On the website, for a non-crypto reader: *Work that proves itself.*
+**Brand statement:** *Work that proves itself.* Use it as written — same words, sentence case, with the full stop — on the site, the store listings, the cover and sign-offs.
 
 ## Principles
 
@@ -23,9 +23,9 @@ Cofferdam is a work-matching app and website built on Base: workers find jobs, h
 
 ## Typography
 
-- Set everything in **Geist** (`sans`); addresses, hashes and code in **Geist Mono** (`mono`). On the website enable Geist's `ss01`, `cv01`, `cv11` stylistic sets on `body`.
+- Set everything in **Geist** (`sans`); IDs, reference numbers and code in **Geist Mono** (`mono`). On the website enable Geist's `ss01`, `cv01`, `cv11` stylistic sets on `body`.
 - Use the scale as roles: `display` for the balance hero, `title` for onboarding and page headlines, `h1`/`h2` for section and card heads, `body` for copy, `body-muted` for secondary copy, `label` for buttons and chips, `caption` for metadata, `eyebrow` (uppercase, 0.2em tracking) for website section labels.
-- Build hierarchy with size and weight, never colour. Money always uses tabular figures; truncate addresses as `0xfb13…9de`.
+- Build hierarchy with size and weight, never colour. Money always uses tabular figures; shorten long IDs in the middle, keeping the start and end (`CD-4821…09`).
 - Website headlines may scale fluidly (`clamp()`) above `title`; keep the negative tracking of `display`.
 
 ## Shape and spacing
@@ -38,8 +38,9 @@ Cofferdam is a work-matching app and website built on Base: workers find jobs, h
 ## Logo
 
 - The mark is **v5, the interlocking brackets**: two point-symmetric slanted brackets, A (top-left) and B (bottom-right), each a stem plus an arm with a folded-corner tone — the cofferdam's two sealed halves, linked but separate. 1024 viewBox, four pieces.
-- **On the Cerulean icon/splash ground** (`splash-bg` light): `cofferdam-mark-v5.svg` — tones `mark-a-stem` #DCEAFF, `mark-a-arm` white, `mark-b-stem` #7FB1FF, `mark-b-arm` #B4D2FF.
-- **On dark grounds** (`bg`, `web-bg`, navy `splash-bg`): `cofferdam-mark-v5-on-dark.svg` — the dark palette (#C9D8F2, white, #2F6FE0, #5EA2FF). B-stem is the deepest face; on pure black it still reads because the arm beside it is bright.
+- **On the Cerulean icon/splash ground** (`splash-bg` light): `cofferdam-mark-v5.svg` — tones `mark-a-arm` #EAF3FF, `mark-a-stem` #CFE2FF, `mark-b-arm` #BDD7FF, `mark-b-stem` #A3C8FF.
+- **On dark grounds** (`bg`, `web-bg`, navy `splash-bg`): `cofferdam-mark-v5-on-dark.svg` — the dark palette (`mark-a-arm` #DCE9FF, `mark-a-stem` #B5CFF7, `mark-b-arm` #7DB2FF, `mark-b-stem` #5A97F2).
+- **Tone balance:** light falls from the top-left, so A is lighter than B and each arm lighter than its stem — but the range is deliberately tight. No face is pure white; the top bracket must never outshine the bottom one. Don't brighten the arm to white for "pop".
 - **Single ink:** `cofferdam-mark-v5-white.svg` on dark or on Cerulean when tones aren't possible (favicons below 32px, embossing, one-colour print). On light grounds use the greyscale (mono) treatment shown in `preview-light-dark-mono.png`; there is no mono SVG yet, so don't improvise one — ask for it.
 - Never use the light-tone mark on white: its pale faces vanish.
 - Keep the 1024 canvas padding as clear space (about one-eighth of the size on every side). Don't rotate, skew further, outline, add a glow, reorder the tones or separate the brackets. It holds down to 16px as a tile (see `preview-sizes.png`).
@@ -64,8 +65,8 @@ Cofferdam is a work-matching app and website built on Base: workers find jobs, h
 
 - Write like a knowledgeable friend, not a bank: brief, active, direct, optimistic but real. Two short sentences beat one long one.
 - Say "use", not "utilize"; "Sending your payment.", not "Your transaction is being processed."
-- On the website, zero crypto jargon: no "blockchain", "web3", "wallet", "on-chain", "gas", "stablecoin". Say "the money is locked before you accept".
-- Never call Cofferdam a bank, never imply a return, never say "deposit", "savings account", "APY" or "guaranteed". Never imply custody of keys. Never overstate verification ("optional, but it unlocks more").
+- **Zero crypto jargon, on every surface** — app, website, store listings, notifications, support replies. No "crypto", "blockchain", "web3", "wallet", "token", "on-chain", "gas", "stablecoin", "seed phrase", "address" (for an account), "deploy". Say "your account", "payment", "the money is locked before you accept", "signed off". The only exception is the partner credit "Built on Base." and Base's own logo.
+- Never call Cofferdam a bank, never imply a return, never say "deposit", "savings account", "APY" or "guaranteed". Never imply Cofferdam holds people's money. Never overstate verification ("optional, but it unlocks more").
 - Every number traces to a source document. No invented metrics, user counts or dates.
 - One emoji at most, rarely. Times as `7am ET`; versions as `v2.6.4`.
 

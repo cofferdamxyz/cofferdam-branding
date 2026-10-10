@@ -11,4 +11,4 @@
 
 The full Base Brand Guidelines PDF stays in `cofferdam-app/assets/base/`.
 
-`../motion/splash/` holds the launch splash (Expo source, timings, preview video and keyframes). `cofferdam-mark-v5-on-dark.svg` is generated from the dark palette in `motion/splash/cofferdamMark.ts` (same geometry); every other v5 file is the designer's original, byte for byte.
+`../motion/splash/` holds the launch splash (Expo source, timings, preview video and keyframes). The v5 SVGs keep the designer's geometry byte for byte; their fills were retoned on 2026-10-10 to the tightened palette (`mark-*` tokens), so their original C2PA manifests were removed. `preview-*.png`, the splash video and keyframes still show the original, brighter tones.

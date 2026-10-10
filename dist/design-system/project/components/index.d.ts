@@ -21,7 +21,7 @@ export declare function Button(props: ButtonProps): JSX.Element;
 
 export interface StatusChipProps {
   status: 'reserving' | 'deploying' | 'ready' | 'failed';
-  /** Replaces the default label (Reserving address / Deploying / Ready / Failed). */
+  /** Replaces the default label (Getting ready / Setting up / Ready / Failed). */
   label?: string;
 }
 export declare function StatusChip(props: StatusChipProps): JSX.Element;

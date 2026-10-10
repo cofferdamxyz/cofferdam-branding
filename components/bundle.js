@@ -37,7 +37,7 @@
 
   /* StatusChip — src/components/ui/StatusChip.tsx. Reserving / Deploying pulse in neutral,
      Ready takes the accent (text + dim fill + border), Failed takes danger. */
-  var STATUS_LABEL = { reserving: 'Reserving address', deploying: 'Deploying', ready: 'Ready', failed: 'Failed' };
+  var STATUS_LABEL = { reserving: 'Getting ready', deploying: 'Setting up', ready: 'Ready', failed: 'Failed' };
   function StatusChip(props) {
     var status = props.status || 'reserving';
     return h(
