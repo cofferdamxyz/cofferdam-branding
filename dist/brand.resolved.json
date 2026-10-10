@@ -1,7 +1,7 @@
 {
   "brandVersion": 3,
-  "tokensVersion": 5,
-  "commit": "f43d92a",
+  "tokensVersion": 6,
+  "commit": "3bf5beb",
   "season": null,
   "builtFor": "10-10",
   "colors": {
@@ -35,6 +35,7 @@
       "chain-tile": "#0a0b1a",
       "chain-tile-testnet": "#1c1f2e",
       "chain-tile-edge": "#3a3f66",
+      "chain-mark": "#ffffff",
       "base-blue": "#0000ff",
       "base-cerulean": "#3c8aff",
       "base-tan": "#b8a581",
@@ -54,7 +55,9 @@
       "mark-mono-a-stem": "#c4c4ca",
       "mark-mono-a-arm": "#dedee2",
       "mark-mono-b-stem": "#82828a",
-      "mark-mono-b-arm": "#9a9aa1"
+      "mark-mono-b-arm": "#9a9aa1",
+      "tile-mono-from": "#26272c",
+      "tile-mono-to": "#141518"
     },
     "light": {
       "bg": "#ffffff",
@@ -86,6 +89,7 @@
       "chain-tile": "#f0f0f3",
       "chain-tile-testnet": "#ffffff",
       "chain-tile-edge": "#d8d8d8",
+      "chain-mark": "#000000",
       "base-blue": "#0000ff",
       "base-cerulean": "#3c8aff",
       "base-tan": "#b8a581",
@@ -105,7 +109,9 @@
       "mark-mono-a-stem": "#2e2e33",
       "mark-mono-a-arm": "#18181b",
       "mark-mono-b-stem": "#6e6e76",
-      "mark-mono-b-arm": "#55555c"
+      "mark-mono-b-arm": "#55555c",
+      "tile-mono-from": "#f7f7f8",
+      "tile-mono-to": "#dcdce0"
     }
   },
   "type": {
@@ -246,6 +252,7 @@
     "radius-lg": "16px",
     "radius-xl": "20px",
     "radius-xxl": "24px",
+    "radius-device": "28px",
     "radius-pill": "999px",
     "radius-web": "10px"
   },

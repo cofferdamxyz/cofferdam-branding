@@ -17,7 +17,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 - Body text in `fg`; secondary in `fg-muted` (≥7:1 in both themes). Keep `fg-muted-2` for tertiary hints or 24px+ text — it is 4.2:1 on dark `bg` and 3.5:1 on light. `fg-dim` is disabled only.
 - Primary actions are **white-on-black** in dark (`fg` fill, `bg` label) and near-black in light. The accent never fills a primary button.
 - **Two blues, two jobs.** `accent` is the *proof* blue: one token, two values — **Base Blue** (`base-blue`, 8.6:1 on white) in light and **Cerulean** (`base-cerulean`, 6.3:1 on black) in dark. It marks verified ticks, live state, the Ready chip and focus. `identity` is the *brand* blue — always Cerulean — for the app icon and splash ground, the logo glow, the cover and brand illustrations. Never use `identity` for text or proof, and never use `accent` for brand decoration. Pair accent text with `accent-dim` fill and `accent-border` hairline.
-- **Never put Base Blue on a dark background** (2.4:1, and the Base guidelines forbid it). The Base Square is white on dark, blue only on light.
+- **Never put Base Blue on a dark background** (2.4:1, and the Base guidelines forbid it). In product UI the Base Square (chain badges, ChainLogo) is `chain-mark`: white on dark, black on light, so blue only ever means proof. The blue Square is for Base's own lockups and the "Built on Base." credit.
 - The Base palette tokens (`base-blue`, `base-cerulean`, `base-tan`, `base-yellow`, `base-green`, `base-lime`, `base-red`, `base-pink`) are locked hex values from brand.base.org. Never interpolate, tint or invent shades. Components read `accent`, never a swatch directly.
 - `danger`, `warning`, `success`, `info` are status only, independent of the user's accent, and always come with a word or icon. Base Green is an accent option, not `success`.
 - `self-teal` is Self.xyz's colour. Use it only inside the Self mark/card and as the last accent option.
@@ -65,7 +65,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 ### Light mode: brand art and proof stay apart
 
 - In light mode the brand blue and the proof blue are close enough to blur together, so they never share a view **unless the brand art is inside its tile**. On a light screen that shows proof (verified ticks, the Ready chip, live state, focus), the logo is single ink or mono, and Cerulean art doesn't appear loose on the page. The one allowed exception is the contained app-icon tile (an About row, a share sheet), because its edge separates it from the proof blue.
-- Brand moments (splash, onboarding hero, store art, the design-system cover) carry no proof elements; proof screens carry no loose brand colour. When a light view needs the icon next to proof (an About row with a verified badge), use the greyscale tile (`mark-mono-*` on a `surface` → `card-border` ground) so Base Blue proof stays the only blue.
+- Brand moments (splash, onboarding hero, store art, the design-system cover) carry no proof elements; proof screens carry no loose brand colour. When a light view needs the icon next to proof (an About row with a verified badge), use the greyscale tile (`CofferdamMark tile="mono"`: `mark-mono-*` on `tile-mono-from` → `tile-mono-to`) so Base Blue proof stays the only blue.
 - In dark the two blues are already distinct (Cerulean proof on black vs the navy tile), so this rule only binds in light — but the default single-ink mark keeps both themes safe.
 
 ## Imagery and texture

@@ -393,8 +393,8 @@
   },
   "lastChange": {
     "by": "Ícaro Hoff",
-    "at": "2026-10-10T22:43:36Z",
+    "at": "2026-10-10T23:54:28Z",
     "via": "GitHub · cofferdamxyz/cofferdam-branding",
-    "note": "Cover: verified tick removed from both covers"
+    "note": "v6: chain-mark (Square black on light), CofferdamMark tile=\"mono\" + tile-mono-* tokens, lockup tones fallback, avatar chain badge lg+, radius-device, generated splash timing + wordmark"
   }
 }

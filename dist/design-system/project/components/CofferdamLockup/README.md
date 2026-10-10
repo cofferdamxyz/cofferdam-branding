@@ -9,7 +9,7 @@ Use the mark alone (`CofferdamMark`) when the name is already on screen.
 `layout`, `height` (clear space included; default 32 horizontal / 96 stacked) and `tone`:
 - `ink` (default) — mark and wordmark in one colour (`currentColor` / `color`): `fg` on any ground, white on Cerulean or photos.
 - `mono` — greyscale mark (`mark-mono-*`) with an `fg` wordmark. Light or dark grounds.
-- `tones` — colour mark (`mark-*`) with an `fg` wordmark. **Dark and navy grounds only.**
+- `tones` — colour mark (`mark-*`) with an `fg` wordmark on dark and navy grounds. In light it falls back to the greyscale mark automatically (the pale tones vanish on white).
 
 ## Rules
 - Geometry, in wordmark cap heights (C): horizontal mark 1.4C, gap 0.5C; stacked mark 3.2C, gap 0.6C; clear space 0.5C on every side (built into the box).

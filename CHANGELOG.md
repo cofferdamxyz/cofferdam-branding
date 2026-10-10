@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-10 — v6, blue means proof, mono tile, no hand-copied values
+
+- New `chain-mark` token: the Base Square in chain badges and ChainLogo is white on dark and **black on light** (was Base Blue), so blue only ever means proof. The light testnet dot is now `warning` (was Base Blue).
+- `CofferdamMark tile="mono"`: the greyscale icon tile from new `tile-mono-from` / `tile-mono-to` tokens (`tile` / `tile="brand"` keeps the colour tile; both get a `chain-tile-edge` hairline). The cover and `render-previews.py` use the same tokens.
+- `CofferdamLockup tone="tones"` falls back to the greyscale mark in light instead of vanishing.
+- Avatar: the chain badge shows at `lg` and `xl` only, on a filled `chain-tile` disc with an edge.
+- New `radius-device` (28px) for phone frames; the Splash replay uses it. No hard-coded colours or radii remain in `bundle.css`.
+- Build: `components/bundle.js` now carries the splash timing (`motion.splash`) and the wordmark (`wordmark.json`) in `@generated` blocks that the build refreshes and `--check` enforces; the Cover's mark comes from `{{mark-polygons}}`, filled from the official geometry.
+
 ## 2026-10-10 — v5, identity kit, cover, light-mode rule
 
 - Lockups: horizontal and stacked, in `on-dark`, `on-light`, `white` and `black` (`assets/logos/lockups/`). Wordmark is Geist 700 at -0.03em, outlined. Geometry in cap heights: horizontal mark 1.4C / gap 0.5C, stacked 3.2C / 0.6C, clear space 0.5C; minimum 34px / 84px tall.

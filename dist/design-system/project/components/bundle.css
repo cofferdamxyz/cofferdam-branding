@@ -59,15 +59,13 @@
   border-radius: 50%; border-style: solid; border-color: var(--bg); overflow: hidden;
 }
 .cd-avatar__badge { background: var(--accent); color: var(--bg); }
-.cd-avatar__chain { background: var(--bg); }
+.cd-avatar__chain { background: var(--chain-tile); box-shadow: inset 0 0 0 1px var(--chain-tile-edge); }
 
 .cd-chain__tile { fill: var(--chain-tile); }
-.cd-chain__square { fill: #ffffff; }
+.cd-chain__square { fill: var(--chain-mark); }
 .cd-chain--sepolia .cd-chain__tile { fill: var(--chain-tile-testnet); }
 .cd-chain__edge { stroke: var(--chain-tile-edge); }
 .cd-chain__dot { fill: var(--warning); stroke: var(--chain-tile-testnet); }
-[data-theme="light"] .cd-chain__square { fill: var(--base-blue); }
-[data-theme="light"] .cd-chain__dot { fill: var(--base-blue); }
 
 .cd-bottomchip {
   display: inline-flex; align-items: center; gap: var(--space-sm);
@@ -91,6 +89,12 @@
   .cd-btn { transition: none; }
 }
 
-.cd-splash { position: relative; overflow: hidden; border-radius: 28px; background: var(--bg); box-shadow: inset 0 0 0 1px var(--card-border); }
+.cd-splash { position: relative; overflow: hidden; border-radius: var(--radius-device); background: var(--bg); box-shadow: inset 0 0 0 1px var(--card-border); }
 .cd-splash__ground, .cd-splash__app { position: absolute; inset: 0; }
 .cd-splash__app { display: flex; flex-direction: column; gap: var(--space-sm); padding: var(--space-xl) var(--space-base); }
+
+/* Lockup tone="tones": the colour tones only read on dark; in light the mark falls back to the greyscale set. */
+[data-theme="light"] .cd-lockup--tones {
+  --cd-mark-a-stem: var(--mark-mono-a-stem); --cd-mark-a-arm: var(--mark-mono-a-arm);
+  --cd-mark-b-stem: var(--mark-mono-b-stem); --cd-mark-b-arm: var(--mark-mono-b-arm);
+}

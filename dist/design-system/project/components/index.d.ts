@@ -36,7 +36,7 @@ export interface AvatarProps {
   /** sm 28 · md 40 · lg 64 · xl 96. Default md. */
   size?: 'sm' | 'md' | 'lg' | 'xl';
   initials?: string;
-  /** Chain id → Base chain badge bottom-left (8453 mainnet, else Sepolia). */
+  /** Chain id → Base chain badge bottom-left (8453 mainnet, else Sepolia). Shown at lg and xl only. */
   chainId?: number;
 }
 export declare function Avatar(props: AvatarProps): JSX.Element;
@@ -71,8 +71,8 @@ export interface CofferdamMarkProps {
   size?: number;
   /** ink = single colour, currentColor / color (default) · mono = mark-mono-* greys · tones = mark-* fills (navy/black grounds, or with tile). */
   tone?: 'ink' | 'mono' | 'tones';
-  /** Draw the app-icon tile (splash gradient) behind the toned mark. Forces tone="tones". */
-  tile?: boolean;
+  /** Draw the app-icon tile behind the mark: "brand" (or true) = splash gradient + mark-* tones; "mono" = tile-mono-* + mark-mono-* (light views that also show proof, tinted icons). Overrides tone. */
+  tile?: boolean | 'brand' | 'mono';
   /** CSS colour for tone="ink". */
   color?: string;
   className?: string;
@@ -82,7 +82,7 @@ export declare function CofferdamMark(props: CofferdamMarkProps): JSX.Element;
 export interface CofferdamLockupProps {
   /** horizontal (default) for nav, headers and footers · stacked for title cards, splash-adjacent and square spaces. */
   layout?: 'horizontal' | 'stacked';
-  /** ink = mark and wordmark in one colour (default) · mono = greyscale mark + fg · tones = mark-* + fg (dark/navy only). */
+  /** ink = mark and wordmark in one colour (default) · mono = greyscale mark + fg · tones = mark-* + fg (falls back to mono greys in light). */
   tone?: 'ink' | 'mono' | 'tones';
   /** Rendered height in px, clear space included. Default 32 (horizontal) / 96 (stacked). Minimum 34 / 84. */
   height?: number;

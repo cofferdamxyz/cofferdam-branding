@@ -52,7 +52,7 @@ def main():
     tiles = {
         'light': (c['light']['splash-gradient-from'], c['light']['splash-gradient-to'], fills('mark-', 'light'), 'rgba(255,255,255,.18)'),
         'dark': (c['dark']['splash-gradient-from'], c['dark']['splash-gradient-to'], fills('mark-', 'dark'), c['dark']['chain-tile-edge']),
-        'mono': (c['light']['surface'], c['light']['card-border'], fills('mark-mono-', 'light'), c['light']['chain-tile-edge']),
+        'mono': (c['light']['tile-mono-from'], c['light']['tile-mono-to'], fills('mark-mono-', 'light'), c['light']['chain-tile-edge']),
     }
     tmp = tempfile.mkdtemp()
     with sync_playwright() as pw:

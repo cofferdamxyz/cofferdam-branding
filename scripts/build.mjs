@@ -147,7 +147,7 @@ for (const theme of Object.keys(colors)) {
     if (bc < 3) errors.push(`contrast ${theme}:border-control is ${bc}:1 — needs ≥ 3:1 on bg, card and surface-2`);
   }
   // Mark faces must read as graphics (3:1): greyscale mark on bg / surface-2; dark colour mark on the navy tile.
-  const markGrounds = [['mark-mono-', ['bg', 'surface-2']], ...(theme === 'dark' ? [['mark-', ['splash-bg', 'splash-gradient-from', 'splash-gradient-to']]] : [])];
+  const markGrounds = [['mark-mono-', ['bg', 'surface-2', 'tile-mono-from', 'tile-mono-to']], ...(theme === 'dark' ? [['mark-', ['splash-bg', 'splash-gradient-from', 'splash-gradient-to']]] : [])];
   for (const [prefix, grounds] of markGrounds) {
     for (const piece of ['a-stem', 'a-arm', 'b-stem', 'b-arm']) {
       const v = colors[theme][prefix + piece];
@@ -182,6 +182,29 @@ if (colors.dark && fs.existsSync(path.join(ROOT, 'motion/splash/cofferdamMark.ts
     const m = new RegExp(`${theme}: \\{ base: '(#\\w+)', from: '(#\\w+)', to: '(#\\w+)'`).exec(comp);
     const want = [colors[theme]['splash-bg'], colors[theme]['splash-gradient-from'], colors[theme]['splash-gradient-to']];
     if (!m || m.slice(1).some((v, i) => v.toLowerCase() !== want[i].toLowerCase())) errors.push(`motion/splash/CofferdamSplash.tsx THEME.${theme} disagrees with splash-bg / splash-gradient-* tokens`);
+  }
+}
+
+// Generated blocks in hand-written sources: components/bundle.js carries the splash timing (tokens/brand.json →
+// motion.splash) and the wordmark outline (assets/logos/lockups/wordmark.json) between @generated markers.
+// A normal build rewrites them in place; --check fails if they are stale.
+{
+  const f = 'components/bundle.js';
+  const src = fs.readFileSync(path.join(ROOT, f), 'utf8');
+  const { $comment, ...splashTiming } = brand.motion.splash;
+  const blocks = {
+    'splash-timing': `var SPLASH = ${JSON.stringify(splashTiming)};`,
+    wordmark: `var WORDMARK = ${fs.readFileSync(path.join(ROOT, 'assets/logos/lockups/wordmark.json'), 'utf8').trim()};`,
+  };
+  let out = src;
+  for (const [id, body] of Object.entries(blocks)) {
+    const re = new RegExp(`(/\\* @generated:${id} \\*/\\n)[\\s\\S]*?(\\n\\s*/\\* @end:${id} \\*/)`);
+    if (!re.test(out)) { errors.push(`${f}: missing @generated:${id} block`); continue; }
+    out = out.replace(re, (m, a, b) => a + '  ' + body + b);
+  }
+  if (out !== src) {
+    if (args.check) errors.push(`${f}: generated blocks are stale — run node scripts/build.mjs`);
+    else { fs.writeFileSync(path.join(ROOT, f), out); warnings.push(`${f}: refreshed generated blocks`); }
   }
 }
 
@@ -243,7 +266,7 @@ const resolved = {
 write('dist/brand.resolved.json', JSON.stringify(resolved, null, 2) + '\n');
 
 // 5b. React Native module — keys match cofferdam-app/src/lib/theme.ts exactly.
-const APP_KEYS = ['bg', 'surface', 'surface-2', 'card', 'card-border', 'border', 'border-control', 'divider', 'fg', 'fg-muted', 'fg-muted-2', 'fg-dim', 'accent', 'accent-dim', 'accent-border', 'identity', 'danger', 'danger-dim', 'danger-border', 'warning', 'success', 'info', 'base-blue', 'overlay', 'scrim', 'glass-scrim', 'chain-tile', 'chain-tile-testnet', 'chain-tile-edge'];
+const APP_KEYS = ['bg', 'surface', 'surface-2', 'card', 'card-border', 'border', 'border-control', 'divider', 'fg', 'fg-muted', 'fg-muted-2', 'fg-dim', 'accent', 'accent-dim', 'accent-border', 'identity', 'danger', 'danger-dim', 'danger-border', 'warning', 'success', 'info', 'base-blue', 'overlay', 'scrim', 'glass-scrim', 'chain-tile', 'chain-tile-testnet', 'chain-tile-edge', 'chain-mark'];
 const appPalette = (theme) =>
   '{\n' + APP_KEYS.map((k) => `  ${camel(k).replace('surface2', 'surface2')}: '${colors[theme][k].startsWith('#') ? colors[theme][k].toUpperCase() : colors[theme][k]}',`).join('\n') + '\n}';
 const rnShadow = (s) => {
@@ -430,13 +453,18 @@ for (const f of tokens.type.fonts) copy(f.file, `${DS}/${f.file}`);
 const walk = (dir) =>
   fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true }).flatMap((d) => (d.isDirectory() ? walk(`${dir}/${d.name}`) : [`${dir}/${d.name}`]));
 for (const f of fs.readdirSync(path.join(ROOT, 'brand/asset-groups')).filter((f) => f.endsWith('.md'))) copy(`brand/asset-groups/${f}`, `${DS}/assets/${f.replace(/\.md$/, '')}/README.md`);
+// {{mark-polygons}} in a static preview (the Cover) → the four official v5 pieces, classed m-a-stem … m-b-arm.
+const markSvg = fs.readFileSync(path.join(ROOT, 'assets/logos/v5/cofferdam-mark-v5-on-dark.svg'), 'utf8');
+const MARK_POLYGONS = ['a-stem', 'a-arm', 'b-stem', 'b-arm']
+  .map((id) => `<polygon class="m-${id}" points="${new RegExp(`<polygon id="${id}" points="([^"]+)"`).exec(markSvg)[1]}"/>`)
+  .join('');
 const assetLock = fs.existsSync(path.join(ROOT, 'design-system.assets.json')) ? readJSON('design-system.assets.json').files : {};
 for (const f of walk('components')) {
   if (!f.endsWith('.html')) {
     copy(f, `${DS}/${f}`);
     continue;
   }
-  const html = fs.readFileSync(path.join(ROOT, f), 'utf8').replace(/\{\{asset:([^}]+)\}\}/g, (m, p) => {
+  const html = fs.readFileSync(path.join(ROOT, f), 'utf8').replace(/\{\{mark-polygons\}\}/g, () => MARK_POLYGONS).replace(/\{\{asset:([^}]+)\}\}/g, (m, p) => {
     if (!assetLock[p]) {
       warnings.push(`${f}: ${p} has no asset-store record in design-system.assets.json`);
       return `../../${p}`;
