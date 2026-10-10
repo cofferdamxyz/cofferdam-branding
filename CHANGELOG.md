@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-10 — v4, light ladder, control borders, blue roles
+
+- Light neutral ladder: `surface` #F7F7F8, `surface-2` #F0F0F3, `card-border` #DCDCE0, `border` #E2E2E6, `divider` #ECECEF (were all white / near-invisible).
+- New `border-control` (dark #6C7079, light #8A8A8A): ≥3:1 outline for secondary buttons and inputs; the build now enforces it.
+- Light `danger` darkened #D92B1A → #CC2818 so it holds 4.5:1 on the new `surface-2` (caught by the build).
+- Blue roles: `accent` stays Base Blue (light) / Cerulean (dark) for proof; new `identity` token (Cerulean, both themes) for icon, splash, glow and brand art.
+- Hard-coded component colours moved to tokens: `danger-dim`, `danger-border`, `glass-scrim`, `chain-tile`, `chain-tile-testnet`, `chain-tile-edge`; all exported to the app module.
+- Light accent picker trimmed to Base Blue, Cerulean, Red, Self Teal (Yellow, Green, Pink, Tan removed: <3:1 on white).
+- Cover: dropped the faint accent sliver.
+
 ## 2026-10-10 — v3, brand statement and mark tones
 
 - Brand statement is now *Work that proves itself.* everywhere; "sealed crypto" is gone.

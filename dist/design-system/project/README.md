@@ -12,10 +12,11 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 
 ## Colour
 
-- Set app screens on `bg` (pure black / paper white). Set the website on `web-bg` (#0a0a0a in dark so the sticky nav separates; white in light). Raise with `surface` → `surface-2`; put tiles and cards on `card` with a `card-border` hairline.
+- Set app screens on `bg` (pure black / paper white). Set the website on `web-bg` (#0a0a0a in dark so the sticky nav separates; white in light). Raise with `surface` → `surface-2` (dark: lighter greys; light: #F7F7F8 → #F0F0F3); put tiles and cards on `card` with a `card-border` hairline. In light mode, white cards read because they sit on `surface`/`surface-2` grounds.
+- Outline anything interactive that has no fill (secondary buttons, inputs, checkboxes) with `border-control` — it holds 3:1 on every ground. `border`, `card-border` and `divider` are decorative structure and must never be the only cue that something is tappable.
 - Body text in `fg`; secondary in `fg-muted` (≥7:1 in both themes). Keep `fg-muted-2` for tertiary hints or 24px+ text — it is 4.2:1 on dark `bg` and 3.5:1 on light. `fg-dim` is disabled only.
 - Primary actions are **white-on-black** in dark (`fg` fill, `bg` label) and near-black in light. The accent never fills a primary button.
-- `accent` defaults to **Cerulean** (`base-cerulean`, 6.3:1 on black) in dark and **Base Blue** (`base-blue`, 8.6:1 on white) in light. Pair accent text with `accent-dim` fill and `accent-border` hairline (the Ready chip, the verified pill).
+- **Two blues, two jobs.** `accent` is the *proof* blue: one token, two values — **Base Blue** (`base-blue`, 8.6:1 on white) in light and **Cerulean** (`base-cerulean`, 6.3:1 on black) in dark. It marks verified ticks, live state, the Ready chip and focus. `identity` is the *brand* blue — always Cerulean — for the app icon and splash ground, the logo glow, the cover and brand illustrations. Never use `identity` for text or proof, and never use `accent` for brand decoration. Pair accent text with `accent-dim` fill and `accent-border` hairline.
 - **Never put Base Blue on a dark background** (2.4:1, and the Base guidelines forbid it). The Base Square is white on dark, blue only on light.
 - The Base palette tokens (`base-blue`, `base-cerulean`, `base-tan`, `base-yellow`, `base-green`, `base-lime`, `base-red`, `base-pink`) are locked hex values from brand.base.org. Never interpolate, tint or invent shades. Components read `accent`, never a swatch directly.
 - `danger`, `warning`, `success`, `info` are status only, independent of the user's accent, and always come with a word or icon. Base Green is an accent option, not `success`.
@@ -72,8 +73,8 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 
 ## Accessibility
 
-- Text holds 4.5:1 on the ground its token names, in both themes (3:1 for 24px+ text, icons, borders that carry meaning, focus rings). The known source exceptions are flagged in the token notes: `fg-muted-2`, light `warning`, light `success`.
-- On light schemes, only Base Blue passes as accent text. Yellow, Green, Lime, Pink and Tan are below 3:1 on white — marks only there.
+- Text holds 4.5:1 on the ground its token names, in both themes (3:1 for 24px+ text, icons, control borders, focus rings). The build enforces it, including `border-control` at 3:1 on `bg`, `card` and `surface-2`. Known source exceptions, flagged in their token notes: `fg-muted-2`, light `warning`, light `success`.
+- On light schemes, Base Blue is the only accent that passes as text. The light picker offers Base Blue, Cerulean, Red and Self Teal (≥3:1, marks and icons); Yellow, Green, Pink and Tan were removed from light because they fall below 3:1 on white. Lime is dark-only.
 - Status never relies on colour alone. Honour Reduce Motion: hero transitions fall back to a `fast` cross-fade.
 
 ## Not synced

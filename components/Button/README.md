@@ -2,7 +2,7 @@ The pill button every Cofferdam action uses: primary (solid `fg` on `bg`), secon
 
 ## When to use
 - **primary** — the one main action on a screen ("Create account", "Send"). White-on-black in dark, near-black in light. Never accent-filled.
-- **secondary** — the alternative next to it ("Import", "Maybe later"), a `border` outline.
+- **secondary** — the alternative next to it ("Import", "Maybe later"), a 1.5px `border-control` outline (≥3:1 on every ground).
 - **ghost** — tertiary links in footers, in `fg-muted`.
 - `lg` (56px) for full-width screen actions; `md` (44px) inline. Both `radius-pill`, `label` type.
 

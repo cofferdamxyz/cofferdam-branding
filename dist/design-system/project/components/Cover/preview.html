@@ -5,7 +5,6 @@
   .cover svg { position: absolute; inset: 0; }
   .ink { fill: var(--fg); }
   .rule { fill: var(--border); }
-  .tint { fill: var(--accent-dim); }
   .g0 { stop-color: var(--splash-gradient-from); }
   .g1 { stop-color: var(--splash-gradient-to); }
   .m-a-stem { fill: var(--mark-a-stem); }
@@ -24,13 +23,12 @@
 <div class="cover">
   <svg viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
     <!--
-      blocks:  icon tile 224×224 on splash-bg (splash-gradient-from → -to, rx 2 × radius-xxl) · fg 96×96 (radius-xl) · border 232×128 (radius-xxl) · accent-dim 96×120 (radius-xl)
-      arrange: the app-icon tile as the one tall slab, an fg satellite top-right, a grey band bleeding off the bottom-right, a faint accent sliver bleeding off the top edge
+      blocks:  icon tile 224×224 on splash-bg (splash-gradient-from → -to, rx 2 × radius-xxl) · fg 56×56 (radius-xl) · border 232×128 (radius-xxl)
+      arrange: the app-icon tile as the one tall slab, an fg satellite top-right, a grey band bleeding off the bottom-right
       pattern: none beyond the single v5 mark on the tile (mark-* tones, official geometry) — README: "The mark is v5, the interlocking brackets"; one logo, no repeats
       scales:  space-xl (24px) gutters between blocks, mark at 82% of the tile like the icon, radii radius-xl / radius-xxl
     -->
     <defs><linearGradient id="cv-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="g0"/><stop offset="1" class="g1"/></linearGradient></defs>
-    <rect class="tint r-xl" x="888" y="-24" width="96" height="120"/>
     <rect class="ink r-xl" x="808" y="48" width="56" height="56"/>
     <rect class="rule r-xxl" x="808" y="184" width="232" height="128"/>
     <rect class="r-icon" x="560" y="32" width="224" height="224" fill="url(#cv-g)"/>

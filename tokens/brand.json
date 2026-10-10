@@ -1,6 +1,6 @@
 {
   "$comment": "Brand data that tokens.json has no family for: user-pickable accents, wallpapers, motion, and the active-season pointer. Edited by hand or by an agent; scripts/build.mjs merges it with tokens.json and any active seasonal overlay.",
-  "version": 2,
+  "version": 3,
   "accentAlpha": {
     "dim": 0.14,
     "border": 0.32
@@ -76,34 +76,10 @@
       "token": "base-cerulean"
     },
     {
-      "id": "yellow-l",
-      "name": "Yellow",
-      "scheme": "light",
-      "token": "base-yellow"
-    },
-    {
-      "id": "green-l",
-      "name": "Green",
-      "scheme": "light",
-      "token": "base-green"
-    },
-    {
       "id": "red-l",
       "name": "Red",
       "scheme": "light",
       "token": "base-red"
-    },
-    {
-      "id": "pink-l",
-      "name": "Pink",
-      "scheme": "light",
-      "token": "base-pink"
-    },
-    {
-      "id": "tan-l",
-      "name": "Tan",
-      "scheme": "light",
-      "token": "base-tan"
     },
     {
       "id": "teal-l",

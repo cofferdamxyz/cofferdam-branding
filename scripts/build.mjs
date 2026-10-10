@@ -141,6 +141,11 @@ for (const theme of Object.keys(colors)) {
       else errors.push(`contrast ${key} is ${worst}:1 on its grounds — needs ≥ ${floor}:1`);
     }
   }
+  // Control outlines must be findable: 3:1 against every ground a control sits on.
+  if (colors[theme]['border-control']) {
+    const bc = Math.min(...['bg', 'card', 'surface-2'].map((g) => contrast(parseColor(colors[theme]['border-control']), parseColor(colors[theme][g]))));
+    if (bc < 3) errors.push(`contrast ${theme}:border-control is ${bc}:1 — needs ≥ 3:1 on bg, card and surface-2`);
+  }
   // Accent text on its own dim fill (the Ready chip / verified pill).
   const chip = contrast(parseColor(colors[theme].accent), over(parseColor(colors[theme]['accent-dim']), parseColor(colors[theme].bg)));
   if (chip < 4.5) errors.push(`contrast ${theme}:accent on accent-dim is ${chip}:1 — needs ≥ 4.5:1`);
@@ -208,7 +213,7 @@ const resolved = {
 write('dist/brand.resolved.json', JSON.stringify(resolved, null, 2) + '\n');
 
 // 5b. React Native module — keys match cofferdam-app/src/lib/theme.ts exactly.
-const APP_KEYS = ['bg', 'surface', 'surface-2', 'card', 'card-border', 'border', 'divider', 'fg', 'fg-muted', 'fg-muted-2', 'fg-dim', 'accent', 'accent-dim', 'accent-border', 'danger', 'warning', 'success', 'info', 'base-blue', 'overlay', 'scrim'];
+const APP_KEYS = ['bg', 'surface', 'surface-2', 'card', 'card-border', 'border', 'border-control', 'divider', 'fg', 'fg-muted', 'fg-muted-2', 'fg-dim', 'accent', 'accent-dim', 'accent-border', 'identity', 'danger', 'danger-dim', 'danger-border', 'warning', 'success', 'info', 'base-blue', 'overlay', 'scrim', 'glass-scrim', 'chain-tile', 'chain-tile-testnet', 'chain-tile-edge'];
 const appPalette = (theme) =>
   '{\n' + APP_KEYS.map((k) => `  ${camel(k).replace('surface2', 'surface2')}: '${colors[theme][k].startsWith('#') ? colors[theme][k].toUpperCase() : colors[theme][k]}',`).join('\n') + '\n}';
 const rnShadow = (s) => {
