@@ -13,6 +13,8 @@ fonts/                    Geist + Geist Mono
 components/               web reference renditions of the app's UI kit (for the design-system artifact)
 scripts/build.mjs         validate + generate dist/
 scripts/sync.mjs          copy dist/ into the consumer repos
+scripts/make-logos.py     black + mono marks and the lockups, from tokens + Geist
+scripts/render-previews.py icon previews, splash videos and keyframes in current tones
 dist/                     generated — committed so consumers can diff it
 .claude/skills/           cofferdam-design · cofferdam-brand-update · cofferdam-seasonal-theme · cofferdam-brand-sync
 .github/workflows/        brand-sync: on push + daily → PRs on app and pages
@@ -41,6 +43,8 @@ node scripts/build.mjs --date=2026-12-10    # preview what a date ships
 node scripts/build.mjs --season=christmas   # force a season (or --season=none)
 node scripts/sync.mjs                       # dry run against ../cofferdam-app and ../cofferdam-pages
 node scripts/sync.mjs --write               # copy generated files into them
+python3 scripts/make-logos.py               # after a mark-* / mark-mono-* change (needs fontTools + brotli)
+python3 scripts/render-previews.py          # after a mark or splash change (needs Playwright + ffmpeg)
 ```
 
 Node 20+, no dependencies.

@@ -146,6 +146,16 @@ for (const theme of Object.keys(colors)) {
     const bc = Math.min(...['bg', 'card', 'surface-2'].map((g) => contrast(parseColor(colors[theme]['border-control']), parseColor(colors[theme][g]))));
     if (bc < 3) errors.push(`contrast ${theme}:border-control is ${bc}:1 — needs ≥ 3:1 on bg, card and surface-2`);
   }
+  // Mark faces must read as graphics (3:1): greyscale mark on bg / surface-2; dark colour mark on the navy tile.
+  const markGrounds = [['mark-mono-', ['bg', 'surface-2']], ...(theme === 'dark' ? [['mark-', ['splash-bg', 'splash-gradient-from', 'splash-gradient-to']]] : [])];
+  for (const [prefix, grounds] of markGrounds) {
+    for (const piece of ['a-stem', 'a-arm', 'b-stem', 'b-arm']) {
+      const v = colors[theme][prefix + piece];
+      if (!v) continue;
+      const worst = Math.min(...grounds.map((g) => contrast(parseColor(v), parseColor(colors[theme][g]))));
+      if (worst < 3) errors.push(`contrast ${theme}:${prefix}${piece} is ${worst}:1 — needs ≥ 3:1 on ${grounds.join(', ')}`);
+    }
+  }
   // Accent text on its own dim fill (the Ready chip / verified pill).
   const chip = contrast(parseColor(colors[theme].accent), over(parseColor(colors[theme]['accent-dim']), parseColor(colors[theme].bg)));
   if (chip < 4.5) errors.push(`contrast ${theme}:accent on accent-dim is ${chip}:1 — needs ≥ 4.5:1`);
@@ -172,6 +182,26 @@ if (colors.dark && fs.existsSync(path.join(ROOT, 'motion/splash/cofferdamMark.ts
     const m = new RegExp(`${theme}: \\{ base: '(#\\w+)', from: '(#\\w+)', to: '(#\\w+)'`).exec(comp);
     const want = [colors[theme]['splash-bg'], colors[theme]['splash-gradient-from'], colors[theme]['splash-gradient-to']];
     if (!m || m.slice(1).some((v, i) => v.toLowerCase() !== want[i].toLowerCase())) errors.push(`motion/splash/CofferdamSplash.tsx THEME.${theme} disagrees with splash-bg / splash-gradient-* tokens`);
+  }
+}
+
+// Generated logo files (scripts/make-logos.py) bake the mark tones in; they must match the tokens.
+{
+  const pieces = ['a-stem', 'a-arm', 'b-stem', 'b-arm'];
+  const expect = [
+    ['assets/logos/v5/cofferdam-mark-v5-mono.svg', pieces.map((p) => colors.light[`mark-mono-${p}`])],
+    ['assets/logos/v5/cofferdam-mark-v5-mono-on-dark.svg', pieces.map((p) => colors.dark[`mark-mono-${p}`])],
+    ['assets/logos/lockups/cofferdam-lockup-horizontal-on-light.svg', [...pieces.map((p) => colors.light[`mark-mono-${p}`]), colors.light.fg]],
+    ['assets/logos/lockups/cofferdam-lockup-stacked-on-light.svg', [...pieces.map((p) => colors.light[`mark-mono-${p}`]), colors.light.fg]],
+    ['assets/logos/lockups/cofferdam-lockup-horizontal-on-dark.svg', pieces.map((p) => colors.dark[`mark-${p}`])],
+    ['assets/logos/lockups/cofferdam-lockup-stacked-on-dark.svg', pieces.map((p) => colors.dark[`mark-${p}`])],
+  ];
+  for (const [f, want] of expect) {
+    const p = path.join(ROOT, f);
+    if (!fs.existsSync(p)) { errors.push(`${f} is missing — run python3 scripts/make-logos.py`); continue; }
+    const svg = fs.readFileSync(p, 'utf8').toLowerCase();
+    const miss = want.filter((v) => v && !svg.includes(`fill="${v.toLowerCase()}"`));
+    if (miss.length) errors.push(`${f} is stale (missing ${miss.join(', ')}) — run python3 scripts/make-logos.py`);
   }
 }
 

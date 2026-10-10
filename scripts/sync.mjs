@@ -25,7 +25,8 @@ const repos = {
 
 const wallpapers = fs.readdirSync(path.join(ROOT, 'assets/wallpapers')).filter((f) => f.endsWith('.png'));
 const textures = fs.readdirSync(path.join(ROOT, 'assets/textures')).filter((f) => f.endsWith('.webp'));
-const LOGOS = ['cofferdam-mark-v5.svg', 'cofferdam-mark-v5-on-dark.svg', 'cofferdam-mark-v5-white.svg'];
+const LOGOS = ['cofferdam-mark-v5.svg', 'cofferdam-mark-v5-on-dark.svg', 'cofferdam-mark-v5-white.svg', 'cofferdam-mark-v5-black.svg', 'cofferdam-mark-v5-mono.svg', 'cofferdam-mark-v5-mono-on-dark.svg'];
+const LOCKUPS = ['horizontal', 'stacked'].flatMap((l) => ['on-dark', 'on-light', 'white', 'black'].map((v) => `cofferdam-lockup-${l}-${v}.svg`));
 const fonts = fs.readdirSync(path.join(ROOT, 'fonts')).filter((f) => /\.(woff2?|ttf|otf)$/.test(f));
 
 /** [repo, from (in this repo), to (in the consumer)] */
@@ -39,6 +40,8 @@ const TARGETS = [
   ...['CofferdamSplash.tsx', 'splashMath.ts', 'cofferdamMark.ts'].map((f) => ['app', `motion/splash/${f}`, `src/components/brand/splash/${f}`]),
   ...LOGOS.map((f) => ['app', `assets/logos/v5/${f}`, `assets/brand/${f}`]),
   ...LOGOS.map((f) => ['pages', `assets/logos/v5/${f}`, `public/brand/${f}`]),
+  ...LOCKUPS.map((f) => ['app', `assets/logos/lockups/${f}`, `assets/brand/${f}`]),
+  ...LOCKUPS.map((f) => ['pages', `assets/logos/lockups/${f}`, `public/brand/${f}`]),
 ];
 
 const hash = (p) => (fs.existsSync(p) ? crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex') : null);

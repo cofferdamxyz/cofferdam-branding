@@ -1,9 +1,9 @@
 <!-- @dsCard group="Brand" height=170 -->
-<div id="r" style="display:flex;align-items:center;gap:24px;color:var(--fg)"></div>
+<div id="r" style="display:flex;align-items:center;gap:28px;color:var(--fg)"></div>
 <script>
 const {CofferdamMark}=window.Cofferdam, e=React.createElement;
-const tile=(c,bg)=>e('div',{style:{width:120,height:120,borderRadius:28,background:bg,display:'flex',alignItems:'center',justifyContent:'center'}},c);
 ReactDOM.createRoot(document.getElementById('r')).render(e(React.Fragment,null,
- tile(e(CofferdamMark,{size:104}),'var(--splash-bg)'),
- e(CofferdamMark,{size:72,tone:'ink'}), e(CofferdamMark,{size:40,tone:'ink'}), e(CofferdamMark,{size:20,tone:'ink'})));
+ e(CofferdamMark,{size:120,tile:true}),
+ e(CofferdamMark,{size:96}), e(CofferdamMark,{size:96,tone:'mono'}),
+ e(CofferdamMark,{size:40}), e(CofferdamMark,{size:24}), e(CofferdamMark,{size:16})));
 </script>

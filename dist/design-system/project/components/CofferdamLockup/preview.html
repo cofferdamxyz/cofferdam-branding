@@ -1,0 +1,9 @@
+<!-- @dsCard group="Brand" height=200 -->
+<div id="r" style="display:flex;align-items:center;gap:40px;color:var(--fg)"></div>
+<script>
+const {CofferdamLockup}=window.Cofferdam, e=React.createElement;
+ReactDOM.createRoot(document.getElementById('r')).render(e(React.Fragment,null,
+ e('div',{style:{display:'flex',flexDirection:'column',gap:20}},
+   e(CofferdamLockup,{height:48}), e(CofferdamLockup,{height:48,tone:'mono'}), e(CofferdamLockup,{height:34})),
+ e(CofferdamLockup,{layout:'stacked',height:150})));
+</script>

@@ -28,7 +28,7 @@ const AnimatedPolygon = Animated.createAnimatedComponent(Polygon);
 // The native splash must be a plain colour with the SAME value, so the first frame is seamless.
 const THEME = {
   light: { base: '#3C8AFF', from: '#60A6FF', to: '#2262E8' },
-  dark: { base: '#0A0F1F', from: '#141C34', to: '#060A18' },
+  dark: { base: '#121A33', from: '#1B2645', to: '#0B1124' },
 } as const;
 
 function Piece({ piece, t, dark }: { piece: MarkPiece; t: SharedValue<number>; dark: boolean }) {

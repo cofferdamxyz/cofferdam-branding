@@ -39,16 +39,34 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 ## Logo
 
 - The mark is **v5, the interlocking brackets**: two point-symmetric slanted brackets, A (top-left) and B (bottom-right), each a stem plus an arm with a folded-corner tone — the cofferdam's two sealed halves, linked but separate. 1024 viewBox, four pieces.
-- **On the Cerulean icon/splash ground** (`splash-bg` light): `cofferdam-mark-v5.svg` — tones `mark-a-arm` #EAF3FF, `mark-a-stem` #CFE2FF, `mark-b-arm` #BDD7FF, `mark-b-stem` #A3C8FF.
-- **On dark grounds** (`bg`, `web-bg`, navy `splash-bg`): `cofferdam-mark-v5-on-dark.svg` — the dark palette (`mark-a-arm` #DCE9FF, `mark-a-stem` #B5CFF7, `mark-b-arm` #7DB2FF, `mark-b-stem` #5A97F2).
-- **Tone balance:** light falls from the top-left, so A is lighter than B and each arm lighter than its stem — but the range is deliberately tight. No face is pure white; the top bracket must never outshine the bottom one. Don't brighten the arm to white for "pop".
-- **Single ink:** `cofferdam-mark-v5-white.svg` on dark or on Cerulean when tones aren't possible (favicons below 32px, embossing, one-colour print). On light grounds use the greyscale (mono) treatment shown in `preview-light-dark-mono.png`; there is no mono SVG yet, so don't improvise one — ask for it.
-- Never use the light-tone mark on white: its pale faces vanish.
-- Keep the 1024 canvas padding as clear space (about one-eighth of the size on every side). Don't rotate, skew further, outline, add a glow, reorder the tones or separate the brackets. It holds down to 16px as a tile (see `preview-sizes.png`).
-- **App icon:** the mark on the `splash-bg` ground with the `splash-gradient-from` → `splash-gradient-to` sweep (top-left to bottom-right), in the iOS/macOS 27 rounded-square glass style; navy in dark mode, greyscale for the tinted/mono icon. The icon in `cofferdam-app` today is still Expo's placeholder — replace it with this.
+- **Single ink is the default.** In product chrome, nav, favicons, documents and anywhere the mark sits on a plain ground, use one colour: `fg`, or `cofferdam-mark-v5-white.svg` / `-black.svg`. Colour is earned — the mark gets its tones only where the brand itself is the subject.
+- **Greyscale (mono):** `cofferdam-mark-v5-mono.svg` (`mark-mono-*`, dark greys) on white and light surfaces, the tinted/mono app icon and greyscale print; `-mono-on-dark.svg` (light greys) on black.
+- **Colour, on dark:** `cofferdam-mark-v5-on-dark.svg` on `bg`, `web-bg` and the navy `splash-bg` — `mark-a-arm` #DCE9FF, `mark-a-stem` #B5CFF7, `mark-b-arm` #7DB2FF, `mark-b-stem` #5A97F2.
+- **Colour, on Cerulean:** `cofferdam-mark-v5.svg` on the light `splash-bg` only — `mark-a-arm` #EAF3FF, `mark-a-stem` #CFE2FF, `mark-b-arm` #BDD7FF, `mark-b-stem` #A3C8FF. Never on white: its pale faces vanish.
+- **Tone balance:** light falls from the top-left, so A is lighter than B and each arm lighter than its stem (on light grounds the greys invert: A darker) — but the range is deliberately tight. No face is pure white; the top bracket must never outshine the bottom one.
+- **Clear space and size:** keep the 1024 canvas padding (about one-eighth of the size on every side). Single ink and the tile hold to 16px; mono and colour tones from 24px. Don't rotate, skew further, outline, add a glow, reorder the tones or separate the brackets.
+
+### Lockups
+
+- **Horizontal** (`cofferdam-lockup-horizontal-*.svg`) for nav, headers, footers and documents; **stacked** (`cofferdam-lockup-stacked-*.svg`) for title cards, store art and square spaces. Use the mark alone when the name is already on screen.
+- The wordmark is "Cofferdam" in Geist 700 at -0.03em, outlined. Never retype it in live text or another weight.
+- Geometry, in wordmark cap heights (C): horizontal mark 1.4C centred on the cap height, gap 0.5C; stacked mark 3.2C centred over the word, gap 0.6C; clear space 0.5C on every side (built into each file).
+- Minimum: horizontal 34px tall (mark 20px); stacked 84px tall. Smaller than that, use the mark alone.
+- Variants: `on-dark` (colour mark, white type), `on-light` (greyscale mark, `fg` type), `white`, `black`. Never put the statement inside the lockup; set it as text beside or below, outside the clear space.
+- Regenerate marks and lockups with `python3 scripts/make-logos.py` whenever a mark token changes.
+
+### App icon and splash
+
+- **App icon:** the toned mark (ink about 70% of the tile) on the `splash-bg` ground with the `splash-gradient-from` → `splash-gradient-to` sweep (top-left to bottom-right), 22.5% corner, in the iOS/macOS 27 rounded-square glass style: Cerulean in light, navy (#121A33, lifted so the tile separates from a black home screen) in dark, greyscale (`mark-mono-*`) for the tinted icon. `CofferdamMark tile` draws it on the web. The icon in `cofferdam-app` today is still Expo's placeholder — replace it with this.
 - **Splash:** the mark draws itself piece by piece (A stem → A arm → B stem → B arm, one at a time), settles with a small pulse, holds until the app is ready, then fades in. See *Motion*.
 - The previous coffer-and-seal mark is retired (`assets/logos/legacy/`). Don't use it in new work.
 - **Built on Base:** use the approved Base lockup or Basemark (white on dark, black or blue on light) with the copy "Built on Base." Never type the Base wordmark in our font.
+
+### Light mode: brand art and proof stay apart
+
+- In light mode the brand blue and the proof blue are close enough to blur together, so they never share a view **unless the brand art is inside its tile**. On a light screen that shows proof (verified ticks, the Ready chip, live state, focus), the logo is single ink or mono, and Cerulean art doesn't appear loose on the page. The one allowed exception is the contained app-icon tile (an About row, a share sheet), because its edge separates it from the proof blue.
+- Brand moments in light (splash, onboarding hero, store art) carry no proof elements; proof screens carry no loose brand colour. The design-system cover shows both only because the mark is inside its tile.
+- In dark the two blues are already distinct (Cerulean proof on black vs the navy tile), so this rule only binds in light — but the default single-ink mark keeps both themes safe.
 
 ## Imagery and texture
 
@@ -81,4 +99,4 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 
 - Components are **hand-written web renditions** of the React Native kit in cofferdam-app (`src/components/ui/`): Button, StatusChip, Avatar, ChainLogo, BottomChip, GlassSurface, plus CofferdamMark (v5) and a web replay of the launch Splash. Not carried over: Icon (use Lucide directly), Numpad, TxSpinner, AppBackground, SelfLogo, and the site's shadcn Button.
 - Fonts are the Latin-subset Geist files the website ships; full-charset files are pending.
-- The v5 mark has no mono (greyscale) SVG yet — only the preview PNG. The Base Brand Guidelines PDF stays in cofferdam-app.
+- The Base Brand Guidelines PDF stays in cofferdam-app.

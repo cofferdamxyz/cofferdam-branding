@@ -33,6 +33,8 @@ node scripts/build.mjs --check      # names, aliases, files, contrast
 node scripts/build.mjs --verbose    # full contrast + accent tables
 node scripts/build.mjs              # write dist/
 node scripts/sync.mjs               # dry run: which consumer files would change
+python3 scripts/make-logos.py       # if a mark-* / mark-mono-* / fg token changed (the build flags stale logo files)
+python3 scripts/render-previews.py  # if mark or splash tokens changed: icon previews, splash videos, keyframes
 ```
 
 The build fails on any new text/ground pair under 4.5:1. If a real brand decision must miss it, add the pair to `KNOWN` in `scripts/build.mjs` AND say so in the token's usage note.

@@ -10,6 +10,8 @@
     "build": "node scripts/build.mjs",
     "check": "node scripts/build.mjs --check --verbose",
     "sync": "node scripts/sync.mjs",
-    "sync:write": "node scripts/sync.mjs --write"
+    "sync:write": "node scripts/sync.mjs --write",
+    "logos": "python3 scripts/make-logos.py",
+    "renders": "node scripts/build.mjs && python3 scripts/render-previews.py"
   }
 }

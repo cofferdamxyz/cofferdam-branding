@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-10 — v5, identity kit, cover, light-mode rule
+
+- Lockups: horizontal and stacked, in `on-dark`, `on-light`, `white` and `black` (`assets/logos/lockups/`). Wordmark is Geist 700 at -0.03em, outlined. Geometry in cap heights: horizontal mark 1.4C / gap 0.5C, stacked 3.2C / 0.6C, clear space 0.5C; minimum 34px / 84px tall.
+- New marks: `cofferdam-mark-v5-black.svg`, `cofferdam-mark-v5-mono.svg` and `-mono-on-dark.svg`, from new `mark-mono-*` tokens (greyscale, same tone order, tight range).
+- `CofferdamMark` now defaults to single ink (`tone="ink"`); new `tone="mono"` and a `tile` prop that draws the app-icon tile. New `CofferdamLockup` component.
+- Dark icon/splash ground lifted so the tile separates from black: `splash-bg` #0A0F1F → #121A33, gradient #141C34 → #1B2645 and #060A18 → #0B1124. Splash source and native splash colour updated.
+- Brand book: single ink is the default mark; lockup rules; new "Light mode: brand art and proof stay apart" rule.
+- Cover rebuilt around the idea: the app-icon tile on one stone texture (Obsidian / Marble) with one verified tick; the white square and grey band are gone.
+- Icon previews, splash videos (light and dark) and keyframes re-rendered in the current tones (`scripts/render-previews.py`); designer originals kept in `original-renders/`.
+- Build: new checks for mark-face contrast (mono on bg/surface-2, dark tones on the navy tile) and for stale generated logo files.
+
 ## 2026-10-10 — v4, light ladder, control borders, blue roles
 
 - Light neutral ladder: `surface` #F7F7F8, `surface-2` #F0F0F3, `card-border` #DCDCE0, `border` #E2E2E6, `divider` #ECECEF (were all white / near-invisible).

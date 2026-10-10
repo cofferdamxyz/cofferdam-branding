@@ -1,7 +1,7 @@
 {
   "brandVersion": 3,
-  "tokensVersion": 4,
-  "commit": "9408f6a",
+  "tokensVersion": 5,
+  "commit": "3160b9f",
   "season": null,
   "builtFor": "10-10",
   "colors": {
@@ -44,13 +44,17 @@
       "base-red": "#fc401f",
       "base-pink": "#fea8cd",
       "self-teal": "#00ffb6",
-      "splash-bg": "#0a0f1f",
-      "splash-gradient-from": "#141c34",
-      "splash-gradient-to": "#060a18",
+      "splash-bg": "#121a33",
+      "splash-gradient-from": "#1b2645",
+      "splash-gradient-to": "#0b1124",
       "mark-a-stem": "#b5cff7",
       "mark-a-arm": "#dce9ff",
       "mark-b-stem": "#5a97f2",
-      "mark-b-arm": "#7db2ff"
+      "mark-b-arm": "#7db2ff",
+      "mark-mono-a-stem": "#c4c4ca",
+      "mark-mono-a-arm": "#dedee2",
+      "mark-mono-b-stem": "#82828a",
+      "mark-mono-b-arm": "#9a9aa1"
     },
     "light": {
       "bg": "#ffffff",
@@ -97,7 +101,11 @@
       "mark-a-stem": "#cfe2ff",
       "mark-a-arm": "#eaf3ff",
       "mark-b-stem": "#a3c8ff",
-      "mark-b-arm": "#bdd7ff"
+      "mark-b-arm": "#bdd7ff",
+      "mark-mono-a-stem": "#2e2e33",
+      "mark-mono-a-arm": "#18181b",
+      "mark-mono-b-stem": "#6e6e76",
+      "mark-mono-b-arm": "#55555c"
     }
   },
   "type": {

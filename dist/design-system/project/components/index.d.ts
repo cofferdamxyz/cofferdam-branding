@@ -67,15 +67,30 @@ export interface GlassSurfaceProps {
 export declare function GlassSurface(props: GlassSurfaceProps): JSX.Element;
 
 export interface CofferdamMarkProps {
-  /** Rendered size in px (square, 1024 viewBox). Default 32. */
+  /** Rendered size in px (square, 1024 viewBox incl. clear space). Default 32. */
   size?: number;
-  /** tones = mark-* token fills (default) · ink = single colour (currentColor / color). */
-  tone?: 'tones' | 'ink';
+  /** ink = single colour, currentColor / color (default) · mono = mark-mono-* greys · tones = mark-* fills (navy/black grounds, or with tile). */
+  tone?: 'ink' | 'mono' | 'tones';
+  /** Draw the app-icon tile (splash gradient) behind the toned mark. Forces tone="tones". */
+  tile?: boolean;
   /** CSS colour for tone="ink". */
   color?: string;
   className?: string;
 }
 export declare function CofferdamMark(props: CofferdamMarkProps): JSX.Element;
+
+export interface CofferdamLockupProps {
+  /** horizontal (default) for nav, headers and footers · stacked for title cards, splash-adjacent and square spaces. */
+  layout?: 'horizontal' | 'stacked';
+  /** ink = mark and wordmark in one colour (default) · mono = greyscale mark + fg · tones = mark-* + fg (dark/navy only). */
+  tone?: 'ink' | 'mono' | 'tones';
+  /** Rendered height in px, clear space included. Default 32 (horizontal) / 96 (stacked). Minimum 34 / 84. */
+  height?: number;
+  /** CSS colour for tone="ink". */
+  color?: string;
+  className?: string;
+}
+export declare function CofferdamLockup(props: CofferdamLockupProps): JSX.Element;
 
 export interface SplashProps {
   /** Frame width in px; height follows a phone ratio. Default 220. */
