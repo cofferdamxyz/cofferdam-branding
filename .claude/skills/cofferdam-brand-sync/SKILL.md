@@ -15,8 +15,8 @@ The consumers never hold brand values of their own: they import generated files.
 | cofferdam-app | `src/lib/brand.resolved.json` | `dist/brand.resolved.json` |
 | cofferdam-app | `assets/wallpapers/*.png`, `assets/fonts/Geist*.woff2` | `assets/`, `fonts/` |
 | cofferdam-pages | `src/app/brand.generated.css` | `dist/pages/brand.generated.css` |
-| cofferdam-app | `src/components/brand/splash/{CofferdamSplash.tsx,splashMath.ts,cofferdamMark.ts}`, `assets/brand/cofferdam-mark-v5*.svg` | `motion/splash/`, `assets/logos/v5/` |
-| cofferdam-pages | `public/textures/*.webp`, `public/brand/cofferdam-mark-v5*.svg` | `assets/` |
+| cofferdam-app | `src/components/brand/splash/{CofferdamSplash.tsx,splashMath.ts,cofferdamMark.ts}`, `assets/brand/cofferdam-mark-v5*.svg`, `assets/brand/cofferdam-lockup-*.svg` | `motion/splash/`, `assets/logos/v5/`, `assets/logos/lockups/` |
+| cofferdam-pages | `public/textures/*.webp`, `public/brand/cofferdam-mark-v5*.svg`, `public/brand/cofferdam-lockup-*.svg` | `assets/` |
 
 ## One-time wiring — cofferdam-app
 
