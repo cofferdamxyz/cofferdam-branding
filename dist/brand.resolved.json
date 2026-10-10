@@ -1,7 +1,7 @@
 {
   "brandVersion": 3,
   "tokensVersion": 4,
-  "commit": "e1e25eb",
+  "commit": "9408f6a",
   "season": null,
   "builtFor": "10-10",
   "colors": {
@@ -79,7 +79,7 @@
       "overlay": "rgba(0, 0, 0, 0.5)",
       "scrim": "rgba(0, 0, 0, 0.7)",
       "glass-scrim": "rgba(255, 255, 255, 0.65)",
-      "chain-tile": "#ffffff",
+      "chain-tile": "#f0f0f3",
       "chain-tile-testnet": "#ffffff",
       "chain-tile-edge": "#d8d8d8",
       "base-blue": "#0000ff",
