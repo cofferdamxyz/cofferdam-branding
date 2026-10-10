@@ -65,7 +65,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 ### Light mode: brand art and proof stay apart
 
 - In light mode the brand blue and the proof blue are close enough to blur together, so they never share a view **unless the brand art is inside its tile**. On a light screen that shows proof (verified ticks, the Ready chip, live state, focus), the logo is single ink or mono, and Cerulean art doesn't appear loose on the page. The one allowed exception is the contained app-icon tile (an About row, a share sheet), because its edge separates it from the proof blue.
-- Brand moments in light (splash, onboarding hero, store art) carry no proof elements; proof screens carry no loose brand colour. When a light view needs the icon next to proof (the design-system cover, an About row with a verified badge), use the greyscale tile (`mark-mono-*` on a `surface` → `card-border` ground) so Base Blue proof stays the only blue.
+- Brand moments (splash, onboarding hero, store art, the design-system cover) carry no proof elements; proof screens carry no loose brand colour. When a light view needs the icon next to proof (an About row with a verified badge), use the greyscale tile (`mark-mono-*` on a `surface` → `card-border` ground) so Base Blue proof stays the only blue.
 - In dark the two blues are already distinct (Cerulean proof on black vs the navy tile), so this rule only binds in light — but the default single-ink mark keeps both themes safe.
 
 ## Imagery and texture

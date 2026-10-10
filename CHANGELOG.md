@@ -7,7 +7,7 @@
 - `CofferdamMark` now defaults to single ink (`tone="ink"`); new `tone="mono"` and a `tile` prop that draws the app-icon tile. New `CofferdamLockup` component.
 - Dark icon/splash ground lifted so the tile separates from black: `splash-bg` #0A0F1F → #121A33, gradient #141C34 → #1B2645 and #060A18 → #0B1124. Splash source and native splash colour updated.
 - Brand book: single ink is the default mark; lockup rules; new "Light mode: brand art and proof stay apart" rule.
-- Cover (v5.1): the stone texture is now the full background at the website texture opacity, faded under the name; the light cover uses the greyscale icon tile so the proof tick is the only blue.
+- Cover (v5.1): the stone texture is now the full background at the website texture opacity, faded under the name; the light cover uses the greyscale icon tile; the verified tick is removed from both covers (a brand moment carries no proof elements).
 - Cover rebuilt around the idea: the app-icon tile on one stone texture (Obsidian / Marble) with one verified tick; the white square and grey band are gone.
 - Icon previews, splash videos (light and dark) and keyframes re-rendered in the current tones (`scripts/render-previews.py`); designer originals kept in `original-renders/`.
 - Build: new checks for mark-face contrast (mono on bg/surface-2, dark tones on the navy tile) and for stale generated logo files.
