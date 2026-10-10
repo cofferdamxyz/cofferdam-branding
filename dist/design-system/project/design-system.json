@@ -24,6 +24,7 @@
   "sections": {},
   "groups": [
     "Logos",
+    "Motion",
     "Wallpapers",
     "Textures",
     "Partners"
@@ -33,25 +34,88 @@
       "name": "Logos",
       "tile": "m",
       "order": [
-        "cofferdam-mark.svg",
-        "cofferdam-mark-white.svg",
-        "cofferdam-mark-black.svg"
+        "cofferdam-mark-v5.svg",
+        "cofferdam-mark-v5-on-dark.svg",
+        "cofferdam-mark-v5-white.svg",
+        "layer-1-bracket-a-stem.svg",
+        "layer-2-bracket-a-arm.svg",
+        "layer-3-bracket-b-stem.svg",
+        "layer-4-bracket-b-arm.svg",
+        "preview-light-dark-mono.png",
+        "preview-sizes.png",
+        "legacy/cofferdam-mark.svg",
+        "legacy/cofferdam-mark-white.svg",
+        "legacy/cofferdam-mark-black.svg"
       ],
       "files": {
-        "cofferdam-mark.svg": {
-          "name": "cofferdam-mark.svg",
+        "cofferdam-mark-v5.svg": {
+          "name": "cofferdam-mark-v5.svg",
+          "blob": "01492d441b1f82f0583f4a0fb7db4f63",
+          "size": 10705,
+          "type": "image/svg+xml"
+        },
+        "cofferdam-mark-v5-on-dark.svg": {
+          "name": "cofferdam-mark-v5-on-dark.svg",
+          "blob": "15558c8582c01d479a3bcee7d35997f8",
+          "size": 2931,
+          "type": "image/svg+xml"
+        },
+        "cofferdam-mark-v5-white.svg": {
+          "name": "cofferdam-mark-v5-white.svg",
+          "blob": "c945b0af4716648a1f99f4eb9f626d8c",
+          "size": 10705,
+          "type": "image/svg+xml"
+        },
+        "layer-1-bracket-a-stem.svg": {
+          "name": "layer-1-bracket-a-stem.svg",
+          "blob": "6dbf64d74afd287ae043e18c7ff67298",
+          "size": 8603,
+          "type": "image/svg+xml"
+        },
+        "layer-2-bracket-a-arm.svg": {
+          "name": "layer-2-bracket-a-arm.svg",
+          "blob": "330ff183baf2074d5b1ede6c8b6a2e8c",
+          "size": 8601,
+          "type": "image/svg+xml"
+        },
+        "layer-3-bracket-b-stem.svg": {
+          "name": "layer-3-bracket-b-stem.svg",
+          "blob": "13918f28349db3cd21794b8b04c38acc",
+          "size": 8603,
+          "type": "image/svg+xml"
+        },
+        "layer-4-bracket-b-arm.svg": {
+          "name": "layer-4-bracket-b-arm.svg",
+          "blob": "c0af708b6f41f0acff6bd5e64f780adf",
+          "size": 8601,
+          "type": "image/svg+xml"
+        },
+        "preview-light-dark-mono.png": {
+          "name": "preview-light-dark-mono.png",
+          "blob": "b0263507857ca8914c46a1ddb2b20499",
+          "size": 228161,
+          "type": "image/png"
+        },
+        "preview-sizes.png": {
+          "name": "preview-sizes.png",
+          "blob": "8e8a3407a86f643bbc4a5889618fd8f6",
+          "size": 107071,
+          "type": "image/png"
+        },
+        "legacy/cofferdam-mark.svg": {
+          "name": "legacy/cofferdam-mark.svg",
           "blob": "b60f701eec9cc6f72ee6d2f19dc1008e",
           "size": 330,
           "type": "image/svg+xml"
         },
-        "cofferdam-mark-white.svg": {
-          "name": "cofferdam-mark-white.svg",
+        "legacy/cofferdam-mark-white.svg": {
+          "name": "legacy/cofferdam-mark-white.svg",
           "blob": "68de3ea8987b31bf52cb57a58cd34ae7",
           "size": 288,
           "type": "image/svg+xml"
         },
-        "cofferdam-mark-black.svg": {
-          "name": "cofferdam-mark-black.svg",
+        "legacy/cofferdam-mark-black.svg": {
+          "name": "legacy/cofferdam-mark-black.svg",
           "blob": "0720fd48ffb88bd16408baf5dbd9f9e7",
           "size": 288,
           "type": "image/svg+xml"
@@ -214,6 +278,28 @@
           "type": "image/svg+xml"
         }
       }
+    },
+    "Motion": {
+      "name": "Motion",
+      "tile": "l",
+      "order": [
+        "cofferdam-splash-preview.mp4",
+        "preview-keyframes.png"
+      ],
+      "files": {
+        "cofferdam-splash-preview.mp4": {
+          "name": "cofferdam-splash-preview.mp4",
+          "blob": "0d9c743c136e111ca1b5fbeddecafa9a",
+          "size": 65634,
+          "type": "video/mp4"
+        },
+        "preview-keyframes.png": {
+          "name": "preview-keyframes.png",
+          "blob": "ba913b0e1d31bcc3b2236cd2070f4c07",
+          "size": 84148,
+          "type": "image/png"
+        }
+      }
     }
   },
   "blobs": {},
@@ -223,8 +309,8 @@
   },
   "lastChange": {
     "by": "Ícaro Hoff",
-    "at": "2026-10-10T15:56:14Z",
-    "via": "GitHub · cofferdamxyz/cofferdam-branding (local, uncommitted)",
-    "note": "First sync: unified tokens from cofferdam-app + cofferdam-pages, Geist, wallpapers, Base/Self marks, 7 components"
+    "at": "2026-10-10T17:26:47Z",
+    "via": "GitHub · cofferdamxyz/cofferdam-branding@7a2b583",
+    "note": "v5 interlocking-brackets mark + launch splash: 7 colour tokens added, Logos and Motion groups, CofferdamMark v5, Splash replay, new cover"
   }
 }
