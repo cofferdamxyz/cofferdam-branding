@@ -103,8 +103,8 @@
         },
         "preview-light-dark-mono.png": {
           "name": "preview-light-dark-mono.png",
-          "blob": "623a5bc7ef3bdc9caa485b83ff37a161",
-          "size": 336672,
+          "blob": "2c27d0f2c756f88c489cde7cccb873bc",
+          "size": 334834,
           "type": "image/png"
         },
         "preview-sizes.png": {
@@ -393,8 +393,8 @@
   },
   "lastChange": {
     "by": "Ícaro Hoff",
-    "at": "2026-10-10T18:36:27Z",
-    "via": "GitHub · cofferdamxyz/cofferdam-branding@9f3ee27",
-    "note": "Identity kit: lockups, black + greyscale marks (mark-mono-*), CofferdamMark defaults to ink, CofferdamLockup; cover rebuilt on stone + proof tick; light-mode brand/proof rule; dark tile lifted to #121A33; renders refreshed"
+    "at": "2026-10-10T19:13:09Z",
+    "via": "GitHub · cofferdamxyz/cofferdam-branding",
+    "note": "Cover: full-bleed stone texture at texture opacity; light cover uses the greyscale icon tile"
   }
 }

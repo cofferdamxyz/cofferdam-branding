@@ -2,10 +2,13 @@
 <style>
   html, body { margin: 0; background: var(--bg); }
   .cover { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--bg); }
-  /* one stone texture: Obsidian in dark, Marble in light (the wallpaper pair) */
-  .stone { position: absolute; left: 528px; top: 24px; width: 480px; height: 240px; border-radius: var(--radius-xxl);
-           background: url('/_blob/a753c7a7e1e79544b6e9a7bce9f6b2eb') center / cover; box-shadow: inset 0 0 0 1px var(--card-border); }
-  [data-theme="light"] .stone { background-image: url('/_blob/44494d6b8405da8943f4f25bb4049f43'); }
+  /* one stone texture as the whole ground: Obsidian in dark, Marble in light, at the website's texture opacity,
+     eased back under the name so the type sits on a calm field */
+  .stone { position: absolute; inset: 0; background: url('/_blob/a753c7a7e1e79544b6e9a7bce9f6b2eb') center / cover;
+           opacity: var(--opacity-texture-dark);
+           -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.7) 45%, #000 75%);
+                   mask-image: linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.7) 45%, #000 75%); }
+  [data-theme="light"] .stone { background-image: url('/_blob/44494d6b8405da8943f4f25bb4049f43'); opacity: var(--opacity-texture-light); }
   .art { position: absolute; inset: 0; }
   .g0 { stop-color: var(--splash-gradient-from); }
   .g1 { stop-color: var(--splash-gradient-to); }
@@ -13,6 +16,13 @@
   .m-a-arm { fill: var(--mark-a-arm); }
   .m-b-stem { fill: var(--mark-b-stem); }
   .m-b-arm { fill: var(--mark-b-arm); }
+  /* light: the greyscale icon (mark-mono-* on a surface → card-border tile), so the only blue on the cover is the proof tick */
+  [data-theme="light"] .g0 { stop-color: var(--surface); }
+  [data-theme="light"] .g1 { stop-color: var(--card-border); }
+  [data-theme="light"] .m-a-stem { fill: var(--mark-mono-a-stem); }
+  [data-theme="light"] .m-a-arm { fill: var(--mark-mono-a-arm); }
+  [data-theme="light"] .m-b-stem { fill: var(--mark-mono-b-stem); }
+  [data-theme="light"] .m-b-arm { fill: var(--mark-mono-b-arm); }
   .edge { fill: none; stroke: var(--chain-tile-edge); stroke-width: 1; }
   .proof { fill: var(--accent); stroke: var(--bg); stroke-width: 6; }
   .tick { fill: none; stroke: var(--bg); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
@@ -26,11 +36,11 @@
   <div class="stone"></div>
   <svg class="art" viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
     <!--
-      blocks:  stone slab 480×240 (radius-xxl, bleeds off the right) · app-icon tile 200×200 · proof badge ⌀60
+      blocks:  full-bleed stone ground (opacity-texture-dark / -light, faded under the name) · app-icon tile 200×200 · proof badge ⌀60
       arrange: the tile sits on the stone like the icon on a wallpaper; one verified tick overlaps the tile's lower-right corner
-      pattern: none — one v5 mark (toned, inside its tile), one texture (Obsidian / Marble), one proof fragment (accent tick, no words)
-      rules:   README "Two blues, two jobs" — identity on the tile, accent on the tick; "Light mode" — the colour mark is inside its tile, so the two may share the view
-      scales:  space-xl (24px) inset of the slab, mark canvas at 94% of the tile (ink ≈ 70%, as in the designer's icon), tile corner 22.5%, badge ring = bg like the Avatar badge
+      pattern: none — one v5 mark (inside its tile), one texture (Obsidian / Marble), one proof fragment (accent tick, no words)
+      rules:   dark: identity navy tile + Cerulean tick ("Two blues, two jobs"); light: greyscale tile (mark-mono-*) so Base Blue proof is the only blue ("Light mode: brand art and proof stay apart")
+      scales:  mark canvas at 94% of the tile (ink ≈ 70%, as in the designer's icon), tile corner 22.5%, badge ring = bg like the Avatar badge
     -->
     <defs><linearGradient id="cv-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="g0"/><stop offset="1" class="g1"/></linearGradient></defs>
     <rect x="600" y="44" width="200" height="200" rx="45" fill="url(#cv-g)"/>
