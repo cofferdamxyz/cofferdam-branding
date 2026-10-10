@@ -140,7 +140,9 @@
     return 'currentColor';
   }
   function markPolys(tone) {
-    return MARK.map(function (m) { return h('polygon', { key: m.id, points: pts(m.pts), style: { fill: markFill(tone, m.id) } }); });
+    // One ink: a hairline stroke in the same colour closes the anti-aliasing seams between the four pieces.
+    var seal = tone !== 'tones' && tone !== 'mono' ? { stroke: 'currentColor', strokeWidth: 6, strokeLinejoin: 'round' } : null;
+    return MARK.map(function (m) { return h('polygon', { key: m.id, points: pts(m.pts), style: Object.assign({ fill: markFill(tone, m.id) }, seal) }); });
   }
   var tileSeq = 0;
   function CofferdamMark(props) {
