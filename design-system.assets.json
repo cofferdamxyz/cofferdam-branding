@@ -53,15 +53,15 @@
     "assets/logos/v5/preview-light-dark-mono.png": {
       "group": "Logos",
       "name": "preview-light-dark-mono.png",
-      "blob": "b0263507857ca8914c46a1ddb2b20499",
-      "size": 228161,
+      "blob": "623a5bc7ef3bdc9caa485b83ff37a161",
+      "size": 336672,
       "type": "image/png"
     },
     "assets/logos/v5/preview-sizes.png": {
       "group": "Logos",
       "name": "preview-sizes.png",
-      "blob": "8e8a3407a86f643bbc4a5889618fd8f6",
-      "size": 107071,
+      "blob": "c318365359d7749710e41585d84e58ca",
+      "size": 126393,
       "type": "image/png"
     },
     "assets/logos/legacy/cofferdam-mark.svg": {
@@ -221,16 +221,100 @@
     "motion/splash/cofferdam-splash-preview.mp4": {
       "group": "Motion",
       "name": "cofferdam-splash-preview.mp4",
-      "blob": "0d9c743c136e111ca1b5fbeddecafa9a",
-      "size": 65634,
+      "blob": "ed973f83785c256b290e2203f5ee35a6",
+      "size": 64537,
       "type": "video/mp4"
     },
     "motion/splash/preview-keyframes.png": {
       "group": "Motion",
       "name": "preview-keyframes.png",
-      "blob": "ba913b0e1d31bcc3b2236cd2070f4c07",
-      "size": 84148,
+      "blob": "e4a9fddfaa400d8c21ba790c5317aa4c",
+      "size": 254071,
       "type": "image/png"
+    },
+    "assets/logos/v5/cofferdam-mark-v5-black.svg": {
+      "group": "Logos",
+      "name": "cofferdam-mark-v5-black.svg",
+      "blob": "d41e23f49ebd87128416a0a1267421ad",
+      "size": 3139,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/v5/cofferdam-mark-v5-mono.svg": {
+      "group": "Logos",
+      "name": "cofferdam-mark-v5-mono.svg",
+      "blob": "f631a207ae775d6696a25e13c4451cfe",
+      "size": 2907,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/v5/cofferdam-mark-v5-mono-on-dark.svg": {
+      "group": "Logos",
+      "name": "cofferdam-mark-v5-mono-on-dark.svg",
+      "blob": "0fb934207f3e907f51289546e3411d22",
+      "size": 2907,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/lockups/cofferdam-lockup-horizontal-on-dark.svg": {
+      "group": "Logos",
+      "name": "lockups/cofferdam-lockup-horizontal-on-dark.svg",
+      "blob": "a966488f89aa59c14b87fd71a6613c7c",
+      "size": 7222,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/lockups/cofferdam-lockup-horizontal-on-light.svg": {
+      "group": "Logos",
+      "name": "lockups/cofferdam-lockup-horizontal-on-light.svg",
+      "blob": "99939eba04fdf903f6dddfc0f7d1a743",
+      "size": 7222,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/lockups/cofferdam-lockup-horizontal-white.svg": {
+      "group": "Logos",
+      "name": "lockups/cofferdam-lockup-horizontal-white.svg",
+      "blob": "e49d714fe25d296e47716b037f8513f4",
+      "size": 7454,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/lockups/cofferdam-lockup-horizontal-black.svg": {
+      "group": "Logos",
+      "name": "lockups/cofferdam-lockup-horizontal-black.svg",
+      "blob": "c42692423957334ce9cb7d446b73e04c",
+      "size": 7454,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/lockups/cofferdam-lockup-stacked-on-dark.svg": {
+      "group": "Logos",
+      "name": "lockups/cofferdam-lockup-stacked-on-dark.svg",
+      "blob": "ea642012f758fdfa4779ca86c327f7cf",
+      "size": 7222,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/lockups/cofferdam-lockup-stacked-on-light.svg": {
+      "group": "Logos",
+      "name": "lockups/cofferdam-lockup-stacked-on-light.svg",
+      "blob": "909cf17a7af173f40f37e0c8dc106cbb",
+      "size": 7222,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/lockups/cofferdam-lockup-stacked-white.svg": {
+      "group": "Logos",
+      "name": "lockups/cofferdam-lockup-stacked-white.svg",
+      "blob": "ab51a266feb3b8256f2b234359a3d382",
+      "size": 7454,
+      "type": "image/svg+xml"
+    },
+    "assets/logos/lockups/cofferdam-lockup-stacked-black.svg": {
+      "group": "Logos",
+      "name": "lockups/cofferdam-lockup-stacked-black.svg",
+      "blob": "36e0678e95ad15411173fa62b61f751d",
+      "size": 7454,
+      "type": "image/svg+xml"
+    },
+    "motion/splash/cofferdam-splash-preview-dark.mp4": {
+      "group": "Motion",
+      "name": "cofferdam-splash-preview-dark.mp4",
+      "blob": "0dc0756da308866310a71c6cb72721cd",
+      "size": 44215,
+      "type": "video/mp4"
     }
   }
 }
