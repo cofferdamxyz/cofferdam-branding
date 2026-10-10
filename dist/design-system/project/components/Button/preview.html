@@ -1,0 +1,13 @@
+<!-- @dsCard group="Actions" height=230 -->
+<div style="display:grid;gap:12px;max-width:340px">
+  <div id="a"></div><div id="b"></div>
+  <div style="display:flex;gap:8px"><span id="c"></span><span id="d"></span><span id="e"></span></div>
+</div>
+<script>
+const {Button}=window.Cofferdam, R=ReactDOM;
+R.createRoot(document.getElementById('a')).render(React.createElement(Button,{label:'Create account'}));
+R.createRoot(document.getElementById('b')).render(React.createElement(Button,{label:'Import account',variant:'secondary'}));
+R.createRoot(document.getElementById('c')).render(React.createElement(Button,{label:'Send',size:'md',fullWidth:false}));
+R.createRoot(document.getElementById('d')).render(React.createElement(Button,{label:'Deploying',size:'md',fullWidth:false,loading:true}));
+R.createRoot(document.getElementById('e')).render(React.createElement(Button,{label:'Maybe later',size:'md',variant:'ghost',fullWidth:false}));
+</script>

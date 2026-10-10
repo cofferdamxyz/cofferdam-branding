@@ -1,0 +1,449 @@
+{
+  "brandVersion": 1,
+  "tokensVersion": 1,
+  "commit": "uncommitted",
+  "season": null,
+  "builtFor": "10-10",
+  "colors": {
+    "dark": {
+      "bg": "#000000",
+      "web-bg": "#0a0a0a",
+      "surface": "#0a0a0b",
+      "surface-2": "#141518",
+      "card": "#101113",
+      "card-border": "#1f2125",
+      "border": "#2a2d32",
+      "divider": "#1a1c20",
+      "fg": "#ffffff",
+      "fg-muted": "#b0b4ba",
+      "fg-muted-2": "#6c7079",
+      "fg-dim": "#3f434a",
+      "accent": "#3c8aff",
+      "accent-dim": "rgba(60, 138, 255, 0.14)",
+      "accent-border": "rgba(60, 138, 255, 0.32)",
+      "danger": "#ff8b7a",
+      "warning": "#ffc857",
+      "success": "#7ce3a2",
+      "info": "#7ab8ff",
+      "overlay": "rgba(0, 0, 0, 0.6)",
+      "scrim": "rgba(0, 0, 0, 0.85)",
+      "base-blue": "#0000ff",
+      "base-cerulean": "#3c8aff",
+      "base-tan": "#b8a581",
+      "base-yellow": "#ffd12f",
+      "base-green": "#66c800",
+      "base-lime": "#b6f569",
+      "base-red": "#fc401f",
+      "base-pink": "#fea8cd",
+      "self-teal": "#00ffb6"
+    },
+    "light": {
+      "bg": "#ffffff",
+      "web-bg": "#ffffff",
+      "surface": "#ffffff",
+      "surface-2": "#ffffff",
+      "card": "#ffffff",
+      "card-border": "#efefef",
+      "border": "#e8e8e8",
+      "divider": "#f2f2f2",
+      "fg": "#1a1a1a",
+      "fg-muted": "#595959",
+      "fg-muted-2": "#8a8a8a",
+      "fg-dim": "#b8b8b8",
+      "accent": "#0000ff",
+      "accent-dim": "rgba(0, 0, 255, 0.08)",
+      "accent-border": "rgba(0, 0, 255, 0.22)",
+      "danger": "#d92b1a",
+      "warning": "#b8860b",
+      "success": "#1a8c4a",
+      "info": "#2563eb",
+      "overlay": "rgba(0, 0, 0, 0.5)",
+      "scrim": "rgba(0, 0, 0, 0.7)",
+      "base-blue": "#0000ff",
+      "base-cerulean": "#3c8aff",
+      "base-tan": "#b8a581",
+      "base-yellow": "#ffd12f",
+      "base-green": "#66c800",
+      "base-lime": "#b6f569",
+      "base-red": "#fc401f",
+      "base-pink": "#fea8cd",
+      "self-teal": "#00a37a"
+    }
+  },
+  "type": {
+    "fonts": [
+      {
+        "family": "Geist",
+        "file": "fonts/Geist-Variable-latin.woff2",
+        "weight": "100 900",
+        "style": "normal"
+      },
+      {
+        "family": "Geist Mono",
+        "file": "fonts/GeistMono-Variable-latin.woff2",
+        "weight": "100 900",
+        "style": "normal"
+      }
+    ],
+    "families": {
+      "sans": "\"Geist\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+      "mono": "\"Geist Mono\", ui-monospace, SFMono-Regular, Menlo, monospace"
+    },
+    "groups": [
+      {
+        "name": "Display",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "display",
+            "fontSize": "40px",
+            "lineHeight": "44px",
+            "fontWeight": 700,
+            "letterSpacing": "-1.2px",
+            "sample": "$1,240.50",
+            "usage": "Balance hero and big-bold moments. Tabular figures for money."
+          },
+          {
+            "name": "title",
+            "fontSize": "28px",
+            "lineHeight": "34px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.4px",
+            "sample": "Your face is your key.",
+            "usage": "Onboarding pane headlines, page titles."
+          }
+        ]
+      },
+      {
+        "name": "Headings",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "h1",
+            "fontSize": "22px",
+            "lineHeight": "28px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.2px",
+            "sample": "Vault",
+            "usage": "Section heads."
+          },
+          {
+            "name": "h2",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.1px",
+            "sample": "Connected devices",
+            "usage": "Sub-section heads, card titles."
+          }
+        ]
+      },
+      {
+        "name": "Text",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "body",
+            "fontSize": "16px",
+            "lineHeight": "24px",
+            "fontWeight": 500,
+            "sample": "The money is set aside before the job starts.",
+            "usage": "Paragraph copy in `fg`."
+          },
+          {
+            "name": "body-muted",
+            "fontSize": "15px",
+            "lineHeight": "22px",
+            "fontWeight": 500,
+            "sample": "Verify with your passport — it's optional, but it unlocks more.",
+            "usage": "Secondary copy in `fg-muted`."
+          },
+          {
+            "name": "label",
+            "fontSize": "15px",
+            "lineHeight": "20px",
+            "fontWeight": 600,
+            "sample": "Create account",
+            "usage": "Buttons, chips, form labels."
+          },
+          {
+            "name": "caption",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 500,
+            "sample": "0xfb13…9de · Base",
+            "usage": "Metadata, captions, status chips. Set addresses in the `mono` family at this size."
+          },
+          {
+            "name": "eyebrow",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 400,
+            "letterSpacing": "0.2em",
+            "sample": "FOR WORKERS",
+            "usage": "Website section eyebrows, uppercase, in `fg`. Never in the accent."
+          }
+        ]
+      }
+    ]
+  },
+  "spacing": {
+    "space-xxs": "2px",
+    "space-xs": "4px",
+    "space-sm": "8px",
+    "space-md": "12px",
+    "space-base": "16px",
+    "space-lg": "20px",
+    "space-xl": "24px",
+    "space-xxl": "32px",
+    "space-xxxl": "48px",
+    "space-huge": "64px",
+    "space-section": "96px",
+    "space-section-lg": "128px"
+  },
+  "radius": {
+    "radius-xs": "4px",
+    "radius-sm": "8px",
+    "radius-md": "12px",
+    "radius-lg": "16px",
+    "radius-xl": "20px",
+    "radius-xxl": "24px",
+    "radius-pill": "999px",
+    "radius-web": "10px"
+  },
+  "shadow": {
+    "shadow-card-sm": "0 1px 4px rgba(0, 0, 0, 0.04)",
+    "shadow-card": "0 2px 8px rgba(0, 0, 0, 0.08)",
+    "shadow-card-lg": "0 4px 12px rgba(0, 0, 0, 0.15)",
+    "shadow-fab": "0 4px 12px rgba(0, 0, 0, 0.5)"
+  },
+  "opacity": {
+    "opacity-disabled": "0.45",
+    "opacity-texture-dark": "0.5",
+    "opacity-texture-light": "0.4"
+  },
+  "accents": [
+    {
+      "id": "cerulean",
+      "name": "Cerulean",
+      "scheme": "dark",
+      "color": "#3C8AFF"
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "scheme": "dark",
+      "color": "#FFD12F"
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "scheme": "dark",
+      "color": "#66C800"
+    },
+    {
+      "id": "lime",
+      "name": "Lime Green",
+      "scheme": "dark",
+      "color": "#B6F569"
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "scheme": "dark",
+      "color": "#FC401F"
+    },
+    {
+      "id": "pink",
+      "name": "Pink",
+      "scheme": "dark",
+      "color": "#FEA8CD"
+    },
+    {
+      "id": "tan",
+      "name": "Tan",
+      "scheme": "dark",
+      "color": "#B8A581"
+    },
+    {
+      "id": "teal",
+      "name": "Self Teal",
+      "scheme": "dark",
+      "color": "#00FFB6"
+    },
+    {
+      "id": "base-blue-l",
+      "name": "Base Blue",
+      "scheme": "light",
+      "color": "#0000FF"
+    },
+    {
+      "id": "cerulean-l",
+      "name": "Cerulean",
+      "scheme": "light",
+      "color": "#3C8AFF"
+    },
+    {
+      "id": "yellow-l",
+      "name": "Yellow",
+      "scheme": "light",
+      "color": "#FFD12F"
+    },
+    {
+      "id": "green-l",
+      "name": "Green",
+      "scheme": "light",
+      "color": "#66C800"
+    },
+    {
+      "id": "red-l",
+      "name": "Red",
+      "scheme": "light",
+      "color": "#FC401F"
+    },
+    {
+      "id": "pink-l",
+      "name": "Pink",
+      "scheme": "light",
+      "color": "#FEA8CD"
+    },
+    {
+      "id": "tan-l",
+      "name": "Tan",
+      "scheme": "light",
+      "color": "#B8A581"
+    },
+    {
+      "id": "teal-l",
+      "name": "Self Teal",
+      "scheme": "light",
+      "color": "#00A37A"
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": "plain-dark",
+      "name": "Pure Black",
+      "scheme": "dark",
+      "kind": "plain",
+      "base": "#000000",
+      "tone": "#000000"
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "scheme": "dark",
+      "kind": "obsidian",
+      "base": "#000000",
+      "tone": "#1A1B20",
+      "image": "assets/wallpapers/obsidian.png",
+      "webTexture": "assets/textures/obsidian.webp"
+    },
+    {
+      "id": "carbon",
+      "name": "Carbon",
+      "scheme": "dark",
+      "kind": "carbon",
+      "base": "#08090A",
+      "tone": "#15171A",
+      "image": "assets/wallpapers/carbon.png"
+    },
+    {
+      "id": "graphite",
+      "name": "Graphite",
+      "scheme": "dark",
+      "kind": "graphite",
+      "base": "#000000",
+      "tone": "#101216",
+      "image": "assets/wallpapers/graphite.png"
+    },
+    {
+      "id": "plain-light",
+      "name": "Paper White",
+      "scheme": "light",
+      "kind": "plain",
+      "base": "#FFFFFF",
+      "tone": "#FFFFFF"
+    },
+    {
+      "id": "marble",
+      "name": "Marble",
+      "scheme": "light",
+      "kind": "marble",
+      "base": "#FFFFFF",
+      "tone": "#FFFFFF",
+      "image": "assets/wallpapers/marble.png",
+      "webTexture": "assets/textures/marble.webp"
+    },
+    {
+      "id": "sand",
+      "name": "Sand",
+      "scheme": "light",
+      "kind": "sand",
+      "base": "#FFFFFF",
+      "tone": "#FFFFFF",
+      "image": "assets/wallpapers/sand.png"
+    },
+    {
+      "id": "ice",
+      "name": "Ice",
+      "scheme": "light",
+      "kind": "ice",
+      "base": "#FFFFFF",
+      "tone": "#FFFFFF",
+      "image": "assets/wallpapers/ice.png"
+    }
+  ],
+  "defaults": {
+    "scheme": "dark",
+    "accent": {
+      "dark": "cerulean",
+      "light": "base-blue-l"
+    },
+    "homeBackground": "plain-dark",
+    "lockBackground": "plain-dark"
+  },
+  "web": {
+    "texture": {
+      "dark": "obsidian",
+      "light": "marble"
+    },
+    "brandAccent": {
+      "dark": "base-cerulean",
+      "light": "base-blue"
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": 180,
+      "base": 260,
+      "slow": 380,
+      "slower": 520
+    },
+    "spring": {
+      "snappy": {
+        "damping": 18,
+        "stiffness": 220,
+        "mass": 0.8
+      },
+      "soft": {
+        "damping": 22,
+        "stiffness": 140,
+        "mass": 1
+      },
+      "bouncy": {
+        "damping": 12,
+        "stiffness": 200,
+        "mass": 0.7
+      }
+    },
+    "staggerCellMs": 40,
+    "centerBurstHoldMs": 120,
+    "pressScale": 0.03,
+    "pressOpacity": 0.1
+  },
+  "accentAlpha": {
+    "dim": 0.14,
+    "border": 0.32
+  }
+}

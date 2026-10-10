@@ -1,0 +1,1 @@
+Website texture layers: 1080px WebP re-encodes of the app's obsidian (dark, opacity 0.5) and marble (light, opacity 0.4). Paint them on an `aria-hidden` layer behind content with a fading mask; never below 0.3 opacity.

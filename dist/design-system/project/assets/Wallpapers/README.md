@@ -1,0 +1,1 @@
+App backgrounds, 1440×1440 PNG, shown centre-cropped (cover). Dark: **obsidian**, **carbon**, **graphite**. Light: **marble**, **sand**, **ice**. The flat Pure Black / Paper White defaults have no file. Text never sits directly on a wallpaper — put it on `card` or glass.

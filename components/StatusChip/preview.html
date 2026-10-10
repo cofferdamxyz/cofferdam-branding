@@ -1,0 +1,7 @@
+<!-- @dsCard group="Status" height=120 -->
+<div id="r" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+<script>
+const {StatusChip}=window.Cofferdam;
+ReactDOM.createRoot(document.getElementById('r')).render(React.createElement(React.Fragment,null,
+ ['reserving','deploying','ready','failed'].map(s=>React.createElement(StatusChip,{key:s,status:s}))));
+</script>

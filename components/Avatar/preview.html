@@ -1,0 +1,8 @@
+<!-- @dsCard group="Identity" height=150 -->
+<div id="r" style="display:flex;align-items:center;gap:20px"></div>
+<script>
+const {Avatar}=window.Cofferdam, e=React.createElement;
+ReactDOM.createRoot(document.getElementById('r')).render(e(React.Fragment,null,
+ e(Avatar,{name:'Ana Souza',size:'sm'}), e(Avatar,{name:'Ana Souza',size:'md',verified:true}),
+ e(Avatar,{name:'João Lima',size:'lg',verified:true,chainId:8453}), e(Avatar,{name:'Mei',size:'xl',chainId:84532})));
+</script>

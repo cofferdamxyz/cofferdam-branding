@@ -1,0 +1,230 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-10T15:56:14Z"
+  },
+  "title": "Cofferdam",
+  "namespace": "Cofferdam",
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18.3.1",
+      "global": "React",
+      "file": "components/lib/react.production.min.js"
+    },
+    {
+      "name": "react-dom",
+      "version": "18.3.1",
+      "global": "ReactDOM",
+      "file": "components/lib/react-dom.production.min.js"
+    }
+  ],
+  "sections": {},
+  "groups": [
+    "Logos",
+    "Wallpapers",
+    "Textures",
+    "Partners"
+  ],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "m",
+      "order": [
+        "cofferdam-mark.svg",
+        "cofferdam-mark-white.svg",
+        "cofferdam-mark-black.svg"
+      ],
+      "files": {
+        "cofferdam-mark.svg": {
+          "name": "cofferdam-mark.svg",
+          "blob": "b60f701eec9cc6f72ee6d2f19dc1008e",
+          "size": 330,
+          "type": "image/svg+xml"
+        },
+        "cofferdam-mark-white.svg": {
+          "name": "cofferdam-mark-white.svg",
+          "blob": "68de3ea8987b31bf52cb57a58cd34ae7",
+          "size": 288,
+          "type": "image/svg+xml"
+        },
+        "cofferdam-mark-black.svg": {
+          "name": "cofferdam-mark-black.svg",
+          "blob": "0720fd48ffb88bd16408baf5dbd9f9e7",
+          "size": 288,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Wallpapers": {
+      "name": "Wallpapers",
+      "tile": "l",
+      "order": [
+        "obsidian.png",
+        "carbon.png",
+        "graphite.png",
+        "marble.png",
+        "sand.png",
+        "ice.png"
+      ],
+      "files": {
+        "obsidian.png": {
+          "name": "obsidian.png",
+          "blob": "8e1ac70181ea139f5c0f99e24c215934",
+          "size": 2347519,
+          "type": "image/png"
+        },
+        "carbon.png": {
+          "name": "carbon.png",
+          "blob": "af6c87b478ab56bf1e484dd191d55de1",
+          "size": 2580581,
+          "type": "image/png"
+        },
+        "graphite.png": {
+          "name": "graphite.png",
+          "blob": "47b9cd6b424afa50dd61438362178082",
+          "size": 2933632,
+          "type": "image/png"
+        },
+        "marble.png": {
+          "name": "marble.png",
+          "blob": "1f1da8c16d71972415fed7eac4313107",
+          "size": 2831483,
+          "type": "image/png"
+        },
+        "sand.png": {
+          "name": "sand.png",
+          "blob": "a1d45d920837df56430232e6171be0d7",
+          "size": 2239156,
+          "type": "image/png"
+        },
+        "ice.png": {
+          "name": "ice.png",
+          "blob": "ac4b526654f4a2a8e59a5df2f0192151",
+          "size": 2569308,
+          "type": "image/png"
+        }
+      }
+    },
+    "Textures": {
+      "name": "Textures",
+      "tile": "m",
+      "order": [
+        "obsidian.webp",
+        "marble.webp"
+      ],
+      "files": {
+        "obsidian.webp": {
+          "name": "obsidian.webp",
+          "blob": "a753c7a7e1e79544b6e9a7bce9f6b2eb",
+          "size": 114402,
+          "type": "image/webp"
+        },
+        "marble.webp": {
+          "name": "marble.webp",
+          "blob": "44494d6b8405da8943f4f25bb4049f43",
+          "size": 45266,
+          "type": "image/webp"
+        }
+      }
+    },
+    "Partners": {
+      "name": "Partners",
+      "tile": "s",
+      "order": [
+        "base/Base_square_white.svg",
+        "base/Base_square_blue.svg",
+        "base/Base_square_black.svg",
+        "base/Base_lockup_white.svg",
+        "base/Base_lockup_black.svg",
+        "base/Base_lockup_2color.svg",
+        "base/Base_basemark_white.svg",
+        "base/Base_basemark_black.svg",
+        "base/Base_basemark_blue.svg",
+        "self/self-logo-on-black.svg",
+        "self/self-logo-on-white.svg"
+      ],
+      "files": {
+        "base/Base_square_white.svg": {
+          "name": "base/Base_square_white.svg",
+          "blob": "adccfafa33b3c7ef914d2c6fbe5fdb66",
+          "size": 603,
+          "type": "image/svg+xml"
+        },
+        "base/Base_square_blue.svg": {
+          "name": "base/Base_square_blue.svg",
+          "blob": "ab9189b392b5f48cf90f07676cc79f1c",
+          "size": 597,
+          "type": "image/svg+xml"
+        },
+        "base/Base_square_black.svg": {
+          "name": "base/Base_square_black.svg",
+          "blob": "32e5579e2629b6265041858cc853ba7b",
+          "size": 559,
+          "type": "image/svg+xml"
+        },
+        "base/Base_lockup_white.svg": {
+          "name": "base/Base_lockup_white.svg",
+          "blob": "3c62eef37544b943510ce53ee24a1c9c",
+          "size": 1849,
+          "type": "image/svg+xml"
+        },
+        "base/Base_lockup_black.svg": {
+          "name": "base/Base_lockup_black.svg",
+          "blob": "60fe39c303e913c1d0980a7c476323a0",
+          "size": 1797,
+          "type": "image/svg+xml"
+        },
+        "base/Base_lockup_2color.svg": {
+          "name": "base/Base_lockup_2color.svg",
+          "blob": "531ccf147deb0337f79b30e360486e3a",
+          "size": 1835,
+          "type": "image/svg+xml"
+        },
+        "base/Base_basemark_white.svg": {
+          "name": "base/Base_basemark_white.svg",
+          "blob": "4dc45a45070e80e488803ce3b7a92bcd",
+          "size": 2032,
+          "type": "image/svg+xml"
+        },
+        "base/Base_basemark_black.svg": {
+          "name": "base/Base_basemark_black.svg",
+          "blob": "2196678f2e0cf0ada71aabf5c1df9dcd",
+          "size": 1952,
+          "type": "image/svg+xml"
+        },
+        "base/Base_basemark_blue.svg": {
+          "name": "base/Base_basemark_blue.svg",
+          "blob": "e77128d79b65e30c40d47884a2b80189",
+          "size": 2028,
+          "type": "image/svg+xml"
+        },
+        "self/self-logo-on-black.svg": {
+          "name": "self/self-logo-on-black.svg",
+          "blob": "702736b7b230216cebb54195ac2f4f84",
+          "size": 2775,
+          "type": "image/svg+xml"
+        },
+        "self/self-logo-on-white.svg": {
+          "name": "self/self-logo-on-white.svg",
+          "blob": "e592cece31ec13db6938cac0ccf383c0",
+          "size": 2775,
+          "type": "image/svg+xml"
+        }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Ícaro Hoff",
+    "at": "2026-10-10T15:56:14Z",
+    "via": "GitHub · cofferdamxyz/cofferdam-branding (local, uncommitted)",
+    "note": "First sync: unified tokens from cofferdam-app + cofferdam-pages, Geist, wallpapers, Base/Self marks, 7 components"
+  }
+}

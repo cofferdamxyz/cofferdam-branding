@@ -1,0 +1,27 @@
+{
+  "$comment": "EXAMPLE overlay, disabled. Shows the shape a seasonal theme takes; the values are a starting point from the locked Base palette, not an approved campaign. Enable it (and adjust) through the cofferdam-seasonal-theme skill.",
+  "id": "christmas",
+  "name": "Christmas",
+  "enabled": false,
+  "window": { "start": "12-01", "end": "12-26" },
+  "surfaces": ["app", "pages"],
+  "color": {
+    "accent": { "dark": "{base-red}", "light": "{base-blue}" },
+    "accent-dim": { "dark": "rgba(252, 64, 31, 0.14)" },
+    "accent-border": { "dark": "rgba(252, 64, 31, 0.32)" }
+  },
+  "defaults": {
+    "accent": { "dark": "red" }
+  },
+  "web": {
+    "brandAccent": { "dark": "base-red" }
+  },
+  "copy": {
+    "$comment": "Optional strings a surface may show while the season is live. Keep to the voice rules: brief, no hype, no emoji overload.",
+    "siteBanner": null
+  },
+  "assets": {
+    "$comment": "Optional seasonal artwork paths under assets/seasonal/<id>/. A missing file is a build error.",
+    "wallpapers": []
+  }
+}

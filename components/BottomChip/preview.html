@@ -1,0 +1,8 @@
+<!-- @dsCard group="Actions" height=96 -->
+<div id="r" style="display:flex;gap:4px"></div>
+<script>
+const {BottomChip}=window.Cofferdam, e=React.createElement;
+const globe=e('svg',{width:16,height:16,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round'},e('circle',{cx:12,cy:12,r:10}),e('path',{d:'M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20'}));
+const moon=e('svg',{width:16,height:16,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},e('path',{d:'M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'}));
+ReactDOM.createRoot(document.getElementById('r')).render(e(React.Fragment,null,e(BottomChip,{label:'English',icon:globe}),e(BottomChip,{label:'Dark',icon:moon})));
+</script>

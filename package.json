@@ -1,0 +1,15 @@
+{
+  "name": "@cofferdam/branding",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cofferdam brand tokens, guidelines, assets and sync tooling.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check --verbose",
+    "sync": "node scripts/sync.mjs",
+    "sync:write": "node scripts/sync.mjs --write"
+  }
+}

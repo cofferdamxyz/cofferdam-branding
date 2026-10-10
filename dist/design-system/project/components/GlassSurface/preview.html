@@ -1,0 +1,12 @@
+<!-- @dsCard group="Surfaces" height=200 -->
+<style>.wall{position:relative;height:168px;border-radius:24px;overflow:hidden;background:url('/_blob/8e1ac70181ea139f5c0f99e24c215934') center/cover,var(--bg)}
+[data-theme="light"] .wall{background-image:url('/_blob/1f1da8c16d71972415fed7eac4313107')}</style>
+<div class="wall">
+  <div id="r" style="position:absolute;left:16px;right:16px;bottom:16px"></div>
+</div>
+<script>
+const {GlassSurface}=window.Cofferdam, e=React.createElement;
+ReactDOM.createRoot(document.getElementById('r')).render(
+ e(GlassSurface,{radius:999,style:{display:'flex',justifyContent:'space-around',padding:'14px 8px',fontFamily:'var(--font-sans)',fontSize:13,fontWeight:500}},
+   e('span',null,'Home'),e('span',{style:{color:'var(--fg-muted)'}},'Contracts'),e('span',{style:{color:'var(--fg-muted)'}},'Messages')));
+</script>

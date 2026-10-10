@@ -1,0 +1,58 @@
+<!-- @dsCard height=288 -->
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--bg); }
+  .cover svg { position: absolute; inset: 0; }
+  .acc { fill: var(--accent); }
+  .ink { fill: var(--fg); }
+  .rule { fill: var(--border); }
+  .tint { fill: var(--accent-dim); }
+  .ring { fill: none; stroke: var(--fg); stroke-width: 4; }
+  .ring-on-acc { fill: none; stroke: var(--bg); stroke-width: 4; }
+  .seal { fill: var(--fg); }
+  .seal-on-acc { fill: var(--bg); }
+  .r-xxl { rx: var(--radius-xxl); }
+  .r-xl { rx: var(--radius-xl); }
+  .r-md { rx: var(--radius-md); }
+  .r-xs { rx: var(--radius-xs); }
+  .name { position: absolute; left: 48px; bottom: 76px; max-width: 440px; margin: 0;
+          font-family: var(--font-sans); font-weight: 700; font-size: 80px; line-height: .92;
+          letter-spacing: -2.4px; color: var(--fg); }
+  .tag { position: absolute; left: 48px; bottom: 48px; max-width: 440px; margin: 0;
+         font-family: var(--font-sans); font-size: 14px; line-height: 20px; font-weight: 500; color: var(--fg-muted); }
+</style>
+<div class="cover">
+  <svg viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+    <!--
+      blocks:  accent 216×216 (radius-xxl) · fg 120×120 (radius-xl) · border 240×120 (radius-xxl) · accent-dim 96×168 (radius-xl)
+      arrange: one tall accent slab bleeding off the top, fg satellite beside it, grey band bleeding off bottom-right, faint accent sliver bleeding right
+      pattern: literal motif — the coffer (rounded-square ring) with its offset seal, built from radius-md / radius-xs; README: "The Square is the seed"
+      scales:  48px units on a space-xl (24px) grid, ring stroke 4, radius-md 12 / radius-xs 4, gaps space-xl
+    -->
+    <rect class="acc r-xxl" x="504" y="-24" width="216" height="216"/>
+    <rect class="ink r-xl" x="744" y="48" width="120" height="120"/>
+    <rect class="rule r-xxl" x="744" y="192" width="240" height="120"/>
+    <rect class="tint r-xl" x="888" y="-24" width="96" height="168"/>
+
+    <!-- coffers on the accent slab (cut in the ground colour) -->
+    <rect class="ring-on-acc r-md" x="528" y="120" width="48" height="48"/>
+    <rect class="seal-on-acc r-xs" x="546" y="138" width="20" height="20"/>
+    <rect class="ring-on-acc r-md" x="600" y="120" width="48" height="48"/>
+    <rect class="seal-on-acc r-xs" x="618" y="138" width="20" height="20"/>
+    <!-- coffers on the ground below the slab -->
+    <rect class="ring r-md" x="528" y="216" width="48" height="48"/>
+    <rect class="seal r-xs" x="546" y="234" width="20" height="20"/>
+    <rect class="ring r-md" x="600" y="216" width="48" height="48"/>
+    <rect class="seal r-xs" x="618" y="234" width="20" height="20"/>
+    <rect class="ring r-md" x="672" y="216" width="48" height="48"/>
+    <rect class="seal r-xs" x="690" y="234" width="20" height="20"/>
+    <!-- coffers on the grey band -->
+    <rect class="ring r-md" x="768" y="216" width="48" height="48"/>
+    <rect class="seal r-xs" x="786" y="234" width="20" height="20"/>
+    <rect class="ring r-md" x="840" y="216" width="48" height="48"/>
+    <rect class="seal r-xs" x="858" y="234" width="20" height="20"/>
+  </svg>
+  <h1 class="name">Cofferdam</h1>
+  <p class="tag">Sealed crypto, built on Base.</p>
+</div>
+<script>/* static cover */</script>
