@@ -4,12 +4,13 @@ import type { PieceId } from './cofferdamMark';
 
 // All times in milliseconds.
 export const SPLASH_TIMING = {
-  start: 120, // quiet beat before the first piece
-  dur: 340, // time to draw one piece
-  gap: 40, // pause between pieces: only ever one piece moving at a time
-  bumpDur: 350, // settle bump after the last piece lands
-  hold: 120, // short hold on the finished mark
-  exitDur: 300, // fade/scale-out into the app
+  start: 40, // quiet beat before the first piece — the app is ready fast, so the mark starts at once
+  dur: 200, // time to draw one piece
+  gap: 20, // pause between pieces: only ever one piece moving at a time
+  bumpDur: 220, // settle bump after the last piece lands
+  hold: 40, // short hold on the finished mark
+  exitDur: 220, // fade/scale-out into the app
+  gradientFadeIn: 400, // the ground's gradient fades in over the first draw
 } as const;
 
 // Draw order follows one continuous path around the mark:
@@ -23,8 +24,8 @@ export const PIECE_START: Record<PieceId, number> = {
   'b-arm': SPLASH_TIMING.start + 3 * (SPLASH_TIMING.dur + SPLASH_TIMING.gap),
 };
 
-export const BUMP_AT = SPLASH_TIMING.start + 4 * SPLASH_TIMING.dur + 3 * SPLASH_TIMING.gap; // 1600
-export const HOLD_END = BUMP_AT + SPLASH_TIMING.bumpDur + SPLASH_TIMING.hold; // 2070
+export const BUMP_AT = SPLASH_TIMING.start + 4 * SPLASH_TIMING.dur + 3 * SPLASH_TIMING.gap; // 900
+export const HOLD_END = BUMP_AT + SPLASH_TIMING.bumpDur + SPLASH_TIMING.hold; // 1160
 
 export function clamp01(x: number): number {
   'worklet';

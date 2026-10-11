@@ -12,12 +12,10 @@ import Svg, { Defs, LinearGradient, Polygon, Rect, Stop } from 'react-native-svg
 
 import { MARK_PIECES, type MarkPiece } from './cofferdamMark';
 import {
-  BUMP_AT,
   HOLD_END,
   PIECE_START,
   SPLASH_TIMING,
   clamp01,
-  easeInOut,
   easeOutCubic,
   settleBump,
   wipePoints,
@@ -62,26 +60,31 @@ export function CofferdamSplash({ onMounted, ready = true, onDone, markScale = 0
   const exit = useSharedValue(0); // 0 -> 1 during the exit
   const [drawn, setDrawn] = useState(false);
 
+  // Latest onDone without re-arming the exit effect (assigned in an effect:
+  // writing a ref during render trips the React Compiler's rules).
   const onDoneRef = useRef(onDone);
-  onDoneRef.current = onDone;
-
-  // Draw + settle. Honours the system "reduce motion" setting (jumps straight to the finished mark).
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout> | undefined;
+    onDoneRef.current = onDone;
+  }, [onDone]);
+
+  // Draw + settle, starting on the first frame: the Reduce Motion query is
+  // asynchronous, so the timeline no longer waits for it. If the system reports
+  // reduced motion, jump to the finished mark instead.
+  useEffect(() => {
     let cancelled = false;
-    AccessibilityInfo.isReduceMotionEnabled().then((reduced) => {
-      if (cancelled) return;
-      if (reduced) {
+    let timer: ReturnType<typeof setTimeout> = setTimeout(() => setDrawn(true), HOLD_END);
+    t.value = withTiming(HOLD_END, { duration: HOLD_END, easing: Easing.linear });
+    AccessibilityInfo.isReduceMotionEnabled()
+      .then((reduced) => {
+        if (cancelled || !reduced) return;
+        clearTimeout(timer);
         t.value = HOLD_END;
         timer = setTimeout(() => setDrawn(true), 400);
-      } else {
-        t.value = withTiming(HOLD_END, { duration: HOLD_END, easing: Easing.linear });
-        timer = setTimeout(() => setDrawn(true), HOLD_END);
-      }
-    });
+      })
+      .catch(() => {});
     return () => {
       cancelled = true;
-      if (timer) clearTimeout(timer);
+      clearTimeout(timer);
     };
   }, [t]);
 
@@ -94,7 +97,7 @@ export function CofferdamSplash({ onMounted, ready = true, onDone, markScale = 0
   }, [drawn, ready, exit]);
 
   const rootStyle = useAnimatedStyle(() => ({ opacity: 1 - exit.value }));
-  const gradientStyle = useAnimatedStyle(() => ({ opacity: clamp01(t.value / 700) }));
+  const gradientStyle = useAnimatedStyle(() => ({ opacity: clamp01(t.value / SPLASH_TIMING.gradientFadeIn) }));
   const markStyle = useAnimatedStyle(() => ({
     transform: [{ scale: 1 + settleBump(t.value) + 0.08 * exit.value }],
   }));

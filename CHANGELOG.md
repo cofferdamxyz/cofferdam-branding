@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-11 — faster launch splash (brand v4)
+
+- `motion.splash` tightened from about 2.4 s to about 1.4 s: start 40 ms (was 120), 200 ms per piece (340), 20 ms gaps (40), 220 ms settle (350), 40 ms hold (120), 220 ms exit (300), gradient fade 400 ms (700). The first screen was arriving before the mark was half drawn.
+- `CofferdamSplash` starts its timeline on the first frame instead of after the asynchronous Reduce Motion query (which still jumps to the finished mark when it reports reduced motion). `splashMath.ts` carries `gradientFadeIn`; the motion section and the splash README follow. Splash preview videos/keyframes not re-rendered (no Playwright on this machine).
+
+## 2026-10-11 — cofferdam-app wired
+
+- The app consumes the brand: `brand.generated.ts`, wallpapers, v5 marks, lockups and the splash module synced in; `theme.ts` / `customization.ts` re-export the tokens, accents, wallpapers and defaults; `CofferdamMark` is the v5 geometry; `CofferdamSplash` is the launch splash over a plain `splash-bg` native splash; the Base Square in chain tiles is `chain-mark`; app icon, Android adaptive layers and favicon rendered from the mark geometry on the `splash-gradient-*` ground.
+- Fonts: native platforms cannot load woff2, so the app embeds the Google Fonts static TTFs from `@expo-google-fonts/geist` / `geist-mono` (400–700) through the `expo-font` plugin under the families `Geist` and `Geist Mono` (`fonts/README.md`, brand book "Not synced", `cofferdam-brand-sync` step 3).
+
 ## 2026-10-11 — GitHub presence
 
 - Avatars (`assets/github/`): enterprise / `cofferdamxyz` org on the colour icon tile, CofferdamDev on the greyscale tile, each in light and dark, 1024 px PNG + SVG, circle-safe.

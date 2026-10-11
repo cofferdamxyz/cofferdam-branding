@@ -1,7 +1,9 @@
 # Cofferdam splash (Expo)
 
 Draws the official mark one piece at a time along a single continuous path, settles with a small pulse,
-holds until the app is ready, then fades into the app. About 2.4 s total, plus any extra wait for your app to load.
+holds until the app is ready, then fades into the app. About 1.4 s total, plus any extra wait for your app to load.
+The timeline starts on the overlay's first frame (it does not wait for the Reduce Motion query), because the app
+underneath is usually ready within a second.
 
 ## Install
     npx expo install react-native-reanimated react-native-svg expo-splash-screen react-native-worklets

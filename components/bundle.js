@@ -194,7 +194,7 @@
      time (A stem → A arm → B stem → B arm, 340ms each, 40ms apart, ease-out cubic), settle bump, hold, fade + scale out.
      Same timeline and wipe clipping as splashMath.ts; requestAnimationFrame instead of Reanimated. */
   /* @generated:splash-timing */
-  var SPLASH = {"start":120,"dur":340,"gap":40,"bumpDur":350,"bumpScale":0.035,"hold":120,"exitDur":300,"exitScale":0.08,"gradientFadeIn":700,"markScale":0.74,"order":["a-stem","a-arm","b-stem","b-arm"]};
+  var SPLASH = {"start":40,"dur":200,"gap":20,"bumpDur":220,"bumpScale":0.035,"hold":40,"exitDur":220,"exitScale":0.08,"gradientFadeIn":400,"markScale":0.74,"order":["a-stem","a-arm","b-stem","b-arm"]};
   /* @end:splash-timing */
   var T = SPLASH;
   var BUMP_AT = T.start + 4 * T.dur + 3 * T.gap;

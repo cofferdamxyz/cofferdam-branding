@@ -1,7 +1,7 @@
 {
-  "brandVersion": 3,
+  "brandVersion": 4,
   "tokensVersion": 6,
-  "commit": "b1f7adc",
+  "commit": "uncommitted",
   "season": null,
   "builtFor": "10-11",
   "colors": {
@@ -464,15 +464,15 @@
     "pressOpacity": 0.1,
     "splash": {
       "$comment": "From motion/splash/splashMath.ts (SPLASH_TIMING). Draw order a-stem → a-arm → b-stem → b-arm, one piece at a time.",
-      "start": 120,
-      "dur": 340,
-      "gap": 40,
-      "bumpDur": 350,
+      "start": 40,
+      "dur": 200,
+      "gap": 20,
+      "bumpDur": 220,
       "bumpScale": 0.035,
-      "hold": 120,
-      "exitDur": 300,
+      "hold": 40,
+      "exitDur": 220,
       "exitScale": 0.08,
-      "gradientFadeIn": 700,
+      "gradientFadeIn": 400,
       "markScale": 0.74,
       "order": [
         "a-stem",

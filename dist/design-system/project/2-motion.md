@@ -29,11 +29,13 @@ The app opens on the v5 mark drawing itself, one piece at a time along one conti
 
 | Phase | Time | What happens |
 |---|---|---|
-| Quiet beat | 0–120ms | Flat `splash-bg` (matches the native splash, so frame 0 is seamless); the gradient fades in over 700ms |
-| Draw | 120–1600ms | A stem (wipes up) → A arm (wipes right) → B stem (wipes down) → B arm (wipes left): 340ms each, ease-out cubic, 40ms apart. Never two pieces moving at once |
-| Settle | 1600–1950ms | The whole mark pulses up 3.5% and back |
-| Hold | +120ms, then until the app is ready | Finished mark on screen |
-| Exit | 300ms | Fade out while scaling up 8%, revealing the app |
+| Quiet beat | 0–40ms | Flat `splash-bg` (matches the native splash, so frame 0 is seamless); the gradient fades in over 400ms |
+| Draw | 40–900ms | A stem (wipes up) → A arm (wipes right) → B stem (wipes down) → B arm (wipes left): 200ms each, ease-out cubic, 20ms apart. Never two pieces moving at once |
+| Settle | 900–1120ms | The whole mark pulses up 3.5% and back |
+| Hold | +40ms, then until the app is ready | Finished mark on screen |
+| Exit | 220ms | Fade out while scaling up 8%, revealing the app |
+
+The timeline starts on the overlay's first frame — it never waits for the Reduce Motion query — because the app underneath is usually ready within a second; about 1.4 s in all. (Tightened 2026-10-11 from 2.4 s: the first screen was arriving before the mark was half drawn.)
 
 - The mark spans 74% of the screen width, centred.
 - Light: Cerulean ground, light tones. Dark: navy ground, dark tones.

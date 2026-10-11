@@ -98,5 +98,5 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 ## Not synced
 
 - Components are **hand-written web renditions** of the React Native kit in cofferdam-app (`src/components/ui/`): Button, StatusChip, Avatar, ChainLogo, BottomChip, GlassSurface, plus CofferdamMark (v5) and a web replay of the launch Splash. Not carried over: Icon (use Lucide directly), Numpad, TxSpinner, AppBackground, SelfLogo, and the site's shadcn Button.
-- Fonts are the Latin-subset Geist files the website ships; full-charset files are pending.
+- Fonts here are the Latin-subset woff2 files the website ships; native platforms cannot load woff2, so cofferdam-app embeds the Google Fonts static TTFs (400–700) from `@expo-google-fonts/geist` and `@expo-google-fonts/geist-mono` through the `expo-font` plugin, under the family names `Geist` and `Geist Mono` the generated `type` styles reference. Full-charset files are pending.
 - The Base Brand Guidelines PDF stays in cofferdam-app.
