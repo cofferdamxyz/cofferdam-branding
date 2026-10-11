@@ -54,6 +54,14 @@ def main():
         'dark': (c['dark']['splash-gradient-from'], c['dark']['splash-gradient-to'], fills('mark-', 'dark'), c['dark']['chain-tile-edge']),
         'mono': (c['light']['tile-mono-from'], c['light']['tile-mono-to'], fills('mark-mono-', 'light'), c['light']['chain-tile-edge']),
     }
+    # Timeline from tokens/brand.json → motion.splash (same as splashMath.ts and the web replay).
+    T = json.load(open(P('tokens', 'brand.json')))['motion']['splash']
+    draw_end = T['start'] + 4 * T['dur'] + 3 * T['gap']          # last piece finished = settle starts
+    hold_end = draw_end + T['bumpDur'] + T['hold']
+    exit_start = hold_end + 500                                   # the web replay waits 500 ms for "app ready"
+    total = exit_start + T['exitDur']
+    piece_end = lambda i: T['start'] + i * (T['dur'] + T['gap']) + T['dur']
+    piece_mid = lambda i: T['start'] + i * (T['dur'] + T['gap']) + T['dur'] // 2
     tmp = tempfile.mkdtemp()
     with sync_playwright() as pw:
         b = pw.chromium.launch()
@@ -93,7 +101,7 @@ def main():
             pg.evaluate('window.__step(0)')
             d = os.path.join(tmp, th)
             os.makedirs(d)
-            total, fps = 2870, 30
+            fps = 30
             n = int(total * fps / 1000) + 1
             for i in range(n):
                 pg.evaluate('t => { window.__step(t); return new Promise(r => setTimeout(r, 0)); }', i * 1000 / fps)
@@ -115,13 +123,14 @@ def main():
                     P('motion', 'splash', 'cofferdam-splash-preview.gif')], check=True)
 
     # Keyframes: 8 moments (empty, each piece, bump, exit), light row over dark row.
-    ms = [0, 300, 680, 1060, 1440, 1700, 2070, 2720]
+    # 8 moments: native frame, A stem drawing, A stem done, A arm done, B stem done, settle peak, hold, mid-exit.
+    ms = [0, piece_mid(0), piece_end(0), piece_end(1), piece_end(2), draw_end + T['bumpDur'] // 2, hold_end, exit_start + T['exitDur'] // 2]
     W, H, gap = 195, 422, 10
     sheet = Image.new('RGB', (gap + len(ms) * (W + gap), gap + 2 * (H + gap)), STAGE)
     for row, th in enumerate(('light', 'dark')):
         d, n = frames[th]
         for col, t in enumerate(ms):
-            f = Image.open(os.path.join(d, 'f%04d.png' % min(n - 1, round(t * 30 / 1000)))).convert('RGB').resize((W, H), Image.LANCZOS)
+            f = Image.open(os.path.join(d, 'f%04d.png' % min(n - 1, -(-t * 30 // 1000)))).convert('RGB').resize((W, H), Image.LANCZOS)
             sheet.paste(f, (gap + col * (W + gap), gap + row * (H + gap)))
     sheet.save(P('motion', 'splash', 'preview-keyframes.png'), optimize=True)
     shutil.rmtree(tmp)

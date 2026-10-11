@@ -221,15 +221,15 @@
     "motion/splash/cofferdam-splash-preview.mp4": {
       "group": "Motion",
       "name": "cofferdam-splash-preview.mp4",
-      "blob": "ed973f83785c256b290e2203f5ee35a6",
-      "size": 64537,
+      "blob": "bc9dd4c4b199cab57e9b5fcb5b79a510",
+      "size": 46984,
       "type": "video/mp4"
     },
     "motion/splash/preview-keyframes.png": {
       "group": "Motion",
       "name": "preview-keyframes.png",
-      "blob": "e4a9fddfaa400d8c21ba790c5317aa4c",
-      "size": 254071,
+      "blob": "3b38e12a98dfc51d5358e27cfd7b6518",
+      "size": 244389,
       "type": "image/png"
     },
     "assets/logos/v5/cofferdam-mark-v5-black.svg": {
@@ -312,8 +312,8 @@
     "motion/splash/cofferdam-splash-preview-dark.mp4": {
       "group": "Motion",
       "name": "cofferdam-splash-preview-dark.mp4",
-      "blob": "0dc0756da308866310a71c6cb72721cd",
-      "size": 44215,
+      "blob": "7b15e9d7a5dedf165be383a2e9481283",
+      "size": 33746,
       "type": "video/mp4"
     },
     "assets/github/avatar-enterprise-light.png": {
