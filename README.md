@@ -15,6 +15,8 @@ scripts/build.mjs         validate + generate dist/
 scripts/sync.mjs          copy dist/ into the consumer repos
 scripts/make-logos.py     black + mono marks and the lockups, from tokens + Geist
 scripts/render-previews.py icon previews, splash videos and keyframes in current tones
+scripts/render-github.py  GitHub avatars and the org-profile banners
+github/profile/          the cofferdamxyz organisation profile README (synced to the .github repo)
 dist/                     generated — committed so consumers can diff it
 .claude/skills/           cofferdam-design · cofferdam-brand-update · cofferdam-seasonal-theme · cofferdam-brand-sync
 .github/workflows/        brand-sync: on push + daily → PRs on app and pages

@@ -6,6 +6,7 @@
  *   node scripts/sync.mjs --write                          # actually copy
  *   node scripts/sync.mjs --app=/path/app --pages=/path/pages --write
  *   node scripts/sync.mjs --only=pages --write
+ *   node scripts/sync.mjs --only=github --write             # the org profile, into a local clone of cofferdamxyz/.github
  *
  * Run `node scripts/build.mjs` first. Only the files in TARGETS are ever written,
  * and only when their bytes differ; nothing is deleted. Exit code 0 = in sync after
@@ -21,12 +22,15 @@ const args = Object.fromEntries(process.argv.slice(2).map((a) => { const [k, v] 
 const repos = {
   app: path.resolve(ROOT, args.app ?? '../cofferdam-app'),
   pages: path.resolve(ROOT, args.pages ?? '../cofferdam-pages'),
+  // cofferdamxyz/.github, cloned under another folder name so it doesn't clash with a parent repo's .github/.
+  github: path.resolve(ROOT, args.github ?? '../github-profile'),
 };
 
 const wallpapers = fs.readdirSync(path.join(ROOT, 'assets/wallpapers')).filter((f) => f.endsWith('.png'));
 const textures = fs.readdirSync(path.join(ROOT, 'assets/textures')).filter((f) => f.endsWith('.webp'));
 const LOGOS = ['cofferdam-mark-v5.svg', 'cofferdam-mark-v5-on-dark.svg', 'cofferdam-mark-v5-white.svg', 'cofferdam-mark-v5-black.svg', 'cofferdam-mark-v5-mono.svg', 'cofferdam-mark-v5-mono-on-dark.svg'];
 const LOCKUPS = ['horizontal', 'stacked'].flatMap((l) => ['on-dark', 'on-light', 'white', 'black'].map((v) => `cofferdam-lockup-${l}-${v}.svg`));
+const profileAssets = fs.readdirSync(path.join(ROOT, 'github/profile/assets'));
 const fonts = fs.readdirSync(path.join(ROOT, 'fonts')).filter((f) => /\.(woff2?|ttf|otf)$/.test(f));
 
 /** [repo, from (in this repo), to (in the consumer)] */
@@ -42,6 +46,8 @@ const TARGETS = [
   ...LOGOS.map((f) => ['pages', `assets/logos/v5/${f}`, `public/brand/${f}`]),
   ...LOCKUPS.map((f) => ['app', `assets/logos/lockups/${f}`, `assets/brand/${f}`]),
   ...LOCKUPS.map((f) => ['pages', `assets/logos/lockups/${f}`, `public/brand/${f}`]),
+  ['github', 'github/profile/README.md', 'profile/README.md'],
+  ...profileAssets.map((f) => ['github', `github/profile/assets/${f}`, `profile/assets/${f}`]),
 ];
 
 const hash = (p) => (fs.existsSync(p) ? crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex') : null);

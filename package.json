@@ -12,6 +12,6 @@
     "sync": "node scripts/sync.mjs",
     "sync:write": "node scripts/sync.mjs --write",
     "logos": "python3 scripts/make-logos.py",
-    "renders": "node scripts/build.mjs && python3 scripts/render-previews.py"
+    "renders": "node scripts/build.mjs && python3 scripts/render-previews.py && python3 scripts/render-github.py"
   }
 }

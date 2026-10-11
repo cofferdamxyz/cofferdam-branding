@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-11 — GitHub presence
+
+- Avatars (`assets/github/`): enterprise / `cofferdamxyz` org on the colour icon tile, CofferdamDev on the greyscale tile, each in light and dark, 1024 px PNG + SVG, circle-safe.
+- Organisation profile (`github/profile/README.md` + assets): the cover as a light/dark header via `<picture>`, the product story in brand voice, the open-source repositories with plain one-liners, and the "Built on Base." credit.
+- `scripts/render-github.py` renders avatars and banners from the tokens (`npm run renders` now includes it); `scripts/sync.mjs --only=github` copies the profile into a local clone of `cofferdamxyz/.github`.
+
 ## 2026-10-10 — v6, blue means proof, mono tile, no hand-copied values
 
 - New `chain-mark` token: the Base Square in chain badges and ChainLogo is white on dark and **black on light** (was Base Blue), so blue only ever means proof. The light testnet dot is now `warning` (was Base Blue).

@@ -24,6 +24,7 @@
   "sections": {},
   "groups": [
     "Logos",
+    "GitHub",
     "Motion",
     "Wallpapers",
     "Textures",
@@ -384,6 +385,56 @@
           "type": "video/mp4"
         }
       }
+    },
+    "GitHub": {
+      "name": "GitHub",
+      "tile": "m",
+      "order": [
+        "avatar-enterprise-light.png",
+        "avatar-enterprise-dark.png",
+        "avatar-cofferdamdev-light.png",
+        "avatar-cofferdamdev-dark.png",
+        "banner-light.png",
+        "banner-dark.png"
+      ],
+      "files": {
+        "avatar-enterprise-light.png": {
+          "name": "avatar-enterprise-light.png",
+          "blob": "820cb8fa1308fe14069b16cf61484224",
+          "size": 354703,
+          "type": "image/png"
+        },
+        "avatar-enterprise-dark.png": {
+          "name": "avatar-enterprise-dark.png",
+          "blob": "e70117a1975b62dd276ba89765630150",
+          "size": 288830,
+          "type": "image/png"
+        },
+        "avatar-cofferdamdev-light.png": {
+          "name": "avatar-cofferdamdev-light.png",
+          "blob": "4b5a89525930f7d1e77d4dc0662ec046",
+          "size": 190482,
+          "type": "image/png"
+        },
+        "avatar-cofferdamdev-dark.png": {
+          "name": "avatar-cofferdamdev-dark.png",
+          "blob": "5a3fa22598117891ef0bde36089d6a58",
+          "size": 192206,
+          "type": "image/png"
+        },
+        "banner-light.png": {
+          "name": "banner-light.png",
+          "blob": "561f4dfc5a49bfcbc5a01d9249a9b759",
+          "size": 281768,
+          "type": "image/png"
+        },
+        "banner-dark.png": {
+          "name": "banner-dark.png",
+          "blob": "8fe0274a11b93987e7a38c3daf256504",
+          "size": 477064,
+          "type": "image/png"
+        }
+      }
     }
   },
   "blobs": {},
@@ -393,8 +444,8 @@
   },
   "lastChange": {
     "by": "Ícaro Hoff",
-    "at": "2026-10-10T23:54:28Z",
+    "at": "2026-10-11T02:49:04Z",
     "via": "GitHub · cofferdamxyz/cofferdam-branding",
-    "note": "v6: chain-mark (Square black on light), CofferdamMark tile=\"mono\" + tile-mono-* tokens, lockup tones fallback, avatar chain badge lg+, radius-device, generated splash timing + wordmark"
+    "note": "GitHub presence: enterprise + CofferdamDev avatars (light/dark), org profile banners and README"
   }
 }
