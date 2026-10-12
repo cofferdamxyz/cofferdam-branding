@@ -8,7 +8,7 @@ import Animated, {
   withTiming,
   type SharedValue,
 } from 'react-native-reanimated';
-import Svg, { Defs, LinearGradient, Polygon, Rect, Stop } from 'react-native-svg';
+import Svg, { Defs, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
 
 import { MARK_PIECES, type MarkPiece } from './cofferdamMark';
 import {
@@ -18,10 +18,12 @@ import {
   clamp01,
   easeOutCubic,
   settleBump,
-  wipePoints,
+  wipePath,
 } from './splashMath';
 
-const AnimatedPolygon = Animated.createAnimatedComponent(Polygon);
+// A Path, not a Polygon: Polygon's `points` becomes a path only on React render,
+// so animated props on it never reach the screen (seen on device, 2026-10-11).
+const AnimatedPath = Animated.createAnimatedComponent(Path);
 
 // The native splash must be a plain colour with the SAME value, so the first frame is seamless.
 const THEME = {
@@ -34,9 +36,9 @@ function Piece({ piece, t, dark }: { piece: MarkPiece; t: SharedValue<number>; d
   const animatedProps = useAnimatedProps(() => {
     const p = easeOutCubic(clamp01((t.value - start) / SPLASH_TIMING.dur));
     const edge = piece.from + (piece.to - piece.from) * p;
-    return { points: wipePoints(piece.pts, piece.axis, edge, piece.keepGreater) };
+    return { d: wipePath(piece.pts, piece.axis, edge, piece.keepGreater) };
   });
-  return <AnimatedPolygon animatedProps={animatedProps} fill={dark ? piece.dark : piece.light} />;
+  return <AnimatedPath animatedProps={animatedProps} fill={dark ? piece.dark : piece.light} />;
 }
 
 export type CofferdamSplashProps = {

@@ -54,6 +54,7 @@ export function settleBump(tMs: number): number {
 /**
  * Wipe reveal: clip a polygon against one axis-aligned half-plane and return an SVG
  * `points` string. axis 0 = x, 1 = y. keepGreater keeps the side with larger coordinates.
+ * (Used by the web replay; the native splash animates a Path through `wipePath`.)
  */
 export function wipePoints(pts: number[][], axis: 0 | 1, edge: number, keepGreater: boolean): string {
   'worklet';
@@ -73,4 +74,17 @@ export function wipePoints(pts: number[][], axis: 0 | 1, edge: number, keepGreat
     prevIn = curIn;
   }
   return s === '' ? '0,0 0,0 0,0' : s;
+}
+
+/**
+ * The same clip as an SVG path `d`. react-native-svg converts a Polygon's `points`
+ * into a path only while React renders, so UI-thread animated props must drive
+ * Path's `d` directly — animating `points` reaches the native view and is ignored.
+ */
+export function wipePath(pts: number[][], axis: 0 | 1, edge: number, keepGreater: boolean): string {
+  'worklet';
+  const parts = wipePoints(pts, axis, edge, keepGreater).trim().split(' ');
+  let d = 'M' + parts[0];
+  for (let i = 1; i < parts.length; i++) d += ' L' + parts[i];
+  return d + ' Z';
 }

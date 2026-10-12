@@ -22,6 +22,7 @@ Make sure the Reanimated babel plugin is configured as described in its docs.)
 All timings live in `SPLASH_TIMING` (splashMath.ts). Draw order is `PIECE_ORDER`. Mark size is the `markScale` prop.
 
 ## Notes
+- The pieces are animated as `Path` `d` strings (`wipePath`), never as `Polygon` `points`: react-native-svg turns points into a path only on React render, so animated props on a Polygon never reach the screen. First run on a device 2026-10-11 (cofferdam-app).
 - Respects the system "reduce motion" setting (shows the finished mark briefly, then exits).
 - Dark mode uses the dark palette from the icon previews.
 - If your SDK's splash plugin insists on an image, use a 1x1 transparent PNG.

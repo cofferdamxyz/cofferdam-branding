@@ -2,6 +2,7 @@
 
 ## 2026-10-11 — faster launch splash (brand v4)
 
+- Splash fix from the first device run: the pieces animate as `Path` `d` strings (`wipePath` in `splashMath.ts`), not `Polygon` `points` — react-native-svg converts points to a path only on React render, so the animated polygons never appeared and the launch showed a bare ground. The exit-timer ref is assigned in an effect (React Compiler rule).
 - `motion.splash` tightened from about 2.4 s to about 1.4 s: start 40 ms (was 120), 200 ms per piece (340), 20 ms gaps (40), 220 ms settle (350), 40 ms hold (120), 220 ms exit (300), gradient fade 400 ms (700). The first screen was arriving before the mark was half drawn.
 - `CofferdamSplash` starts its timeline on the first frame instead of after the asynchronous Reduce Motion query (which still jumps to the finished mark when it reports reduced motion). `splashMath.ts` carries `gradientFadeIn`; the motion section and the splash README follow. Splash preview videos/keyframes not re-rendered (no Playwright on this machine).
 
