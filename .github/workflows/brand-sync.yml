@@ -4,7 +4,8 @@
 #
 # Setup (once): add a repository secret BRAND_SYNC_TOKEN — a fine-grained PAT (or GitHub
 # App token) with Contents + Pull requests: read/write on cofferdamxyz/cofferdam-app and
-# cofferdamxyz/cofferdam-pages.
+# cofferdamxyz/cofferdam-pages. Until it exists the build still runs and validates the
+# brand, and the sync jobs are skipped with a warning instead of failing the run.
 name: brand-sync
 
 on:
@@ -21,12 +22,30 @@ on:
 permissions:
   contents: read
 
+env:
+  # Run JavaScript actions on Node 24 now (Node 20 is deprecated on the runners).
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    outputs:
+      can-sync: ${{ steps.token.outputs.present }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Check for BRAND_SYNC_TOKEN
+        id: token
+        env:
+          TOKEN: ${{ secrets.BRAND_SYNC_TOKEN }}
+        run: |
+          if [ -n "$TOKEN" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::warning title=brand-sync skipped::Repository secret BRAND_SYNC_TOKEN is not set, so no pull requests were opened on cofferdam-app / cofferdam-pages. Add a fine-grained PAT with Contents + Pull requests read/write on both repos."
+            echo "### Sync skipped: \`BRAND_SYNC_TOKEN\` is not set" >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Build + validate
@@ -41,25 +60,26 @@ jobs:
 
   sync:
     needs: build
-    runs-on: ubuntu-latest
+    if: needs.build.outputs.can-sync == 'true'
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
         consumer: [cofferdam-app, cofferdam-pages]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: branding
       - uses: actions/download-artifact@v4
         with:
           name: brand-dist
           path: branding
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: cofferdamxyz/${{ matrix.consumer }}
           token: ${{ secrets.BRAND_SYNC_TOKEN }}
           path: ${{ matrix.consumer }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Copy generated files
