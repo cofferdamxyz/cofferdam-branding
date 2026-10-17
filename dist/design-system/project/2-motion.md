@@ -8,7 +8,7 @@ Base's principle: motion is **purposeful, physical and Square-led**. It explains
 |---|---|---|
 | `fast` | 180ms | Press feedback, exits, reduce-motion cross-fades |
 | `base` | 260ms | Fades, scale-ins, most transitions |
-| `slow` | 380ms | Sheets rising, the Square-wipe |
+| `slow` | 380ms | Sheets rising (and the chat's top sheet dropping), the Square-wipe |
 | `slower` | 520ms | Hero reveals |
 | spring `snappy` | damping 18 · stiffness 220 · mass 0.8 | Taps, toggles, grid cells |
 | spring `soft` | damping 22 · stiffness 140 · mass 1 | Sheets, cards settling |
@@ -16,8 +16,8 @@ Base's principle: motion is **purposeful, physical and Square-led**. It explains
 
 ## Rules
 
-- Springs for physical things; timing curves for choreographed sequences. Enter with ease-out cubic, exit with ease-in cubic.
-- Press feedback: scale down 3% and fade 10% over `fast`.
+- Springs for physical things; timing curves for choreographed sequences. Enter with ease-out cubic, exit with ease-in cubic. Two app exceptions: a sheet docked to a moving edge (the chat's top sheet, docked to the AI bar) lifts away with ease-out over `base`, because an ease-in exit would first dip with the bar; an in-place swap (send and stop, the + popover) runs `fast` with ease-out both ways.
+- Press feedback: scale down 3% and fade 10% over `fast`. Controls on glass (the AI bar's buttons, its chips, popover rows) dim instead, to 50% (chips 65%), with no scale and no fill, so the material shows through.
 - Grid entrances stagger 40ms per cell. Center-burst holds 120ms before collapsing.
 - Signature transitions (Square-wipe, Center-burst, Grid-mosaic, Type-scramble) are for hero moments only: account ready, verified, first payment received.
 - Website: hero fades up in a staggered cascade; tiles reveal on scroll; the phone mockup floats on a 6-second sine. Nothing else moves.

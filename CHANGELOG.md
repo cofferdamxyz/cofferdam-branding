@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-17 — guidelines follow the assistant-first Home (no value changes)
+
+- The app's Home rebuild (workspace decisions 0024 and 0033 to 0036) left the guidelines describing chrome that is gone and missing rules the new chrome set. No token value changed, so consumers need no sync.
+- `GlassSurface`: the material now covers the AI bar, its chips and its + popover (the tab bar and the FAB are gone). Glass never fades as a whole, because Liquid Glass under a low-opacity ancestor is dropped and shows fully transparent. A surface that comes and goes uses the native `materialized` prop. Pressed controls on glass dim and never fill. The `glass-scrim` values in the doc are repaired.
+- README: the accent also marks the current selection; maps draw in the ground (the range is one translucent `bg` disc, 40% fill and 85% edge, never the accent). Corners: chips are pills and `radius-sm` is for small badges. Shadows: `shadow-card` and `shadow-card-lg` name their app users, and `shadow-fab` has none since the FAB left Home. NativeMenu is not carried over.
+- Motion: two app exceptions to "exits ease in" (the chat's top sheet lifts away with ease-out over `base`; in-place swaps run `fast` ease-out both ways), and controls on glass dim instead of the 3% / 10% press.
+- `tokens.json` usage notes for `radius-pill`, `shadow-card`, `shadow-card-lg` and `shadow-fab` follow the same changes (values unchanged).
+- `cofferdam-design` skill: the same accent, map and glass rules.
+
 ## 2026-10-11 — faster launch splash (brand v4)
 
 - Splash fix from the first device run: the pieces animate as `Path` `d` strings (`wipePath` in `splashMath.ts`), not `Polygon` `points` — react-native-svg converts points to a path only on React render, so the animated polygons never appeared and the launch showed a bare ground. The exit-timer ref is assigned in an effect (React Compiler rule).

@@ -5,7 +5,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 ## Principles
 
 - **Dark-first, monochrome canvas.** Pure black `bg` ground, white `fg`, greyscale structure (`surface`, `card`, `border`, `divider`). Every surface and CTA stays zero-chroma.
-- **One accent at a time, and it means something.** `accent` marks proof: verified ticks, the live/active state, the Ready chip, focus. Never eyebrows, links, headings or decoration. The moment the accent lands on decoration it stops reading as *proven*.
+- **One accent at a time, and it means something.** `accent` marks proof: verified ticks, the live/active state, the Ready chip, the current selection, focus. Never eyebrows, links, headings or decoration. The moment the accent lands on decoration it stops reading as *proven*.
 - **The Square is the seed.** Base's Square is the atomic shape. The v5 brackets close into a slanted rounded square; avatars, tiles, cards and wallpapers rhyme with it through the `radius-*` scale.
 - **Calm, physical motion.** Purposeful, with mass, on the UI thread. Never decorative jitter.
 - **Plain, punchy voice.** Brief, human, active. "Your face is your key." not "Biometric authentication enrolment."
@@ -16,7 +16,8 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 - Outline anything interactive that has no fill (secondary buttons, inputs, checkboxes) with `border-control` — it holds 3:1 on every ground. `border`, `card-border` and `divider` are decorative structure and must never be the only cue that something is tappable.
 - Body text in `fg`; secondary in `fg-muted` (≥7:1 in both themes). Keep `fg-muted-2` for tertiary hints or 24px+ text — it is 4.2:1 on dark `bg` and 3.5:1 on light. `fg-dim` is disabled only.
 - Primary actions are **white-on-black** in dark (`fg` fill, `bg` label) and near-black in light. The accent never fills a primary button.
-- **Two blues, two jobs.** `accent` is the *proof* blue: one token, two values — **Base Blue** (`base-blue`, 8.6:1 on white) in light and **Cerulean** (`base-cerulean`, 6.3:1 on black) in dark. It marks verified ticks, live state, the Ready chip and focus. `identity` is the *brand* blue — always Cerulean — for the app icon and splash ground, the logo glow, the cover and brand illustrations. Never use `identity` for text or proof, and never use `accent` for brand decoration. Pair accent text with `accent-dim` fill and `accent-border` hairline.
+- **Maps draw in the ground.** A range on a map (Cofferdam Maps and the Work card's copy of it) is one translucent disc in `bg`: white on the light map, black on the dark one, a 40% fill with an 85% edge, with no halo and no centre dot. A range is not proof, so it is never the accent.
+- **Two blues, two jobs.** `accent` is the *proof* blue: one token, two values — **Base Blue** (`base-blue`, 8.6:1 on white) in light and **Cerulean** (`base-cerulean`, 6.3:1 on black) in dark. It marks verified ticks, live state, the Ready chip, the current selection and focus. `identity` is the *brand* blue — always Cerulean — for the app icon and splash ground, the logo glow, the cover and brand illustrations. Never use `identity` for text or proof, and never use `accent` for brand decoration. Pair accent text with `accent-dim` fill and `accent-border` hairline.
 - **Never put Base Blue on a dark background** (2.4:1, and the Base guidelines forbid it). In product UI the Base Square (chain badges, ChainLogo) is `chain-mark`: white on dark, black on light, so blue only ever means proof. The blue Square is for Base's own lockups and the "Built on Base." credit.
 - The Base palette tokens (`base-blue`, `base-cerulean`, `base-tan`, `base-yellow`, `base-green`, `base-lime`, `base-red`, `base-pink`) are locked hex values from brand.base.org. Never interpolate, tint or invent shades. Components read `accent`, never a swatch directly.
 - `danger`, `warning`, `success`, `info` are status only, independent of the user's accent, and always come with a word or icon. Base Green is an accent option, not `success`.
@@ -32,9 +33,9 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 ## Shape and spacing
 
 - Spacing runs on a 4px grid: `space-xxs` 2 → `space-huge` 64. Screen gutter and card padding `space-base`; gaps between cards `space-xl`; between sections `space-xxl`. Website sections pad `space-section` (96) on mobile and `space-section-lg` (128) from md up.
-- Corners: chips `radius-sm`, tiles and inputs `radius-lg`, cards `radius-xl`, sheets `radius-xxl`, buttons and status chips `radius-pill`. The website's shadcn scale derives from `radius-web` (10px). Product UI never uses a hard rectangle.
-- Prefer hairline borders to shadows, especially in dark. `shadow-card` and `shadow-card-lg` are for light mode and popovers; `shadow-fab` is the FAB only.
-- Surfaces are **solid**, not glass, on the website (`surface`, `surface-strong` utilities). In the app, chrome over content may use the native glass material (Liquid Glass on iOS 26+, blur fallback elsewhere).
+- Corners: small badges `radius-sm`, tiles and inputs `radius-lg`, cards and popovers `radius-xl`, sheets `radius-xxl`, buttons, status chips and the AI bar's chips `radius-pill`. The website's shadcn scale derives from `radius-web` (10px). Product UI never uses a hard rectangle.
+- Prefer hairline borders to shadows, especially in dark. `shadow-card` lifts light-mode cards and the AI bar, its chips and its popover; `shadow-card-lg` raised cards, popovers and the chat's top sheet (iOS only, since an Android elevation there would paint over the bar). `shadow-fab` has no current user: Home dropped its floating action button (workspace decision 0024).
+- Surfaces are **solid**, not glass, on the website (`surface`, `surface-strong` utilities). In the app, chrome over content may use the native glass material (Liquid Glass on iOS 26+, blur fallback elsewhere): the AI bar, its chips and its popover, never a content card. Glass never fades as a whole, because Liquid Glass under a fading ancestor is dropped and shows fully transparent; glass that comes and goes uses the material's own animation (`GlassSurface`).
 
 ## Logo
 
@@ -97,6 +98,6 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 
 ## Not synced
 
-- Components are **hand-written web renditions** of the React Native kit in cofferdam-app (`src/components/ui/`): Button, StatusChip, Avatar, ChainLogo, BottomChip, GlassSurface, plus CofferdamMark (v5) and a web replay of the launch Splash. Not carried over: Icon (use Lucide directly), Numpad, TxSpinner, AppBackground, SelfLogo, and the site's shadcn Button.
+- Components are **hand-written web renditions** of the React Native kit in cofferdam-app (`src/components/ui/`): Button, StatusChip, Avatar, ChainLogo, BottomChip, GlassSurface, plus CofferdamMark (v5) and a web replay of the launch Splash. Not carried over: Icon (use Lucide directly), Numpad, TxSpinner, AppBackground, SelfLogo, NativeMenu (the platform's own menu: SwiftUI on iOS, Compose on Android), and the site's shadcn Button.
 - Fonts here are the Latin-subset woff2 files the website ships; native platforms cannot load woff2, so cofferdam-app embeds the Google Fonts static TTFs (400–700) from `@expo-google-fonts/geist` and `@expo-google-fonts/geist-mono` through the `expo-font` plugin, under the family names `Geist` and `Geist Mono` the generated `type` styles reference. Full-charset files are pending.
 - The Base Brand Guidelines PDF stays in cofferdam-app.
