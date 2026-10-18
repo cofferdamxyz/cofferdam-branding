@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-18 — token notes follow the guidelines; the Design System artifact republished
+
+- Usage notes only (no value changes): `accent` also marks the current selection; `radius-sm` is for small badges and a chat bubble's tail corner, chips being pills; `radius-xl` covers popovers. They had lagged the 2026-10-17 README.
+- The Design System artifact carries the 2026-10-17 guidelines (`README.md`, `2-motion.md`, `GlassSurface`, `tokens.json`; via `af4e96f`); `dist/design-system/project/design-system.json` mirrors its index. These three notes reach it on the next publish.
+
 ## 2026-10-17 — guidelines follow the assistant-first Home (no value changes)
 
 - The app's Home rebuild (workspace decisions 0024 and 0033 to 0036) left the guidelines describing chrome that is gone and missing rules the new chrome set. No token value changed, so consumers need no sync.

@@ -444,8 +444,8 @@
   },
   "lastChange": {
     "by": "Ícaro Hoff",
-    "at": "2026-10-11T22:36:38Z",
-    "via": "GitHub · cofferdamxyz/cofferdam-branding@cce4d71",
-    "note": "Faster launch splash (~1.4 s): splash timing in the web replay, motion section, and re-rendered preview videos and keyframes"
+    "at": "2026-10-18T08:49:39Z",
+    "via": "GitHub · cofferdamxyz/cofferdam-branding@af4e96f",
+    "note": "Guidelines follow the assistant-first Home: glass chrome (the AI bar, its chips and + popover; never fade glass), maps draw in the ground, the accent marks the current selection, pill chips, shadow users, motion exceptions; token usage notes. No value changes."
   }
 }
