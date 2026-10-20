@@ -31,6 +31,8 @@ The consumers never hold brand values of their own: they import generated files.
 
 ## One-time wiring — cofferdam-pages
 
+> Done on 2026-10-20 (cofferdam-pages PR #3). The SdkShowcase colour sweep and its mask were dropped rather than redrawn (the founder: not in the guidelines), and the favicon and Apple icon are the white mark on the dark `splash-gradient-*` tile. Kept as the reference for a fresh consumer.
+
 1. In `src/app/globals.css`, after the three `@import`s: `@import "./brand.generated.css";`
 2. Delete the hand-written `--base-*`, `--self-teal`, `--brand*`, `--texture*` lines from `:root` and `.dark` (the generated file declares them).
 3. Point the shadcn variables at brand tokens, in both `:root` and `.dark`: `--background: var(--cd-web-bg); --foreground: var(--cd-fg); --card: var(--cd-card); --popover: var(--cd-card); --primary: var(--cd-fg); --primary-foreground: var(--cd-bg); --secondary: var(--cd-surface-2); --muted: var(--cd-card); --muted-foreground: var(--cd-fg-muted); --destructive: var(--cd-danger); --surface-strong: var(--cd-surface-2); --radius: var(--cd-radius-web);` — keep the alpha `--border`/`--input`/`--ring` values. This moves light mode from #fafafa to the canonical #ffffff and the dark brand accent from Lime to Cerulean (both decided in the brand).

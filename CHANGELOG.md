@@ -30,6 +30,10 @@
 - New `web.headlines` in `tokens/brand.json`: the two fluid headlines the brand book allows on the website only, written as `--cd-headline-display-*` (40px at a 375px viewport to 88px at 1280px, line height 1, −0.03em) and `--cd-headline-title-*` (28px to 52px, 1.05, −0.02em). Both keep their role's weight (700), which is what makes the app read as finished; the lighter display weights of the reference sites studied (Bleap 400, Revolut 500) were rejected for that reason.
 - No value changed for the app: its generated files differ only in the build header.
 
+## 2026-10-20 — cofferdam-pages wired (no value changes)
+
+- The website consumes the brand: `brand.generated.css` imported, shadcn variables on the `--cd-*` tokens (Cerulean on dark, paper white in light), v5 mark and horizontal lockup, favicon from the mark (cofferdam-pages PR #3). `cofferdam-brand-sync` notes the one-time wiring as done.
+
 ## 2026-10-18 — token notes follow the guidelines; the Design System artifact republished
 
 - Usage notes only (no value changes): `accent` also marks the current selection; `radius-sm` is for small badges and a chat bubble's tail corner, chips being pills; `radius-xl` covers popovers. They had lagged the 2026-10-17 README.
