@@ -42,6 +42,7 @@ The app's own transitions are used as recorded. Nothing is added in the edit exc
 - The film sits in the device frame at `--cd-video-aspect`, on the scene's stone stage. The page reserves its box before the file loads, so nothing shifts.
 - `muted`, `playsinline`, `preload="none"` below the fold, `aria-hidden` (the scene's copy carries the meaning), no `autoplay` attribute: script plays it when its scene is on screen and selected, and pauses it otherwise.
 - Scroll never moves the playhead. Scroll may move the frame (`2-motion.md`, On the website).
+- A loop runs longer than 5 s, so it always carries a visible pause control (WCAG 2.2.2). Controls sit outside the screen, under the phone, never over the footage, where they would cover the app's own bar.
 - Reduce Motion: the poster shows, with a visible play control; nothing starts on its own.
 
 ## Placeholders
