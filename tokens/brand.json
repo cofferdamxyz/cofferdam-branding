@@ -1,6 +1,6 @@
 {
   "$comment": "Brand data that tokens.json has no family for: user-pickable accents, wallpapers, motion, and the active-season pointer. Edited by hand or by an agent; scripts/build.mjs merges it with tokens.json and any active seasonal overlay.",
-  "version": 4,
+  "version": 5,
   "accentAlpha": {
     "dim": 0.14,
     "border": 0.32
@@ -170,6 +170,13 @@
     "brandAccent": {
       "dark": "base-cerulean",
       "light": "base-blue"
+    },
+    "headlines": {
+      "$comment": "Website headlines scale fluidly above `title` (brand README, Typography). Each grows linearly from its type role's size at `from` to `max` at `to`, keeps the role's weight, and keeps the negative tracking of `display` in em so it holds at every size. scripts/build.mjs writes them to the website CSS as --cd-headline-*.",
+      "from": "375px",
+      "to": "1280px",
+      "display": { "role": "display", "max": "88px", "lineHeight": 1, "letterSpacing": "-0.03em" },
+      "title": { "role": "title", "max": "52px", "lineHeight": 1.05, "letterSpacing": "-0.02em" }
     }
   },
   "motion": {

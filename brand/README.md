@@ -28,7 +28,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 - Set everything in **Geist** (`sans`); IDs, reference numbers and code in **Geist Mono** (`mono`). On the website enable Geist's `ss01`, `cv01`, `cv11` stylistic sets on `body`.
 - Use the scale as roles: `display` for the balance hero, `title` for onboarding and page headlines, `h1`/`h2` for section and card heads, `body` for copy, `body-muted` for secondary copy, `label` for buttons and chips, `caption` for metadata, `eyebrow` (uppercase, 0.2em tracking) for website section labels.
 - Build hierarchy with size and weight, never colour. Money always uses tabular figures; shorten long IDs in the middle, keeping the start and end (`CD-4821…09`).
-- Website headlines may scale fluidly (`clamp()`) above `title`; keep the negative tracking of `display`.
+- Website headlines may scale fluidly above `title`, and only through `--cd-headline-display-*` and `--cd-headline-title-*` (`tokens/brand.json` → `web.headlines`); they keep the role's weight and the negative tracking of `display`. Every other website text style reads its role from `--cd-text-<role>-*`; no component sets its own size.
 
 ## Shape and spacing
 

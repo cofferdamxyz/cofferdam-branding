@@ -377,6 +377,33 @@ const textureFor = (theme) => {
   const op = tokens.opacity.tokens.find((t) => t.name === `opacity-texture-${theme}`)?.value;
   return `  --texture: url("/textures/${path.basename(b.webTexture)}");\n  --texture-opacity: ${op};`;
 };
+// Type roles for the website: the app's roles as CSS variables, plus the fluid
+// headlines (brand.json web.headlines) the brand book allows on the site only.
+const typeVars = typeEntries
+  .map((s) => {
+    const n = `--cd-text-${s.name}`;
+    return `  ${n}-size: ${s.fontSize};\n  ${n}-line: ${s.lineHeight};\n  ${n}-weight: ${s.fontWeight};\n  ${n}-tracking: ${s.letterSpacing ?? 'normal'};`;
+  })
+  .join('\n');
+const headlineVars = (() => {
+  const h = effBrand.web.headlines;
+  if (!h) return '';
+  const from = px(h.from);
+  const to = px(h.to);
+  return ['display', 'title']
+    .filter((k) => h[k])
+    .map((k) => {
+      const role = typeEntries.find((s) => s.name === h[k].role);
+      const min = px(role.fontSize);
+      const max = px(h[k].max);
+      const slope = (max - min) / (to - from);
+      const base = +(min - slope * from).toFixed(2);
+      const vw = +(slope * 100).toFixed(3);
+      const n = `--cd-headline-${k}`;
+      return `  ${n}-size: clamp(${min}px, calc(${base}px + ${vw}vw), ${max}px);\n  ${n}-line: ${h[k].lineHeight};\n  ${n}-weight: ${role.fontWeight};\n  ${n}-tracking: ${h[k].letterSpacing};`;
+    })
+    .join('\n');
+})();
 const pages = `${HEADER('/*')} */
 /* Import from globals.css AFTER the tailwind imports:  @import "./brand.generated.css";
    Then point the shadcn variables at the --cd-* tokens (see cofferdam-branding/.claude/skills/cofferdam-brand-sync). */
@@ -392,6 +419,8 @@ ${brandFor('light')}
 ${textureFor('light')}
   --cd-font-sans: ${tokens.type.families.sans};
   --cd-font-mono: ${tokens.type.families.mono};
+${typeVars}
+${headlineVars}
 ${tokens.spacing.tokens.map((t) => `  --cd-${t.name}: ${t.value};`).join('\n')}
 ${tokens.radius.tokens.map((t) => `  --cd-${t.name}: ${t.value};`).join('\n')}
 ${tokens.shadow.tokens.map((t) => `  --cd-${t.name}: ${t.value};`).join('\n')}

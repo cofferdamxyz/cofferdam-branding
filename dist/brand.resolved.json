@@ -1,9 +1,9 @@
 {
-  "brandVersion": 4,
+  "brandVersion": 5,
   "tokensVersion": 6,
-  "commit": "af4e96f",
+  "commit": "a1c5134",
   "season": null,
-  "builtFor": "10-18",
+  "builtFor": "10-21",
   "colors": {
     "dark": {
       "bg": "#000000",
@@ -432,6 +432,23 @@
     "brandAccent": {
       "dark": "base-cerulean",
       "light": "base-blue"
+    },
+    "headlines": {
+      "$comment": "Website headlines scale fluidly above `title` (brand README, Typography). Each grows linearly from its type role's size at `from` to `max` at `to`, keeps the role's weight, and keeps the negative tracking of `display` in em so it holds at every size. scripts/build.mjs writes them to the website CSS as --cd-headline-*.",
+      "from": "375px",
+      "to": "1280px",
+      "display": {
+        "role": "display",
+        "max": "88px",
+        "lineHeight": 1,
+        "letterSpacing": "-0.03em"
+      },
+      "title": {
+        "role": "title",
+        "max": "52px",
+        "lineHeight": 1.05,
+        "letterSpacing": "-0.02em"
+      }
     }
   },
   "motion": {
