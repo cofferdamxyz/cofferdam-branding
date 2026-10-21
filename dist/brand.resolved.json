@@ -1,7 +1,7 @@
 {
-  "brandVersion": 5,
+  "brandVersion": 6,
   "tokensVersion": 6,
-  "commit": "a1c5134",
+  "commit": "543fdd4",
   "season": null,
   "builtFor": "10-21",
   "colors": {
@@ -457,6 +457,12 @@
       "base": 260,
       "slow": 380,
       "slower": 520
+    },
+    "easing": {
+      "$comment": "The timing curves of brand/sections/2-motion.md as CSS: enter with ease-out cubic, exit with ease-in cubic, choreographed moves (the Square-wipe) ease-in-out cubic. The app uses Reanimated's Easing.out/in/inOut(Easing.cubic); these are the same curves for the website (--cd-ease-*).",
+      "out": "cubic-bezier(0.33, 1, 0.68, 1)",
+      "in": "cubic-bezier(0.32, 0, 0.67, 0)",
+      "inOut": "cubic-bezier(0.65, 0, 0.35, 1)"
     },
     "spring": {
       "snappy": {

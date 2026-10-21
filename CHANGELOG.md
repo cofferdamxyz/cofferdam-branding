@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-21 — website motion tokens (brand v6)
+
+- `tokens/brand.json` → `motion.easing`: the brand's three timing curves (ease-out, ease-in and ease-in-out cubic, the same curves as the app's Reanimated easings). The website CSS now carries them as `--cd-ease-out | in | in-out`.
+- The springs (`snappy`, `soft`, `bouncy`) reach the website as CSS `linear()` curves, `--cd-spring-<name>` with `--cd-spring-<name>-duration`, simulated by `scripts/build.mjs` from the app's spring values. The site can move like the app without a JavaScript animation loop. Idea from a design study of bleap.finance and revolut.com (research only).
+- `brand/sections/2-motion.md`: the easing rows, "On the website", and per-animation Reduce Motion overrides on the site.
+- Proposed, not adopted: `brand/proposals/web-intro.md`, a first-visit website intro that replays the launch splash and opens into the hero (workspace OD-13).
+- `components/Splash/README.md` stated the pre-2026-10-11 timings; it now gives the current ones.
+- No value changed for the app: its generated file differs only in the build header.
+
 ## 2026-10-21 — the website gets the type roles and fluid headlines (brand v5)
 
 - The website CSS (`dist/pages/brand.generated.css`) now carries every type role as `--cd-text-<role>-size / -line / -weight / -tracking`, the same values the app reads from `type`. The site had no type tokens and improvised its sizes per component (a Hallmark audit of cofferdam-pages found the same `clamp()` copied four times and sizes from 8 to 15px).

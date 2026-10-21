@@ -13,6 +13,17 @@ Base's principle: motion is **purposeful, physical and Square-led**. It explains
 | spring `snappy` | damping 18 · stiffness 220 · mass 0.8 | Taps, toggles, grid cells |
 | spring `soft` | damping 22 · stiffness 140 · mass 1 | Sheets, cards settling |
 | spring `bouncy` | damping 12 · stiffness 200 · mass 0.7 | Celebrations only |
+| ease `out` | ease-out cubic, `cubic-bezier(0.33, 1, 0.68, 1)` | Entrances |
+| ease `in` | ease-in cubic, `cubic-bezier(0.32, 0, 0.67, 0)` | Exits |
+| ease `inOut` | ease-in-out cubic, `cubic-bezier(0.65, 0, 0.35, 1)` | Choreographed moves (the Square-wipe) |
+
+### On the website
+
+The website reads the same tokens as CSS variables from `brand.generated.css`, so it moves like the app:
+
+- `--cd-duration-fast | base | slow | slower` and `--cd-ease-out | in | in-out`.
+- `--cd-spring-snappy | soft | bouncy`: each spring as a CSS `linear()` curve, simulated from the app's spring values by `scripts/build.mjs`, with its settle time as `--cd-spring-<name>-duration` (snappy 693ms with a 5% overshoot, soft 666ms with none, bouncy 836ms with 15%). Use a spring curve with its own duration: `transition: transform var(--cd-spring-snappy-duration) var(--cd-spring-snappy)`. No JavaScript animation loop is needed for a physical feel.
+- Every website animation carries its own Reduce Motion override (movement, blur and loops off; a `fast` cross-fade at most), not only a global switch.
 
 ## Rules
 
@@ -20,7 +31,7 @@ Base's principle: motion is **purposeful, physical and Square-led**. It explains
 - Press feedback: scale down 3% and fade 10% over `fast`. Controls on glass (the AI bar's buttons, its chips, popover rows) dim instead, to 50% (chips 65%), with no scale and no fill, so the material shows through.
 - Grid entrances stagger 40ms per cell. Center-burst holds 120ms before collapsing.
 - Signature transitions (Square-wipe, Center-burst, Grid-mosaic, Type-scramble) are for hero moments only: account ready, verified, first payment received.
-- Website: hero fades up in a staggered cascade; tiles reveal on scroll; the phone mockup floats on a 6-second sine. Nothing else moves.
+- Website: hero fades up in a staggered cascade; tiles reveal on scroll; the phone mockup floats on a 6-second sine. Nothing else moves. (Proposed, not adopted: a first-visit intro that replays the launch splash and opens into the hero, `brand/proposals/web-intro.md`.)
 - Reduce Motion replaces every hero transition with a `fast` cross-fade and removes decorative loops (the logo sweep isn't rendered at all).
 
 ## Launch splash
