@@ -228,6 +228,68 @@ if (colors.dark && fs.existsSync(path.join(ROOT, 'motion/splash/cofferdamMark.ts
   }
 }
 
+// Motion for the website: the brand's easing curves, and its springs as CSS
+// `linear()` curves so the site moves like the app without a JS animation loop.
+// Each spring is simulated from 0 to 1 at rest (m·x'' + c·x' + k·(x − 1) = 0,
+// the model Reanimated's withSpring uses), until it settles within 0.1%; the
+// curve samples that response and the duration is the settle time.
+const springCurve = ({ damping: c, stiffness: k, mass: m }) => {
+  const dt = 1 / 1000;
+  let x = 0;
+  let v = 0;
+  const xs = [0];
+  let still = 0;
+  for (let i = 1; i <= 5000; i++) {
+    // Semi-implicit Euler at 1 ms is plenty for curves this soft.
+    v += ((-c * v - k * (x - 1)) / m) * dt;
+    x += v * dt;
+    xs.push(x);
+    still = Math.abs(x - 1) < 0.001 && Math.abs(v) < 0.01 ? still + 1 : 0;
+    if (still >= 20) break;
+  }
+  const ms = xs.length - 1;
+  const stops = 40;
+  const pts = [];
+  for (let s = 0; s <= stops; s++) {
+    const t = Math.round((s / stops) * ms);
+    const val = s === stops ? 1 : +xs[t].toFixed(4);
+    pts.push(`${val} ${+((t / ms) * 100).toFixed(2)}%`);
+  }
+  return { ms, css: `linear(${pts.join(', ')})` };
+};
+const springs = Object.entries(effBrand.motion.spring).map(([name, p]) => ({ name, ...springCurve(p) }));
+for (const s of springs) {
+  if (s.ms >= 5000) errors.push(`motion.spring.${s.name} never settles within 5 s`);
+}
+const kebab = (s) => s.replace(/[A-Z]/g, (ch) => `-${ch.toLowerCase()}`);
+const motionVars = [
+  ...Object.entries(effBrand.motion.duration).map(([k, v]) => `  --cd-duration-${k}: ${v}ms;`),
+  ...Object.entries(effBrand.motion.easing ?? {})
+    .filter(([k]) => !k.startsWith('$'))
+    .map(([k, v]) => `  --cd-ease-${kebab(k)}: ${v};`),
+  ...springs.flatMap((s) => [`  --cd-spring-${s.name}: ${s.css};`, `  --cd-spring-${s.name}-duration: ${s.ms}ms;`]),
+  ...(effBrand.web.video
+    ? [`  --cd-video-aspect: ${effBrand.web.video.delivery.width} / ${effBrand.web.video.delivery.height};`]
+    : []),
+  ...(effBrand.web.scroll
+    ? [
+        `  --cd-scroll-parallax-max: ${effBrand.web.scroll.parallaxMax};`,
+        `  --cd-scroll-inset-radius: var(--cd-${effBrand.web.scroll.insetRadius});`,
+      ]
+    : []),
+].join('\n');
+// Footage that cannot meet the delivery spec is a brand error, not a site bug.
+if (effBrand.web.video) {
+  const v = effBrand.web.video;
+  const loopHolds = v.loop.vignettes * (v.loop.maxChange + v.loop.minHold);
+  if (loopHolds > v.loop.duration) errors.push(`web.video.loop: ${v.loop.vignettes} vignettes of ${v.loop.maxChange} ms change + ${v.loop.minHold} ms hold do not fit ${v.loop.duration} ms`);
+  if (v.playOnce.settleBy >= v.playOnce.duration) errors.push('web.video.playOnce.settleBy must come before the end of the film');
+  if (!effBrand.motion.duration || v.loop.maxChange > effBrand.motion.duration.slower) errors.push('web.video.loop.maxChange is longer than motion.duration.slower');
+}
+if (effBrand.web.scroll && !tokens.radius.tokens.some((t) => t.name === effBrand.web.scroll.insetRadius)) {
+  errors.push(`web.scroll.insetRadius names ${effBrand.web.scroll.insetRadius}, which is not a radius token`);
+}
+
 if (errors.length) {
   console.error('✗ build failed\n  ' + errors.join('\n  '));
   process.exit(1);
@@ -404,47 +466,6 @@ const headlineVars = (() => {
     })
     .join('\n');
 })();
-// Motion for the website: the brand's easing curves, and its springs as CSS
-// `linear()` curves so the site moves like the app without a JS animation loop.
-// Each spring is simulated from 0 to 1 at rest (m·x'' + c·x' + k·(x − 1) = 0,
-// the model Reanimated's withSpring uses), until it settles within 0.1%; the
-// curve samples that response and the duration is the settle time.
-const springCurve = ({ damping: c, stiffness: k, mass: m }) => {
-  const dt = 1 / 1000;
-  let x = 0;
-  let v = 0;
-  const xs = [0];
-  let still = 0;
-  for (let i = 1; i <= 5000; i++) {
-    // Semi-implicit Euler at 1 ms is plenty for curves this soft.
-    v += ((-c * v - k * (x - 1)) / m) * dt;
-    x += v * dt;
-    xs.push(x);
-    still = Math.abs(x - 1) < 0.001 && Math.abs(v) < 0.01 ? still + 1 : 0;
-    if (still >= 20) break;
-  }
-  const ms = xs.length - 1;
-  const stops = 40;
-  const pts = [];
-  for (let s = 0; s <= stops; s++) {
-    const t = Math.round((s / stops) * ms);
-    const val = s === stops ? 1 : +xs[t].toFixed(4);
-    pts.push(`${val} ${+((t / ms) * 100).toFixed(2)}%`);
-  }
-  return { ms, css: `linear(${pts.join(', ')})` };
-};
-const springs = Object.entries(effBrand.motion.spring).map(([name, p]) => ({ name, ...springCurve(p) }));
-for (const s of springs) {
-  if (s.ms >= 5000) errors.push(`motion.spring.${s.name} never settles within 5 s`);
-}
-const kebab = (s) => s.replace(/[A-Z]/g, (ch) => `-${ch.toLowerCase()}`);
-const motionVars = [
-  ...Object.entries(effBrand.motion.duration).map(([k, v]) => `  --cd-duration-${k}: ${v}ms;`),
-  ...Object.entries(effBrand.motion.easing ?? {})
-    .filter(([k]) => !k.startsWith('$'))
-    .map(([k, v]) => `  --cd-ease-${kebab(k)}: ${v};`),
-  ...springs.flatMap((s) => [`  --cd-spring-${s.name}: ${s.css};`, `  --cd-spring-${s.name}-duration: ${s.ms}ms;`]),
-].join('\n');
 const pages = `${HEADER('/*')} */
 /* Import from globals.css AFTER the tailwind imports:  @import "./brand.generated.css";
    Then point the shadcn variables at the --cd-* tokens (see cofferdam-branding/.claude/skills/cofferdam-brand-sync). */

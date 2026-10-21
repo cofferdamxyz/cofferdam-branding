@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-21 — footage and website motion rules (brand v7)
+
+- New `brand/sections/5-footage.md`: the website's footage is screen recordings of the app shown in the site's device frame (Home in the hero, Open to work in the Workers scene, the AI chat in the Hirers scene). It sets capture (demo account, clean status bar, 60 fps native), two edit forms (play-once 4 s ending on its poster frame; 15 s loops of three vignettes, changes no longer than `slower`, holds of 2 s or more, the seam inside a hold), encoding (590 × 1278, 30 fps, 1 s GOP, HEVC then H.264, 1 MB a file, a poster per film), how the page plays it, and placeholder slates until the real films exist.
+- `tokens/brand.json` → `web.video` and `web.scroll`; the website CSS gains `--cd-video-aspect`, `--cd-scroll-parallax-max` and `--cd-scroll-inset-radius`. The build fails if a loop cannot hold its vignettes or a play-once film settles after it ends.
+- `brand/sections/2-motion.md` is reorganised: tokens, rules everywhere, the app, the website (what may move: hero, tiles, scroll, scenes, footage, press and hover, focus) and one Reduce Motion table for every moment. Scroll moves containers and never a video's playhead; scene swaps cross-fade with no auto-advance. From design studies of revolut.com and bleap.finance (research only; neither site scrubs video with scroll). Workspace decision 0049.
+- The README's imagery line points at the footage rules instead of "crop personal data out": personal data is never filmed.
+- The motion checks in `scripts/build.mjs` now run before the build reports errors, so they can fail it.
+
 ## 2026-10-21 — website motion tokens (brand v6)
 
 - `tokens/brand.json` → `motion.easing`: the brand's three timing curves (ease-out, ease-in and ease-in-out cubic, the same curves as the app's Reanimated easings). The website CSS now carries them as `--cd-ease-out | in | in-out`.

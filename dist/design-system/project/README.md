@@ -73,7 +73,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 
 - Wallpapers are stone and fibre textures, square and centre-cropped so they survive any aspect ratio: **Obsidian, Carbon, Graphite** on dark; **Marble, Sand, Ice** on light; plus flat Pure Black / Paper White (the defaults).
 - On the website, paint the texture as an `aria-hidden` layer behind content at `opacity-texture-dark` (0.5, Obsidian) or `opacity-texture-light` (0.4, Marble), faded with a mask. Never below 0.3 — the source art is low-contrast and disappears.
-- No illustrations, mascots or emoji decoration. The one gradient in the brand is the icon/splash ground (`splash-gradient-from` → `splash-gradient-to`); nothing else gets one. Product footage and real app captures carry the story; crop personal data out.
+- No illustrations, mascots or emoji decoration. The one gradient in the brand is the icon/splash ground (`splash-gradient-from` → `splash-gradient-to`); nothing else gets one. Product footage and real app captures carry the story: screen recordings of the app on a seeded demo account, never stock, rendered phones or people (`sections/5-footage.md`).
 
 ## Iconography
 

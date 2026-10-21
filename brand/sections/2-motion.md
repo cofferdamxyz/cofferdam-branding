@@ -1,38 +1,70 @@
 # Motion
 
-Base's principle: motion is **purposeful, physical and Square-led**. It explains where things came from and where they went. In the app it runs on the UI thread (Reanimated worklets); on the site it's restrained Framer Motion.
+Base's principle: motion is **purposeful, physical and Square-led**. It explains where things came from and where they went. In the app it runs on the UI thread (Reanimated worklets); on the website it runs in CSS first, with Framer Motion only where CSS cannot reach.
 
 ## Tokens
 
 | Token | Value | Use |
 |---|---|---|
 | `fast` | 180ms | Press feedback, exits, reduce-motion cross-fades |
-| `base` | 260ms | Fades, scale-ins, most transitions |
-| `slow` | 380ms | Sheets rising (and the chat's top sheet dropping), the Square-wipe |
-| `slower` | 520ms | Hero reveals |
+| `base` | 260ms | Fades, scale-ins, most transitions, scene swaps |
+| `slow` | 380ms | Sheets rising (and the chat's top sheet dropping), the Square-wipe, stage reveals |
+| `slower` | 520ms | Hero reveals; the longest change inside website footage |
 | spring `snappy` | damping 18 · stiffness 220 · mass 0.8 | Taps, toggles, grid cells |
 | spring `soft` | damping 22 · stiffness 140 · mass 1 | Sheets, cards settling |
 | spring `bouncy` | damping 12 · stiffness 200 · mass 0.7 | Celebrations only |
 | ease `out` | ease-out cubic, `cubic-bezier(0.33, 1, 0.68, 1)` | Entrances |
 | ease `in` | ease-in cubic, `cubic-bezier(0.32, 0, 0.67, 0)` | Exits |
-| ease `inOut` | ease-in-out cubic, `cubic-bezier(0.65, 0, 0.35, 1)` | Choreographed moves (the Square-wipe) |
+| ease `inOut` | ease-in-out cubic, `cubic-bezier(0.65, 0, 0.35, 1)` | Choreographed moves (the Square-wipe), scene steps |
 
-### On the website
-
-The website reads the same tokens as CSS variables from `brand.generated.css`, so it moves like the app:
+The website reads the same tokens from `brand.generated.css`, so it moves like the app:
 
 - `--cd-duration-fast | base | slow | slower` and `--cd-ease-out | in | in-out`.
-- `--cd-spring-snappy | soft | bouncy`: each spring as a CSS `linear()` curve, simulated from the app's spring values by `scripts/build.mjs`, with its settle time as `--cd-spring-<name>-duration` (snappy 693ms with a 5% overshoot, soft 666ms with none, bouncy 836ms with 15%). Use a spring curve with its own duration: `transition: transform var(--cd-spring-snappy-duration) var(--cd-spring-snappy)`. No JavaScript animation loop is needed for a physical feel.
-- Every website animation carries its own Reduce Motion override (movement, blur and loops off; a `fast` cross-fade at most), not only a global switch.
+- `--cd-spring-snappy | soft | bouncy`: each spring as a CSS `linear()` curve, simulated from the app's spring values by `scripts/build.mjs`, with its settle time as `--cd-spring-<name>-duration` (snappy 693ms with a 5% overshoot, soft 666ms with none, bouncy 836ms with 15%). Use a spring curve with its own duration, `transition: transform var(--cd-spring-snappy-duration) var(--cd-spring-snappy)`, and no JavaScript animation loop is needed for a physical feel.
+- `--cd-scroll-parallax-max` (48px) and `--cd-scroll-inset-radius` (`radius-xl`) for scroll, `--cd-video-aspect` for footage (`tokens/brand.json` → `web.scroll`, `web.video`).
 
-## Rules
+## Rules everywhere
 
-- Springs for physical things; timing curves for choreographed sequences. Enter with ease-out cubic, exit with ease-in cubic. Two app exceptions: a sheet docked to a moving edge (the chat's top sheet, docked to the AI bar) lifts away with ease-out over `base`, because an ease-in exit would first dip with the bar; an in-place swap (send and stop, the + popover) runs `fast` with ease-out both ways.
-- Press feedback: scale down 3% and fade 10% over `fast`. Controls on glass (the AI bar's buttons, its chips, popover rows) dim instead, to 50% (chips 65%), with no scale and no fill, so the material shows through.
-- Grid entrances stagger 40ms per cell. Center-burst holds 120ms before collapsing.
+- Springs for physical things; timing curves for choreographed sequences. Enter with ease-out, exit with ease-in.
 - Signature transitions (Square-wipe, Center-burst, Grid-mosaic, Type-scramble) are for hero moments only: account ready, verified, first payment received.
-- Website: hero fades up in a staggered cascade; tiles reveal on scroll; the phone mockup floats on a 6-second sine. Nothing else moves. (Proposed, not adopted: a first-visit intro that replays the launch splash and opens into the hero, `brand/proposals/web-intro.md`.)
-- Reduce Motion replaces every hero transition with a `fast` cross-fade and removes decorative loops (the logo sweep isn't rendered at all).
+- Grid entrances stagger 40ms per cell. Center-burst holds 120ms before collapsing.
+- One motion language: things arrive by fading and settling, change by cross-fading, and leave by fading. No hard cuts in footage, no wipes except the Square-wipe, no bounce outside celebrations.
+
+## In the app
+
+- Two exceptions to "exits ease in": a sheet docked to a moving edge (the chat's top sheet, docked to the AI bar) lifts away with ease-out over `base`, because an ease-in exit would first dip with the bar; an in-place swap (send and stop, the + popover) runs `fast` with ease-out both ways.
+- Press feedback: scale down 3% and fade 10% over `fast`. Controls on glass (the AI bar's buttons, its chips, popover rows) dim instead, to 50% (chips 65%), with no scale and no fill, so the material shows through.
+
+## On the website
+
+What may move, and nothing else:
+
+| Moment | How |
+|---|---|
+| Hero | Fades up in a staggered cascade on load; the hero object floats on a 6-second sine |
+| Tiles | Reveal once on scroll (fade and rise, `slow`, ease-out) |
+| Scroll | Scroll moves containers, never the playhead of a video. A scene stage may grow from an inset card (`--cd-scroll-inset-radius`, the page gutter) to full width as it enters, and one layer per scene may drift against the scroll by up to `--cd-scroll-parallax-max`. Scroll-linked motion is CSS first: `animation-timeline: view()` driving a registered `@property`, with a script fallback only where the browser lacks it. Snapping, if used, is `y proximity`, never mandatory |
+| Scenes | The scene switcher (Workers · Hirers · Developers) swaps its stage with a cross-fade over `base`; captions swap in place in one grid cell, the old one out over `fast` with ease-in, the new one in over `base` with ease-out, so nothing below moves. No auto-advance |
+| Footage | Plays when its scene is on screen and selected, pauses when it is not; play-once films stop on their end frame, loops loop (`5-footage.md`) |
+| Press and hover | Fade to 85% or move one property; never scale a card, never animate a shadow or a gradient |
+| Focus | The 2px accent outline appears instantly; it never animates |
+
+Proposed, not adopted: a first-visit intro that replays the launch splash and opens into the hero (`brand/proposals/web-intro.md`, workspace OD-13).
+
+## Reduce Motion
+
+Every animation carries its own override, on top of any global switch.
+
+| Moment | Under Reduce Motion |
+|---|---|
+| App hero transitions | A `fast` cross-fade |
+| Launch splash | The finished mark for 400ms, then exit |
+| Website hero cascade, tile reveals | Opacity only, no movement |
+| Hero float, decorative loops | Not rendered |
+| Scroll-linked growth and parallax | Off: the stage sits at its final size, layers do not drift |
+| Scene swap | Instant, or a `fast` cross-fade |
+| Footage | Never autoplays: the poster shows, with a play control |
+| Intro (if adopted) | Not shown |
 
 ## Launch splash
 
@@ -50,5 +82,4 @@ The timeline starts on the overlay's first frame — it never waits for the Redu
 
 - The mark spans 74% of the screen width, centred.
 - Light: Cerulean ground, light tones. Dark: navy ground, dark tones.
-- Reduce Motion: show the finished mark for 400ms, then exit.
 - The native splash (`app.json`) is a plain colour only — `splash-bg` per theme, no image.

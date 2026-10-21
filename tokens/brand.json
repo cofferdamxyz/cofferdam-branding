@@ -1,6 +1,6 @@
 {
   "$comment": "Brand data that tokens.json has no family for: user-pickable accents, wallpapers, motion, and the active-season pointer. Edited by hand or by an agent; scripts/build.mjs merges it with tokens.json and any active seasonal overlay.",
-  "version": 6,
+  "version": 7,
   "accentAlpha": {
     "dim": 0.14,
     "border": 0.32
@@ -177,6 +177,18 @@
       "to": "1280px",
       "display": { "role": "display", "max": "88px", "lineHeight": 1, "letterSpacing": "-0.03em" },
       "title": { "role": "title", "max": "52px", "lineHeight": 1.05, "letterSpacing": "-0.02em" }
+    },
+    "video": {
+      "$comment": "Website footage (brand/sections/5-footage.md): screen recordings of the app shown inside the site's device frame. Times in ms, sizes in px. scripts/build.mjs writes the delivery aspect to the website CSS as --cd-video-aspect.",
+      "master": { "width": 1179, "height": 2556, "fps": 60 },
+      "delivery": { "width": 590, "height": 1278, "fps": 30, "gop": 1000, "maxBytes": 1000000 },
+      "playOnce": { "duration": 4000, "settleBy": 3500 },
+      "loop": { "duration": 15000, "vignettes": 3, "maxChange": 520, "minHold": 2000 }
+    },
+    "scroll": {
+      "$comment": "Website scroll motion (brand/sections/2-motion.md, On the website): the most a layer may move against the scroll, and the corner a scene stage starts from when it grows to full width. scripts/build.mjs writes them as --cd-scroll-*.",
+      "parallaxMax": "48px",
+      "insetRadius": "radius-xl"
     }
   },
   "motion": {
