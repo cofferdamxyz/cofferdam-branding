@@ -1,6 +1,6 @@
 {
   "$comment": "Brand data that tokens.json has no family for: user-pickable accents, wallpapers, motion, and the active-season pointer. Edited by hand or by an agent; scripts/build.mjs merges it with tokens.json and any active seasonal overlay.",
-  "version": 7,
+  "version": 8,
   "accentAlpha": {
     "dim": 0.14,
     "border": 0.32
@@ -243,6 +243,14 @@
         "b-stem",
         "b-arm"
       ]
+    },
+    "webIntro": {
+      "$comment": "The website's first-visit intro (brand/sections/2-motion.md, On the website; workspace decision 0050). The launch splash's ground and draw are reused as they are (motion.splash: start, dur, gap, gradientFadeIn, markScale, order); then the page opens through the mark's slanted square over openDuration (a motion.duration name) with easing.inOut. No settle, no hold: the website has nothing to wait for. scripts/build.mjs writes --cd-intro-* for cofferdam-pages.",
+      "openDuration": "slow",
+      "shape": "mark-square",
+      "frequency": "session",
+      "scope": "home",
+      "skipOnAnchor": true
     }
   },
   "season": {

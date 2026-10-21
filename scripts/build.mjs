@@ -262,6 +262,26 @@ for (const s of springs) {
   if (s.ms >= 5000) errors.push(`motion.spring.${s.name} never settles within 5 s`);
 }
 const kebab = (s) => s.replace(/[A-Z]/g, (ch) => `-${ch.toLowerCase()}`);
+// The website intro (motion.webIntro) replays the splash's draw, then opens
+// the page over a duration token. The site builds its keyframes from these.
+function introVars() {
+  const intro = effBrand.motion.webIntro;
+  if (!intro) return [];
+  const sp = effBrand.motion.splash;
+  const open = effBrand.motion.duration[intro.openDuration];
+  if (open === undefined) errors.push(`motion.webIntro.openDuration names ${intro.openDuration}, which is not a motion.duration`);
+  const drawEnd = sp.start + sp.order.length * sp.dur + (sp.order.length - 1) * sp.gap;
+  return [
+    `  --cd-intro-start: ${sp.start}ms;`,
+    `  --cd-intro-piece: ${sp.dur}ms;`,
+    `  --cd-intro-gap: ${sp.gap}ms;`,
+    `  --cd-intro-draw-end: ${drawEnd}ms;`,
+    `  --cd-intro-open: ${open}ms;`,
+    `  --cd-intro-total: ${drawEnd + open}ms;`,
+    `  --cd-intro-gradient-fade: ${sp.gradientFadeIn}ms;`,
+    `  --cd-intro-mark-scale: ${sp.markScale};`,
+  ];
+}
 const motionVars = [
   ...Object.entries(effBrand.motion.duration).map(([k, v]) => `  --cd-duration-${k}: ${v}ms;`),
   ...Object.entries(effBrand.motion.easing ?? {})
@@ -277,6 +297,7 @@ const motionVars = [
         `  --cd-scroll-inset-radius: var(--cd-${effBrand.web.scroll.insetRadius});`,
       ]
     : []),
+  ...introVars(),
 ].join('\n');
 // Footage that cannot meet the delivery spec is a brand error, not a site bug.
 if (effBrand.web.video) {

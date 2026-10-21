@@ -60,6 +60,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 
 - **App icon:** the toned mark (ink about 70% of the tile) on the `splash-bg` ground with the `splash-gradient-from` → `splash-gradient-to` sweep (top-left to bottom-right), 22.5% corner, in the iOS/macOS 27 rounded-square glass style: Cerulean in light, navy (#121A33, lifted so the tile separates from a black home screen) in dark, greyscale (`mark-mono-*`) for the tinted icon. `CofferdamMark tile` draws it on the web. The icon in `cofferdam-app` today is still Expo's placeholder — replace it with this.
 - **Splash:** the mark draws itself piece by piece (A stem → A arm → B stem → B arm, one at a time), settles with a small pulse, holds until the app is ready, then fades in. See *Motion*.
+- **Website intro:** the first home-page visit of a session replays the splash's draw and opens the page through the mark's square (about 1.3 s, skippable, never under Reduce Motion). See *Motion*, On the website.
 - The previous coffer-and-seal mark is retired (`assets/logos/legacy/`). Don't use it in new work.
 - **Built on Base:** use the approved Base lockup or Basemark (white on dark, black or blue on light) with the copy "Built on Base." Never type the Base wordmark in our font.
 

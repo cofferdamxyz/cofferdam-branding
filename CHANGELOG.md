@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-21 — the website intro is adopted (brand v8)
+
+- Workspace decision 0050 closes OD-13: cofferdam.xyz opens, on the first home-page visit of a browsing session, with the launch splash's ground and draw, then the page revealed through the mark's slanted rounded square over `slow` with ease-in-out, about 1.3 s, skippable, never on an anchor deep link and never under Reduce Motion. The rule is the Intro row of `brand/sections/2-motion.md` (On the website) and its Reduce Motion row; `brand/proposals/web-intro.md` keeps the rationale and is marked adopted.
+- `tokens/brand.json` → `motion.webIntro` (the reveal shape, frequency, scope and the open duration as a `motion.duration` name; the draw reuses `motion.splash` as it is). The website CSS gains `--cd-intro-start`, `-piece`, `-gap`, `-draw-end`, `-open`, `-total`, `-gradient-fade` and `-mark-scale`, from which cofferdam-pages builds the keyframes; the build fails if the open duration names no duration token.
+- No value changed for the app.
+
 ## 2026-10-21 — footage and website motion rules (brand v7)
 
 - New `brand/sections/5-footage.md`: the website's footage is screen recordings of the app shown in the site's device frame (Home in the hero, Open to work in the Workers scene, the AI chat in the Hirers scene). It sets capture (demo account, clean status bar, 60 fps native), two edit forms (play-once 4 s ending on its poster frame; 15 s loops of three vignettes, changes no longer than `slower`, holds of 2 s or more, the seam inside a hold), encoding (590 × 1278, 30 fps, 1 s GOP, HEVC then H.264, 1 MB a file, a poster per film), how the page plays it, and placeholder slates until the real films exist.

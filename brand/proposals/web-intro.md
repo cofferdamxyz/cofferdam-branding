@@ -1,6 +1,6 @@
 # Proposal: a website intro that replays the launch splash
 
-Status: **proposed, not adopted** (2026-10-21). Open decision OD-13 in the workspace (`docs/open-decisions.md`). Until the founder rules, the website rule in `brand/sections/2-motion.md` stands: the hero fades up, tiles reveal, the phone floats, nothing else moves.
+Status: **adopted** (2026-10-21, workspace decision 0050, closing OD-13): the intro as proposed, the mark's slanted square as the reveal shape, first visit per session. The rule lives in `brand/sections/2-motion.md` (On the website, Intro) and the values in `tokens/brand.json` → `motion.webIntro`; this file is kept as the design rationale.
 
 ## Why
 
