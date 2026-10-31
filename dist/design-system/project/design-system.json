@@ -424,14 +424,14 @@
         },
         "banner-light.png": {
           "name": "banner-light.png",
-          "blob": "561f4dfc5a49bfcbc5a01d9249a9b759",
-          "size": 281768,
+          "blob": "09cd3ac8910309e01b10cf1f0695df95",
+          "size": 280039,
           "type": "image/png"
         },
         "banner-dark.png": {
           "name": "banner-dark.png",
-          "blob": "8fe0274a11b93987e7a38c3daf256504",
-          "size": 477064,
+          "blob": "686725a8badf75573e7eb885abc98331",
+          "size": 449822,
           "type": "image/png"
         }
       }
@@ -444,8 +444,8 @@
   },
   "lastChange": {
     "by": "Ícaro Hoff",
-    "at": "2026-10-18T08:54:54Z",
-    "via": "GitHub · cofferdamxyz/cofferdam-branding@acc114b",
-    "note": "Token usage notes follow the guidelines: accent also marks the current selection; radius-sm is for small badges (chips are pills); radius-xl covers popovers. No value changes."
+    "at": "2026-10-31T18:34:16Z",
+    "via": "GitHub · cofferdamxyz/cofferdam-branding@d0c623e",
+    "note": "The cover and the GitHub banners use the greyscale icon tile in both themes (dark dropped the navy colour tile), outlined in `border`; the README no longer lists the cover among the identity blue's uses. No token value changed."
   }
 }
