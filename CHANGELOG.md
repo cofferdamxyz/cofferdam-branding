@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-31 — the cover and GitHub banners go monochrome
+
+- `components/Cover/preview.html` (the design-system cover, rendered 2x as `github/profile/assets/banner-*.png`) now uses the greyscale icon tile (`tile-mono-*` and `mark-mono-*`) in both themes. Each theme keeps its own stone: Obsidian in dark, Marble in light. Before this, dark used the navy colour tile, which clashed with the monochrome ground.
+- The tile's outline is `border` instead of `chain-tile-edge`, a navy hairline meant for the testnet tile that tinted the grey tile blue.
+- `brand/README.md`: the identity blue no longer lists the cover among its uses.
+- No token value changed, so no consumer needs a sync for this. The new banners reach `cofferdamxyz/.github` through `node scripts/sync.mjs --only=github --write`.
+
 ## 2026-10-21 — the website intro is adopted (brand v8)
 
 - Workspace decision 0050 closes OD-13: cofferdam.xyz opens, on the first home-page visit of a browsing session, with the launch splash's ground and draw, then the page revealed through the mark's slanted rounded square over `slow` with ease-in-out, about 1.3 s, skippable, never on an anchor deep link and never under Reduce Motion. The rule is the Intro row of `brand/sections/2-motion.md` (On the website) and its Reduce Motion row; `brand/proposals/web-intro.md` keeps the rationale and is marked adopted.

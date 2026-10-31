@@ -10,20 +10,15 @@
                    mask-image: linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.7) 45%, #000 75%); }
   [data-theme="light"] .stone { background-image: url('{{asset:assets/textures/marble.webp}}'); opacity: var(--opacity-texture-light); }
   .art { position: absolute; inset: 0; }
-  .g0 { stop-color: var(--splash-gradient-from); }
-  .g1 { stop-color: var(--splash-gradient-to); }
-  .m-a-stem { fill: var(--mark-a-stem); }
-  .m-a-arm { fill: var(--mark-a-arm); }
-  .m-b-stem { fill: var(--mark-b-stem); }
-  .m-b-arm { fill: var(--mark-b-arm); }
-  /* light: the greyscale icon tile (CofferdamMark tile="mono": tile-mono-* + mark-mono-*) */
-  [data-theme="light"] .g0 { stop-color: var(--tile-mono-from); }
-  [data-theme="light"] .g1 { stop-color: var(--tile-mono-to); }
-  [data-theme="light"] .m-a-stem { fill: var(--mark-mono-a-stem); }
-  [data-theme="light"] .m-a-arm { fill: var(--mark-mono-a-arm); }
-  [data-theme="light"] .m-b-stem { fill: var(--mark-mono-b-stem); }
-  [data-theme="light"] .m-b-arm { fill: var(--mark-mono-b-arm); }
-  .edge { fill: none; stroke: var(--chain-tile-edge); stroke-width: 1; }
+  /* the greyscale icon tile in both themes (CofferdamMark tile="mono": tile-mono-* + mark-mono-*),
+     so the cover stays as monochrome as the canvas: charcoal on Obsidian, paper on Marble */
+  .g0 { stop-color: var(--tile-mono-from); }
+  .g1 { stop-color: var(--tile-mono-to); }
+  .m-a-stem { fill: var(--mark-mono-a-stem); }
+  .m-a-arm { fill: var(--mark-mono-a-arm); }
+  .m-b-stem { fill: var(--mark-mono-b-stem); }
+  .m-b-arm { fill: var(--mark-mono-b-arm); }
+  .edge { fill: none; stroke: var(--border); stroke-width: 1; }
   .name { position: absolute; left: 48px; bottom: 76px; max-width: 440px; margin: 0;
           font-family: var(--font-sans); font-weight: 700; font-size: 80px; line-height: .92;
           letter-spacing: -2.4px; color: var(--fg); }
@@ -37,7 +32,7 @@
       blocks:  full-bleed stone ground (opacity-texture-dark / -light, faded under the name) · app-icon tile 200×200
       arrange: the tile sits on the stone like the icon on a wallpaper, beside the name and statement
       pattern: none — one v5 mark (inside its tile; {{mark-polygons}} is filled in by build.mjs from the official geometry), one texture (Obsidian / Marble)
-      rules:   dark: the navy identity tile; light: the greyscale tile (mark-mono-*). No proof elements on a brand moment ("Light mode: brand art and proof stay apart")
+      rules:   the greyscale tile (tile-mono-*, mark-mono-*) in both themes, never the colour tile. No proof elements on a brand moment ("Light mode: brand art and proof stay apart")
       scales:  mark canvas at 94% of the tile (ink ≈ 70%, as in the designer's icon), tile corner 22.5%
     -->
     <defs><linearGradient id="cv-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="g0"/><stop offset="1" class="g1"/></linearGradient></defs>
