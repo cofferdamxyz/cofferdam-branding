@@ -4,6 +4,11 @@
 
 - `scripts/build.mjs`: the seasonal overlay's `merge` helper skips `__proto__`, `constructor` and `prototype`, closing CodeQL alert 2 (js/prototype-pollution-utility). No token value changed, so no consumer needs a sync.
 
+## 2026-11-03 — the Engineering bot's picture
+
+- `assets/github/bot-engineering-{idle,working,happy}.png`: the GitHub App avatar of the Engineering bot (workspace decision 0053, `coworkers/`), 1024 px, circle-safe. It is Coworkers' own bot face, the `robot-heads` 0.3.0 TV head the bots app draws, in the brand's colours: shell `accent` (Cerulean `#3c8aff`), ears and trim `mark-a-stem` (`#b5cff7`), LEDs the package's `#e8f2ff`, on the `splash-gradient-from` → `splash-gradient-to` background of the enterprise avatar. The bots app itself keeps its hub-assigned look (`blue-rectangle`, `#2b49a3`); the picture is for GitHub, where the bot signs issues and comments.
+- `scripts/render-bots/` (`render.sh`, `entry.tsx`, `avatar.html`) renders it: esbuild and `robot-heads` from `../coworkers/node_modules`, a screenshot from the Mac's Chrome. Idle is the GitHub App's logo; working and happy are spares for the bots' pages. No token value changed.
+
 ## 2026-10-31 — the cover and GitHub banners go monochrome
 
 - `components/Cover/preview.html` (the design-system cover, rendered 2x as `github/profile/assets/banner-*.png`) now uses the greyscale icon tile (`tile-mono-*` and `mark-mono-*`) in both themes. Each theme keeps its own stone: Obsidian in dark, Marble in light. Before this, dark used the navy colour tile, which clashed with the monochrome ground.

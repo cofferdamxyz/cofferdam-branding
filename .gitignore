@@ -1,2 +1,5 @@
 node_modules/
 .DS_Store
+
+# render-bots: built on the fly from ../coworkers
+scripts/render-bots/bundle.js
