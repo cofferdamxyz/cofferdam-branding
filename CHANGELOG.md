@@ -7,7 +7,7 @@
 ## 2026-11-03 — the Engineering bot's picture
 
 - `assets/github/bot-engineering-{idle,working,happy}.png`: the GitHub App avatar of the Engineering bot (workspace decision 0053, `coworkers/`), 1024 px, circle-safe. It is Coworkers' own bot face, the `robot-heads` 0.3.0 TV head the bots app draws, in the brand's colours: shell `accent` (Cerulean `#3c8aff`), ears and trim `mark-a-stem` (`#b5cff7`), LEDs the package's `#e8f2ff`, on the `splash-gradient-from` → `splash-gradient-to` background of the enterprise avatar. The bots app itself keeps its hub-assigned look (`blue-rectangle`, `#2b49a3`); the picture is for GitHub, where the bot signs issues and comments.
-- `scripts/render-bots/` (`render.sh`, `entry.tsx`, `avatar.html`) renders it: esbuild and `robot-heads` from `../coworkers/node_modules`, a screenshot from the Mac's Chrome. Idle is the GitHub App's logo; working and happy are spares for the bots' pages. No token value changed.
+- `scripts/render-bots/` (`render.sh`, `entry.tsx`, `avatar.html`) renders it: esbuild and `robot-heads` from `../coworkers/node_modules`, a screenshot from the Mac's Chrome. Idle is the GitHub App's logo, as `bot-engineering-idle-badge.png`: the same picture cut to a circle with transparent corners, because GitHub inscribes a square logo in a circle of the App's "Badge background color", which is set to `splash-gradient-to` (`0b1124`) so the two meet without an edge. Working and happy are spares for the bots' pages. No token value changed.
 
 ## 2026-10-31 — the cover and GitHub banners go monochrome
 
