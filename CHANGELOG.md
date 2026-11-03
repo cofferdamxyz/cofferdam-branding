@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-03 — the Christmas 2026 overlay is switched on
+
+- `themes/seasonal/christmas.json`: `enabled` is `true`, through the `cofferdam-seasonal-theme` skill; the window stays `12-01` to `12-26` and the surfaces `app` and `pages`. The "disabled example" `$comment` is dropped. No colour value changed: whether the overlay's red and blue are the right ones is the founder's brand decision on the pull request.
+- `dist/` is rebuilt; today is outside the window, so it differs only by the build's commit and date stamps (`season: none`). The season turns on from 1 December through the daily `brand-sync` run, which opens a pull request on each consumer.
+- Issue `cofferdamxyz/cofferdam#28`, the first test of the dispatch routine.
+
 ## 2026-10-31 — the cover and GitHub banners go monochrome
 
 - `components/Cover/preview.html` (the design-system cover, rendered 2x as `github/profile/assets/banner-*.png`) now uses the greyscale icon tile (`tile-mono-*` and `mark-mono-*`) in both themes. Each theme keeps its own stone: Obsidian in dark, Marble in light. Before this, dark used the navy colour tile, which clashed with the monochrome ground.

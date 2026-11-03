@@ -1,8 +1,7 @@
 {
-  "$comment": "EXAMPLE overlay, disabled. Shows the shape a seasonal theme takes; the values are a starting point from the locked Base palette, not an approved campaign. Enable it (and adjust) through the cofferdam-seasonal-theme skill.",
   "id": "christmas",
   "name": "Christmas",
-  "enabled": false,
+  "enabled": true,
   "window": { "start": "12-01", "end": "12-26" },
   "surfaces": ["app", "pages"],
   "color": {
