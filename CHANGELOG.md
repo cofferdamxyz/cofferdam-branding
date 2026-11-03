@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-03 — the seasonal merge skips prototype keys
+
+- `scripts/build.mjs`: the seasonal overlay's `merge` helper skips `__proto__`, `constructor` and `prototype`, closing CodeQL alert 2 (js/prototype-pollution-utility). No token value changed, so no consumer needs a sync.
+
 ## 2026-10-31 — the cover and GitHub banners go monochrome
 
 - `components/Cover/preview.html` (the design-system cover, rendered 2x as `github/profile/assets/banner-*.png`) now uses the greyscale icon tile (`tile-mono-*` and `mark-mono-*`) in both themes. Each theme keeps its own stone: Obsidian in dark, Marble in light. Before this, dark used the navy colour tile, which clashed with the monochrome ground.
