@@ -44,13 +44,13 @@ jobs:
             echo "::warning title=brand-sync skipped::Repository secret BRAND_SYNC_TOKEN is not set, so no pull requests were opened on cofferdam-app / cofferdam-pages. Add a fine-grained PAT with Contents + Pull requests read/write on both repos."
             echo "### Sync skipped: \`BRAND_SYNC_TOKEN\` is not set" >> "$GITHUB_STEP_SUMMARY"
           fi
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       - name: Build + validate
         run: node scripts/build.mjs ${{ inputs.season && format('--season={0}', inputs.season) || '' }}
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: brand-dist
           path: |
@@ -67,19 +67,19 @@ jobs:
       matrix:
         consumer: [cofferdam-app, cofferdam-pages]
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           path: branding
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: brand-dist
           path: branding
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           repository: cofferdamxyz/${{ matrix.consumer }}
           token: ${{ secrets.BRAND_SYNC_TOKEN }}
           path: ${{ matrix.consumer }}
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       - name: Copy generated files
@@ -94,7 +94,7 @@ jobs:
           echo "season=$(node -p "require('./dist/brand.resolved.json').season || 'none'")" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
       - name: Open / update pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           path: ${{ matrix.consumer }}
           token: ${{ secrets.BRAND_SYNC_TOKEN }}
