@@ -90,7 +90,7 @@ if (season) {
   }
   const merge = (a, b) => {
     for (const [k, v] of Object.entries(b ?? {})) {
-      if (k.startsWith('$')) continue;
+      if (k.startsWith('$') || k === '__proto__' || k === 'constructor' || k === 'prototype') continue;
       a[k] = v && typeof v === 'object' && !Array.isArray(v) ? merge(a[k] ?? {}, v) : v;
     }
     return a;
