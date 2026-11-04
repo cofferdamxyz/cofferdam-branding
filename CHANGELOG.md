@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-04 — the Security bot's picture
+
+- `assets/github/bot-security-{idle,searching,happy}.png` and `bot-security-idle-transparent.png`: the GitHub App avatar of the Security bot (`Cofferdam Security Bot`, coworkers `DEPLOYMENT.md` step 10.1), 1024 px, circle-safe. The same `robot-heads` 0.3.0 head as the Engineering bot in the hexagon shape, a shield, so the two tell apart at GitHub's 20 px: shell the dark `mark-mono-a-stem` (`#c4c4ca`, steel), ears and antenna collar `accent` (Cerulean `#3c8aff`), LEDs the package's `#e8f2ff`, on the `splash-gradient-from` → `splash-gradient-to` background. The idle-transparent one is the App's logo, badge colour `splash-gradient-to` (`0b1124`); searching and happy are spares.
+- `scripts/render-bots/render.sh` takes the bot first (`engineering` default, `security`) with each bot's shape and colours, and renders `idle-transparent` itself (`avatar-transparent.html`, transparent background); `entry.tsx` reads the shape and colours from the page's query, defaulting to the Engineering bot's. Re-rendering the Engineering bot's idle picture gives identical pixels. No token value changed.
+
 ## 2026-11-03 — the seasonal merge skips prototype keys
 
 - `scripts/build.mjs`: the seasonal overlay's `merge` helper skips `__proto__`, `constructor` and `prototype`, closing CodeQL alert 2 (js/prototype-pollution-utility). No token value changed, so no consumer needs a sync.
