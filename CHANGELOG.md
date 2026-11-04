@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-04 — the Ops bot's picture
+
+- `assets/github/bot-ops-{idle,working,happy}.png` and `bot-ops-idle-transparent.png`: the GitHub App avatar of the Ops bot (`Cofferdam Ops Bot`, coworkers `DEPLOYMENT.md` step 11.1), 1024 px, circle-safe. The same `robot-heads` 0.3.0 head in the square shape, a ledger box, so the three bots tell apart at GitHub's 20 px by outline before colour: shell `base-tan` (`#b8a581`, the locked Base Tan, paper and receipts rather than the warning yellow), ears and antenna collar `accent` (Cerulean `#3c8aff`), LEDs the package's `#e8f2ff`, on the `splash-gradient-from` → `splash-gradient-to` background. The idle-transparent one is the App's logo, badge colour `splash-gradient-to` (`0b1124`); working and happy are spares.
+- `scripts/render-bots/render.sh` takes `ops`. No token value changed.
+
 ## 2026-11-04 — the bots fork is a consumer
 
 - `scripts/sync.mjs` gains the `coworkers` consumer (`--coworkers=<path>`, default `../coworkers`): `dist/pages/brand.generated.css` to `src/cofferdam/brand/brand.generated.css` and the two Geist woff2 files to `src/cofferdam/brand/fonts/`, the copies the fork has carried since its brand layer (coworkers `ddfb79f`). Local only (`--only=coworkers --write`); the `brand-sync` workflow still opens pull requests on the app and the website alone.
