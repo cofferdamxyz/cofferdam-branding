@@ -2,11 +2,12 @@
 /**
  * Copy the generated brand files into the consumer repositories.
  *
- *   node scripts/sync.mjs                                  # dry run against ../cofferdam-app and ../cofferdam-pages
+ *   node scripts/sync.mjs                                  # dry run against ../cofferdam-app, ../cofferdam-pages and the others below
  *   node scripts/sync.mjs --write                          # actually copy
  *   node scripts/sync.mjs --app=/path/app --pages=/path/pages --write
  *   node scripts/sync.mjs --only=pages --write
  *   node scripts/sync.mjs --only=github --write             # the org profile, into a local clone of cofferdamxyz/.github
+ *   node scripts/sync.mjs --only=coworkers --write          # the bots fork (../coworkers); local only, the brand-sync workflow does not open its PRs
  *
  * Run `node scripts/build.mjs` first. Only the files in TARGETS are ever written,
  * and only when their bytes differ; nothing is deleted. Exit code 0 = in sync after
@@ -22,6 +23,8 @@ const args = Object.fromEntries(process.argv.slice(2).map((a) => { const [k, v] 
 const repos = {
   app: path.resolve(ROOT, args.app ?? '../cofferdam-app'),
   pages: path.resolve(ROOT, args.pages ?? '../cofferdam-pages'),
+  // The company's bots, a fork of fayazara/coworkers (src/cofferdam/brand/theme.css maps the --cd-* tokens).
+  coworkers: path.resolve(ROOT, args.coworkers ?? '../coworkers'),
   // cofferdamxyz/.github, cloned under another folder name so it doesn't clash with a parent repo's .github/.
   github: path.resolve(ROOT, args.github ?? '../github-profile'),
 };
@@ -46,6 +49,8 @@ const TARGETS = [
   ...LOGOS.map((f) => ['pages', `assets/logos/v5/${f}`, `public/brand/${f}`]),
   ...LOCKUPS.map((f) => ['app', `assets/logos/lockups/${f}`, `assets/brand/${f}`]),
   ...LOCKUPS.map((f) => ['pages', `assets/logos/lockups/${f}`, `public/brand/${f}`]),
+  ['coworkers', 'dist/pages/brand.generated.css', 'src/cofferdam/brand/brand.generated.css'],
+  ...fonts.map((f) => ['coworkers', `fonts/${f}`, `src/cofferdam/brand/fonts/${f}`]),
   ['github', 'github/profile/README.md', 'profile/README.md'],
   ...profileAssets.map((f) => ['github', `github/profile/assets/${f}`, `profile/assets/${f}`]),
 ];

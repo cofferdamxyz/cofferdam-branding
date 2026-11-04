@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-04 — the bots fork is a consumer
+
+- `scripts/sync.mjs` gains the `coworkers` consumer (`--coworkers=<path>`, default `../coworkers`): `dist/pages/brand.generated.css` to `src/cofferdam/brand/brand.generated.css` and the two Geist woff2 files to `src/cofferdam/brand/fonts/`, the copies the fork has carried since its brand layer (coworkers `ddfb79f`). Local only (`--only=coworkers --write`); the `brand-sync` workflow still opens pull requests on the app and the website alone.
+- `cofferdam-brand-sync` lists the fork in its generated-files table and says how its sheet is wired. No token value changed.
+
 ## 2026-11-04 — the Security bot's picture
 
 - `assets/github/bot-security-{idle,searching,happy}.png` and `bot-security-idle-transparent.png`: the GitHub App avatar of the Security bot (`Cofferdam Security Bot`, coworkers `DEPLOYMENT.md` step 10.1), 1024 px, circle-safe. The same `robot-heads` 0.3.0 head as the Engineering bot in the hexagon shape, a shield, so the two tell apart at GitHub's 20 px: shell the dark `mark-mono-a-stem` (`#c4c4ca`, steel), ears and antenna collar `accent` (Cerulean `#3c8aff`), LEDs the package's `#e8f2ff`, on the `splash-gradient-from` → `splash-gradient-to` background. The idle-transparent one is the App's logo, badge colour `splash-gradient-to` (`0b1124`); searching and happy are spares.

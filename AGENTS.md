@@ -1,6 +1,6 @@
 # AGENTS.md — cofferdam-branding
 
-This repository is the Cofferdam brand. Other repos (cofferdam-app, cofferdam-pages) consume its generated output; never edit brand values there.
+This repository is the Cofferdam brand. Other repos (cofferdam-app, cofferdam-pages, the coworkers fork) consume its generated output; never edit brand values there.
 
 ## Skills (`.claude/skills/`)
 
@@ -9,7 +9,7 @@ This repository is the Cofferdam brand. Other repos (cofferdam-app, cofferdam-pa
 | `cofferdam-design` | Design anything for Cofferdam (screens, site sections, decks, posts) |
 | `cofferdam-brand-update` | Change a token, asset, font or guideline and ship it |
 | `cofferdam-seasonal-theme` | Add / schedule / retire a dated seasonal look |
-| `cofferdam-brand-sync` | Pull brand changes into cofferdam-app or cofferdam-pages |
+| `cofferdam-brand-sync` | Pull brand changes into cofferdam-app, cofferdam-pages or coworkers |
 
 Agents without skill support: read the matching `SKILL.md` directly.
 
