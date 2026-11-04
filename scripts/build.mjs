@@ -351,7 +351,7 @@ write('dist/brand.resolved.json', JSON.stringify(resolved, null, 2) + '\n');
 // 5b. React Native module — keys match cofferdam-app/src/lib/theme.ts exactly.
 const APP_KEYS = ['bg', 'surface', 'surface-2', 'card', 'card-border', 'border', 'border-control', 'divider', 'fg', 'fg-muted', 'fg-muted-2', 'fg-dim', 'accent', 'accent-dim', 'accent-border', 'identity', 'danger', 'danger-dim', 'danger-border', 'warning', 'success', 'info', 'base-blue', 'overlay', 'scrim', 'glass-scrim', 'chain-tile', 'chain-tile-testnet', 'chain-tile-edge', 'chain-mark'];
 const appPalette = (theme) =>
-  '{\n' + APP_KEYS.map((k) => `  ${camel(k).replace('surface2', 'surface2')}: '${colors[theme][k].startsWith('#') ? colors[theme][k].toUpperCase() : colors[theme][k]}',`).join('\n') + '\n}';
+  '{\n' + APP_KEYS.map((k) => `  ${camel(k)}: '${colors[theme][k].startsWith('#') ? colors[theme][k].toUpperCase() : colors[theme][k]}',`).join('\n') + '\n}';
 const rnShadow = (s) => {
   const m = /^(-?[\d.]+)(?:px)?\s+(-?[\d.]+)(?:px)?\s+([\d.]+)(?:px)?\s+(rgba?\([^)]*\)|#[0-9a-f]+)$/i.exec(s.trim());
   if (!m) return null;
