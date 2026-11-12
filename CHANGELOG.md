@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-11 — the X profile header and picture
+
+- New `assets/social/x-header.png` (1500×500): the brand statement in Geist 700, set right on the Obsidian stone, `cofferdam.xyz` beneath in Geist Mono. It keeps to the band phones show and clear of the lower left, where X lays the profile picture; no mark or name, which the picture and X's own name line carry. Dark only. Picked by the founder from three previews (statement right, centred line, Marble).
+- New `assets/social/x-avatar.png` (400×400): the colour icon tile, the GitHub enterprise avatar's art at X's size.
+- Template `social/x-header.html`, renderer `scripts/render-social.py` (Playwright, the GitHub renderer's pattern), and the asset group `brand/asset-groups/Social.md`, which the build copies into the Design System.
+- No token value changed; no consumer needs a sync.
+
 ## 2026-11-04 — the Ops bot's picture
 
 - `assets/github/bot-ops-{idle,working,happy}.png` and `bot-ops-idle-transparent.png`: the GitHub App avatar of the Ops bot (`Cofferdam Ops Bot`, coworkers `DEPLOYMENT.md` step 11.1), 1024 px, circle-safe. The same `robot-heads` 0.3.0 head in the square shape, a ledger box, so the three bots tell apart at GitHub's 20 px by outline before colour: shell `base-tan` (`#b8a581`, the locked Base Tan, paper and receipts rather than the warning yellow), ears and antenna collar `accent` (Cerulean `#3c8aff`), LEDs the package's `#e8f2ff`, on the `splash-gradient-from` → `splash-gradient-to` background. The idle-transparent one is the App's logo, badge colour `splash-gradient-to` (`0b1124`); working and happy are spares.

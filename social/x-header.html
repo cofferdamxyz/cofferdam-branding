@@ -1,0 +1,31 @@
+<!--
+  The X (Twitter) profile header, 1500x500. Rendered by scripts/render-social.py with the brand
+  tokens (dist/tokens.css) and fonts; {{asset:…}} placeholders become file URLs at render time.
+
+  blocks:  Obsidian stone ground, faded toward the left · the brand statement · the address
+  arrange: the statement set right and centred in the band phones keep (X trims about 70px top and
+           bottom), so the avatar, which X lays over the lower left, sits on the calmest stone
+  rules:   no mark and no name here: the avatar carries the mark and X prints the name under the
+           header. Dark only: X shows one header in both its themes. No proof elements, no accent.
+  type:    Geist 700 at -0.03em (the display tracking), Geist Mono for the address
+-->
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .hdr { position: relative; width: 1500px; height: 500px; overflow: hidden;
+         background: var(--bg); color: var(--fg); font-family: var(--font-sans); }
+  .stone { position: absolute; inset: 0; background: url('{{asset:assets/textures/obsidian.webp}}') center / cover;
+           opacity: var(--opacity-texture-dark);
+           -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.6) 40%, #000 80%);
+                   mask-image: linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.6) 40%, #000 80%); }
+  .text { position: absolute; right: 120px; top: 50%; transform: translateY(-50%); text-align: right; }
+  .statement { margin: 0; font-size: 104px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
+  .address { margin: 28px 0 0; font-family: var(--font-mono); font-size: 22px; letter-spacing: 0.02em;
+             color: var(--fg-muted); }
+</style>
+<div class="hdr">
+  <div class="stone"></div>
+  <div class="text">
+    <p class="statement">Work that<br>proves itself.</p>
+    <p class="address">cofferdam.xyz</p>
+  </div>
+</div>

@@ -7,7 +7,7 @@ tokens/tokens.json        colours (dark + light), type, spacing, radii, shadows,
 tokens/brand.json         accent options, wallpapers, motion, defaults, website accent/texture
 themes/seasonal/*.json    dated overlays (Christmas example included, disabled)
 brand/                    the brand book (README.md + sections/)
-assets/                   logos (v5 + legacy), wallpapers, website textures, partner marks (Base, Self)
+assets/                   logos (v5 + legacy), wallpapers, website textures, partner marks (Base, Self), social profile art
 motion/splash/            the launch splash (Expo + Reanimated) and its preview renders
 fonts/                    Geist + Geist Mono
 components/               web reference renditions of the app's UI kit (for the design-system artifact)
@@ -16,6 +16,7 @@ scripts/sync.mjs          copy dist/ into the consumer repos
 scripts/make-logos.py     black + mono marks and the lockups, from tokens + Geist
 scripts/render-previews.py icon previews, splash videos and keyframes in current tones
 scripts/render-github.py  GitHub avatars and the org-profile banners
+scripts/render-social.py  the X profile header and picture (assets/social/), from social/x-header.html
 github/profile/          the cofferdamxyz organisation profile README (synced to the .github repo)
 dist/                     generated — committed so consumers can diff it
 .claude/skills/           cofferdam-design · cofferdam-brand-update · cofferdam-seasonal-theme · cofferdam-brand-sync
@@ -47,6 +48,7 @@ node scripts/sync.mjs                       # dry run against ../cofferdam-app a
 node scripts/sync.mjs --write               # copy generated files into them
 python3 scripts/make-logos.py               # after a mark-* / mark-mono-* change (needs fontTools + brotli)
 python3 scripts/render-previews.py          # after a mark or splash change (needs Playwright + ffmpeg)
+python3 scripts/render-social.py            # the X header and picture, after a texture, type or icon-tile change (needs Playwright)
 ```
 
 Node 20+, no dependencies.
