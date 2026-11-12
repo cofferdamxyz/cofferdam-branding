@@ -25,6 +25,7 @@
   "groups": [
     "Logos",
     "GitHub",
+    "Social",
     "Motion",
     "Wallpapers",
     "Textures",
@@ -435,6 +436,28 @@
           "type": "image/png"
         }
       }
+    },
+    "Social": {
+      "name": "Social",
+      "tile": "l",
+      "order": [
+        "x-header.png",
+        "x-avatar.png"
+      ],
+      "files": {
+        "x-header.png": {
+          "name": "x-header.png",
+          "blob": "82c3652a295946102af08e379fce02aa",
+          "size": 299304,
+          "type": "image/png"
+        },
+        "x-avatar.png": {
+          "name": "x-avatar.png",
+          "blob": "b4d507d8b671dcdca9f1ece673c85801",
+          "size": 39441,
+          "type": "image/png"
+        }
+      }
     }
   },
   "blobs": {},
@@ -444,8 +467,8 @@
   },
   "lastChange": {
     "by": "Ícaro Hoff",
-    "at": "2026-10-31T18:34:16Z",
-    "via": "GitHub · cofferdamxyz/cofferdam-branding@d0c623e",
-    "note": "The cover and the GitHub banners use the greyscale icon tile in both themes (dark dropped the navy colour tile), outlined in `border`; the README no longer lists the cover among the identity blue's uses. No token value changed."
+    "at": "2026-11-12T00:36:50Z",
+    "via": "GitHub · cofferdamxyz/cofferdam-branding@0f0fd79",
+    "note": "New Social asset group: the X profile header (1500×500, the statement set right on Obsidian, dark only) and picture (400×400, the colour icon tile), rendered by scripts/render-social.py. No token value changed."
   }
 }
