@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-19 — Geist Serif, for a credential's name beside the mark
+
+- New `fonts/GeistSerif-Regular.woff2`, Vercel's file from the `geist` package 1.9.2 (OFL 1.1), byte for byte; `type.fonts` lists it and `type.families.serif` is `"Geist Serif", ui-serif, Georgia, serif`. Tokens v7.
+- The app's generated `fonts` gains `serif: 'Geist Serif'`; the web sheet gains `--cd-font-serif` and `--font-serif`.
+- Use: the Cofferdam Passport card sets "Passport" in Geist Serif beside the mark (the founder, 2026-11-19). Regular only; never body text, headings or the wordmark (`brand/README.md`).
+- Consumers: cofferdam-app embeds the TTF decompressed from this file through `expo-font` (a native change: prebuild and rebuild).
+
 ## 2026-11-11 — the X profile header and picture
 
 - New `assets/social/x-header.png` (1500×500): the brand statement in Geist 700, set right on the Obsidian stone, `cofferdam.xyz` beneath in Geist Mono. It keeps to the band phones show and clear of the lower left, where X lays the profile picture; no mark or name, which the picture and X's own name line carry. Dark only. Picked by the founder from three previews (statement right, centred line, Marble).

@@ -392,10 +392,11 @@ export const radii = {
 ${tokens.radius.tokens.filter((t) => t.name !== 'radius-web').map((t) => `  ${camel(t.name.replace('radius-', ''))}: ${px(t.value)},`).join('\n')}
 } as const;
 
-/** Geist is registered by expo-font under these family names (see fonts/README.md). */
+/** Geist is registered by expo-font under these family names (see fonts/README.md). Serif is Regular (400) only: names beside the mark (Passport). */
 export const fonts = {
   sans: '${familyName('sans')}',
   mono: Platform.select({ ios: '${familyName('mono')}', default: '${familyName('mono')}' }) as string,
+  serif: '${familyName('serif')}',
 } as const;
 
 export const type = {
@@ -502,6 +503,7 @@ ${brandFor('light')}
 ${textureFor('light')}
   --cd-font-sans: ${tokens.type.families.sans};
   --cd-font-mono: ${tokens.type.families.mono};
+  --cd-font-serif: ${tokens.type.families.serif};
 ${typeVars}
 ${headlineVars}
 ${tokens.spacing.tokens.map((t) => `  --cd-${t.name}: ${t.value};`).join('\n')}
@@ -541,6 +543,7 @@ ${themeBlock('light', '[data-theme="light"]')}
 ${[...tokens.spacing.tokens, ...tokens.radius.tokens, ...tokens.opacity.tokens].map((t) => `  --${t.name}: ${t.value};`).join('\n')}
   --font-sans: ${tokens.type.families.sans};
   --font-mono: ${tokens.type.families.mono};
+  --font-serif: ${tokens.type.families.serif};
 }
 ${typeClasses}
 ${tokens.type.fonts.map((f) => `@font-face { font-family: "${f.family}"; src: url("${f.file}") format("woff2"); font-weight: ${f.weight}; font-style: ${f.style ?? 'normal'}; font-display: swap; }`).join('\n')}

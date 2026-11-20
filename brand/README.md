@@ -25,7 +25,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 
 ## Typography
 
-- Set everything in **Geist** (`sans`); IDs, reference numbers and code in **Geist Mono** (`mono`). On the website enable Geist's `ss01`, `cv01`, `cv11` stylistic sets on `body`.
+- Set everything in **Geist** (`sans`); IDs, reference numbers and code in **Geist Mono** (`mono`). **Geist Serif** (`serif`, Regular only) sets one thing: a credential's name beside the mark, as in the Cofferdam Passport card (the mark, then "Passport"); never body text, headings or the wordmark. On the website enable Geist's `ss01`, `cv01`, `cv11` stylistic sets on `body`.
 - Use the scale as roles: `display` for the balance hero, `title` for onboarding and page headlines, `h1`/`h2` for section and card heads, `body` for copy, `body-muted` for secondary copy, `label` for buttons and chips, `caption` for metadata, `eyebrow` (uppercase, 0.2em tracking) for website section labels.
 - Build hierarchy with size and weight, never colour. Money always uses tabular figures; shorten long IDs in the middle, keeping the start and end (`CD-4821…09`).
 - Website headlines may scale fluidly above `title`, and only through `--cd-headline-display-*` and `--cd-headline-title-*` (`tokens/brand.json` → `web.headlines`); they keep the role's weight and the negative tracking of `display`. Every other website text style reads its role from `--cd-text-<role>-*`; no component sets its own size.
@@ -100,5 +100,5 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 ## Not synced
 
 - Components are **hand-written web renditions** of the React Native kit in cofferdam-app (`src/components/ui/`): Button, StatusChip, Avatar, ChainLogo, BottomChip, GlassSurface, plus CofferdamMark (v5) and a web replay of the launch Splash. Not carried over: Icon (use Lucide directly), Numpad, TxSpinner, AppBackground, SelfLogo, NativeMenu (the platform's own menu: SwiftUI on iOS, Compose on Android), and the site's shadcn Button.
-- Fonts here are the Latin-subset woff2 files the website ships; native platforms cannot load woff2, so cofferdam-app embeds the Google Fonts static TTFs (400–700) from `@expo-google-fonts/geist` and `@expo-google-fonts/geist-mono` through the `expo-font` plugin, under the family names `Geist` and `Geist Mono` the generated `type` styles reference. Full-charset files are pending.
+- Fonts here are the Latin-subset woff2 files the website ships; native platforms cannot load woff2, so cofferdam-app embeds the Google Fonts static TTFs (400–700) from `@expo-google-fonts/geist` and `@expo-google-fonts/geist-mono` through the `expo-font` plugin, under the family names `Geist` and `Geist Mono` the generated `type` styles reference. Geist Serif is not on Google Fonts: its Regular comes from Vercel's `geist` package (1.9.2, OFL 1.1) as woff2, and cofferdam-app embeds the TTF decompressed from that same file, family `Geist Serif`. Full-charset files are pending.
 - The Base Brand Guidelines PDF stays in cofferdam-app.

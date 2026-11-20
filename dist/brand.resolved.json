@@ -1,9 +1,9 @@
 {
   "brandVersion": 8,
-  "tokensVersion": 6,
-  "commit": "0f0fd79",
+  "tokensVersion": 7,
+  "commit": "7241c31",
   "season": null,
-  "builtFor": "11-12",
+  "builtFor": "11-20",
   "colors": {
     "dark": {
       "bg": "#000000",
@@ -127,11 +127,18 @@
         "file": "fonts/GeistMono-Variable-latin.woff2",
         "weight": "100 900",
         "style": "normal"
+      },
+      {
+        "family": "Geist Serif",
+        "file": "fonts/GeistSerif-Regular.woff2",
+        "weight": "400",
+        "style": "normal"
       }
     ],
     "families": {
       "sans": "\"Geist\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
-      "mono": "\"Geist Mono\", ui-monospace, SFMono-Regular, Menlo, monospace"
+      "mono": "\"Geist Mono\", ui-monospace, SFMono-Regular, Menlo, monospace",
+      "serif": "\"Geist Serif\", ui-serif, Georgia, serif"
     },
     "groups": [
       {
