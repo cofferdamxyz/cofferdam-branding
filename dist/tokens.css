@@ -138,6 +138,7 @@
   --opacity-texture-light: 0.4;
   --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: "Geist Serif", ui-serif, Georgia, serif;
 }
 .display { font-family: var(--font-sans); font-size: 40px; line-height: 44px; font-weight: 700; letter-spacing: -1.2px; }
 .title { font-family: var(--font-sans); font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.4px; }
@@ -150,3 +151,4 @@
 .eyebrow { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 400; letter-spacing: 0.2em; }
 @font-face { font-family: "Geist"; src: url("fonts/Geist-Variable-latin.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
 @font-face { font-family: "Geist Mono"; src: url("fonts/GeistMono-Variable-latin.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist Serif"; src: url("fonts/GeistSerif-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
