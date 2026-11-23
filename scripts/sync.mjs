@@ -49,6 +49,9 @@ const TARGETS = [
   ...LOGOS.map((f) => ['pages', `assets/logos/v5/${f}`, `public/brand/${f}`]),
   ...LOCKUPS.map((f) => ['app', `assets/logos/lockups/${f}`, `assets/brand/${f}`]),
   ...LOCKUPS.map((f) => ['pages', `assets/logos/lockups/${f}`, `public/brand/${f}`]),
+  // The website sets one accent in Geist Serif (brand/README.md, Typography), which Google Fonts
+  // does not serve: it loads the brand's file, with the licence beside it as OFL 1.1 asks.
+  ...['GeistSerif-Regular.woff2', 'GeistSerif-OFL.txt'].map((f) => ['pages', `fonts/${f}`, `public/fonts/${f}`]),
   ['coworkers', 'dist/pages/brand.generated.css', 'src/cofferdam/brand/brand.generated.css'],
   ...fonts.map((f) => ['coworkers', `fonts/${f}`, `src/cofferdam/brand/fonts/${f}`]),
   ['github', 'github/profile/README.md', 'profile/README.md'],

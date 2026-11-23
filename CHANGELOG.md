@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-23 — Geist Serif gets one accent on the website
+
+- `brand/README.md`: Geist Serif now sets two things, the credential's name beside the mark and one word of the landing page's headline ("Work that *proves* itself."), after bleap.finance's two-face headlines (the founder, 2026-11-23). One accent on the whole site, Regular and upright; the 2026-11-19 rule kept it off the website altogether.
+- `scripts/sync.mjs`: the pages target copies `fonts/GeistSerif-Regular.woff2` and `GeistSerif-OFL.txt` into `cofferdam-pages/public/fonts/`, since Google Fonts does not serve the face. No token changed.
+
 ## 2026-11-23 — two website type roles, and where captions stop
 
 - New type styles in `tokens/tokens.json` (tokens v8): `lead`, 18/28 at 500, for the one paragraph under a page headline on the website from tablet width up; `label-sm`, 14/20 at 600, for the website's nav (its links, menus and button). Both sizes were already on the landing page as one-offs outside the scale; a type critique of the page found them and the founder said to settle them in the brand. `lead` was drawn at a 1.63 line height and is now 28px.
