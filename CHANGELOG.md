@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-23 — the website's serif accent is italic, in two headlines
+
+- `brand/README.md`: the accent word is set in italic and appears twice, in the landing headline and in the closing headline that repeats the statement (the founder, 2026-11-23, replacing the same day's "one accent, upright"). Geist Serif has no italic: `geist` 1.9.2 ships Regular, three shape variants and a variable font whose only axis is `ELSH`, so the slant is the browser's synthesis. No token or file changed.
+
 ## 2026-11-23 — Geist Serif gets one accent on the website
 
 - `brand/README.md`: Geist Serif now sets two things, the credential's name beside the mark and one word of the landing page's headline ("Work that *proves* itself."), after bleap.finance's two-face headlines (the founder, 2026-11-23). One accent on the whole site, Regular and upright; the 2026-11-19 rule kept it off the website altogether.
