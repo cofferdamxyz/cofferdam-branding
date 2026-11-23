@@ -467,8 +467,8 @@
   },
   "lastChange": {
     "by": "Ícaro Hoff",
-    "at": "2026-11-12T00:36:50Z",
-    "via": "GitHub · cofferdamxyz/cofferdam-branding@0f0fd79",
-    "note": "New Social asset group: the X profile header (1500×500, the statement set right on Obsidian, dark only) and picture (400×400, the colour icon tile), rendered by scripts/render-social.py. No token value changed."
+    "at": "2026-11-23T23:19:03Z",
+    "via": "GitHub · cofferdamxyz/cofferdam-branding@2493edc",
+    "note": "Tokens v8: two website type roles, lead (18/28 at 500) and label-sm (14/20 at 600); captions are for metadata, never a selling point. Also brings v7's Geist Serif (the font file and its rule), which had not been published here. No colour changed."
   }
 }
