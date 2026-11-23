@@ -1,0 +1,46 @@
+{
+  "cloudflare": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/cloudflare.svg",
+    "file": "cloudflare.svg",
+    "bytes": 1473
+  },
+  "workers": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/cloudflare-workers.svg",
+    "file": "workers.svg",
+    "bytes": 3448
+  },
+  "planetscale": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/planetscale.svg",
+    "file": "planetscale.svg",
+    "bytes": 252,
+    "dark_file": "planetscale_dark.svg",
+    "dark_url": "https://svgl.app/library/planetscale_dark.svg"
+  },
+  "postgres": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/postgresql.svg",
+    "file": "postgres.svg",
+    "bytes": 3944
+  },
+  "bell": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/bell.svg",
+    "file": "bell.svg",
+    "bytes": 465
+  },
+  "caddy": {
+    "source": "explicit",
+    "url": "https://caddyserver.com/resources/images/favicon.png",
+    "file": "caddy.png",
+    "bytes": 7228
+  },
+  "xmtp": {
+    "source": "explicit",
+    "url": "https://raw.githubusercontent.com/xmtp/brand/main/assets/logomark.svg",
+    "file": "xmtp.svg",
+    "bytes": 1745
+  }
+}

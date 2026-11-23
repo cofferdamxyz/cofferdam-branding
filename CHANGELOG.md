@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-23 — the first X Article: private messaging on Cloudflare
+
+- New `social/articles/xmtp-on-cloudflare/`: `article.md` (the draft, with each image's alt text), the cover `00-cover.png` (3000×1200, 5:2) and five diagrams at 3200×2400, 4:3 so a phone gives them room. Dark only and greyscale: the only colour is in the logos, and a heavy white line marks bytes carried without being read.
+- `render.py` and `stack.py` draw the cover and diagrams from `dist/tokens.css` and the brand fonts, with the installed Chrome through Playwright. Diagrams 1 and 2 put logos on white tiles; Cofferdam's tile is `assets/github/avatar-cofferdamdev-light.svg`. The third-party logos are in `icons/`, copied verbatim, with their sources in `icons/manifest.json`.
+- `publish.py` (standard library only) writes `paste.html`, a page to copy from for X's editor: the title, the body as rich text with a marker where each diagram and code sample goes, each sample's code for the editor's Insert, Code, the alt texts, and `launch-post.md`'s post. It refuses a code line over 60 columns.
+- House rule for public engineering posts (the founder, 2026-11-22): the pattern, never our deployment. No costs, sizes, regions, hostnames, internal names, dates, incidents or status.
+- Not posted. Posting is the founder's, by hand, from the company account.
+
 ## 2026-11-19 — Geist Serif, for a credential's name beside the mark
 
 - New `fonts/GeistSerif-Regular.woff2`, Vercel's file from the `geist` package 1.9.2 (OFL 1.1), byte for byte; `type.fonts` lists it and `type.families.serif` is `"Geist Serif", ui-serif, Georgia, serif`. Tokens v7.
