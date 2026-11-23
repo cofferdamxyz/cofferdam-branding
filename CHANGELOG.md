@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-23 — two website type roles, and where captions stop
+
+- New type styles in `tokens/tokens.json` (tokens v8): `lead`, 18/28 at 500, for the one paragraph under a page headline on the website from tablet width up; `label-sm`, 14/20 at 600, for the website's nav (its links, menus and button). Both sizes were already on the landing page as one-offs outside the scale; a type critique of the page found them and the founder said to settle them in the brand. `lead` was drawn at a 1.63 line height and is now 28px.
+- `brand/README.md`: `caption` is for metadata, never for a selling point; on phones a card or step title under a section title takes `h2` so the section title leads.
+- The app's generated `type` gains the two keys and uses neither. The web sheet gains `--cd-text-lead-*` and `--cd-text-label-sm-*`.
+
 ## 2026-11-23 — the first X Article: private messaging on Cloudflare
 
 - New `social/articles/xmtp-on-cloudflare/`: `article.md` (the draft, with each image's alt text), the cover `00-cover.png` (3000×1200, 5:2) and five diagrams at 3200×2400, 4:3 so a phone gives them room. Dark only and greyscale: the only colour is in the logos, and a heavy white line marks bytes carried without being read.

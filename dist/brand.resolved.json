@@ -1,9 +1,9 @@
 {
   "brandVersion": 8,
-  "tokensVersion": 7,
-  "commit": "7241c31",
+  "tokensVersion": 8,
+  "commit": "1a8fdf3",
   "season": null,
-  "builtFor": "11-20",
+  "builtFor": "11-23",
   "colors": {
     "dark": {
       "bg": "#000000",
@@ -202,12 +202,28 @@
             "usage": "Paragraph copy in `fg`."
           },
           {
+            "name": "lead",
+            "fontSize": "18px",
+            "lineHeight": "28px",
+            "fontWeight": 500,
+            "sample": "The money is set aside before you start.",
+            "usage": "Website only: the one paragraph under a page headline (the hero, the manifesto), from tablet width up; phones set it in `body`. Never in the app."
+          },
+          {
             "name": "body-muted",
             "fontSize": "15px",
             "lineHeight": "22px",
             "fontWeight": 500,
             "sample": "Verify with your passport — it's optional, but it unlocks more.",
             "usage": "Secondary copy in `fg-muted`."
+          },
+          {
+            "name": "label-sm",
+            "fontSize": "14px",
+            "lineHeight": "20px",
+            "fontWeight": 600,
+            "sample": "How it works",
+            "usage": "Website nav only: the pill's links, its menus and the nav's button. Every other button and chip takes `label`."
           },
           {
             "name": "label",
