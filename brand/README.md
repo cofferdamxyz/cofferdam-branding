@@ -87,7 +87,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 
 - Write like a knowledgeable friend, not a bank: brief, active, direct, optimistic but real. Two short sentences beat one long one.
 - Say "use", not "utilize"; "Sending your payment.", not "Your transaction is being processed."
-- **Zero crypto jargon, on every surface** — app, website, store listings, notifications, support replies. No "crypto", "blockchain", "web3", "wallet", "token", "on-chain", "gas", "stablecoin", "seed phrase", "address" (for an account), "deploy". Say "your account", "payment", "the money is locked before you accept", "signed off". The only exception is the partner credit "Built on Base." and Base's own logo.
+- **Zero crypto jargon, on every surface** — app, website, store listings, notifications, support replies. No "crypto", "blockchain", "web3", "wallet", "token", "on-chain", "gas", "stablecoin", "seed phrase", "address" (for an account), "deploy". Say "your account", "payment", "the money is locked before you accept", "signed off". Two exceptions: the partner credit "Built on Base." with Base's own logo, and the developer docs and the engineering blog, which are technical writing for developers and their coding agents and use the technical words (the founder, 2026-11-23). Everything a worker, a hirer or a company reads stays under the rule.
 - Never call Cofferdam a bank, never imply a return, never say "deposit", "savings account", "APY" or "guaranteed". Never imply Cofferdam holds people's money. Never overstate verification ("optional, but it unlocks more").
 - Every number traces to a source document. No invented metrics, user counts or dates.
 - One emoji at most, rarely. Times as `7am ET`; versions as `v2.6.4`.

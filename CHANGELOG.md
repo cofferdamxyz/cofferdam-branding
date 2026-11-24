@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-23 — developer docs are the exception to zero jargon
+
+- `brand/README.md`, Voice: the developer docs and the engineering blog use the technical words (passkey, escrow, on-chain, chain id); the founder, 2026-11-23, workspace decision 0094 question 6. The app, the landing pages, store listings, notifications and support replies stay under the rule. No token changed.
+
 ## 2026-11-23 — the Built with strip is a film strip
 
 - `brand/sections/2-motion.md`: the founder chose the film-strip look for the website's Built with loop over a plain row of logos: each logo in a frame on a `surface-2` band, with sprocket holes punched through to the page ground, small squares with soft corners after the Square. Monochrome and hairlines; the motion is unchanged. No token or file changed.
