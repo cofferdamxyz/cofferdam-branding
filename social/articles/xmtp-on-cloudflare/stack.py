@@ -23,13 +23,15 @@ SCALE = 3200 / W
 E = html.escape
 MIME = {'svg': 'image/svg+xml', 'png': 'image/png'}
 LEGEND = 'carried without being read'
+ICON_DIRS = [os.path.join(HERE, 'icons')]  # another diagram set appends its own folder
 
 
 def icon(name):
-    for ext in ('svg', 'png'):
-        p = os.path.join(HERE, 'icons', name + '.' + ext)
-        if os.path.exists(p):
-            return 'data:%s;base64,%s' % (MIME[ext], base64.b64encode(open(p, 'rb').read()).decode())
+    for d in ICON_DIRS:
+        for ext in ('svg', 'png'):
+            p = os.path.join(d, name + '.' + ext)
+            if os.path.exists(p):
+                return 'data:%s;base64,%s' % (MIME[ext], base64.b64encode(open(p, 'rb').read()).decode())
     if name == 'cofferdam':
         p = os.path.join(ROOT, 'assets', 'github', 'avatar-cofferdamdev-light.svg')  # the light greyscale icon: the mono mark on its near-white tile
         return 'data:image/svg+xml;base64,' + base64.b64encode(open(p, 'rb').read()).decode()
@@ -107,13 +109,13 @@ def el(x, y, s, cls='', anchor='middle'):
     return '<text class="el %s" x="%s" y="%s" text-anchor="%s">%s</text>' % (cls, x, y, anchor, E(s))
 
 
-def canvas(title, sub, groups, edges, nodes, extra=''):
+def canvas(title, sub, groups, edges, nodes, extra='', legend=None, plain='ordinary call', url='cofferdam.xyz'):
     lg = ('<div class="legend"><span><span class="sw"></span>%s</span>'
-          '<span><span class="sw n"></span>ordinary call</span></div>') % LEGEND
+          '<span><span class="sw n"></span>%s</span></div>') % (E(legend or LEGEND), E(plain))
     return ('<div class="canvas"><div class="ttl">%s</div><div class="sub">%s</div>%s'
             '<svg class="edges" width="%d" height="%d" viewBox="0 0 %d %d">%s%s</svg>%s%s%s'
-            '<img class="lock" src="%s" alt=""><div class="url">cofferdam.xyz</div></div>') % (
-        E(title), E(sub), ''.join(groups), W, H, W, H, DEFS, ''.join(edges), ''.join(nodes), extra, lg, LOCKUP)
+            '<img class="lock" src="%s" alt=""><div class="url">%s</div></div>') % (
+        E(title), E(sub), ''.join(groups), W, H, W, H, DEFS, ''.join(edges), ''.join(nodes), extra, lg, LOCKUP, E(url))
 
 
 def d_architecture():

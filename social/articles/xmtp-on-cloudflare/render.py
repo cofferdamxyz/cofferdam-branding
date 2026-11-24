@@ -83,7 +83,8 @@ def label(x, y, s, anchor='middle', size=18):
     return text(x, y, s, size, 500, 'var(--fg-muted)', mono=True, anchor=anchor)
 
 
-def frame(title, sub, body, legend=True):
+def frame(title, sub, body, legend=True, url='cofferdam.xyz'):
+    """legend: True for the article's line, a string for another diagram set's, False for none."""
     foot = H - 44
     out = ['<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (W, H, W, H), DEFS,
            '<rect width="100%" height="100%" fill="var(--bg)"/><rect width="100%" height="100%" fill="url(#grid)"/>',
@@ -91,10 +92,10 @@ def frame(title, sub, body, legend=True):
            text(48, 118, sub, 21, 500),
            body,
            '<image href="%s" x="32" y="%d" width="170" height="41"/>' % (LOCKUP, foot - 28),
-           text(W - 48, foot, 'cofferdam.xyz', 17, 500, mono=True, anchor='end')]
+           text(W - 48, foot, url, 17, 500, mono=True, anchor='end')]
     if legend:
         out.append('<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="var(--fg)" stroke-width="4" stroke-linecap="round"/>' % (W / 2 - 150, foot - 6, W / 2 - 108, foot - 6))
-        out.append(text(W / 2 - 96, foot, stack.LEGEND, 18, 500))
+        out.append(text(W / 2 - 96, foot, legend if isinstance(legend, str) else stack.LEGEND, 18, 500))
     out.append('</svg>')
     return ''.join(out)
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-23 — diagrams for Lockkeeper's README, with the article's builder
+
+- New `social/diagrams/lockkeeper/`: `render.py` and four 4:3 diagrams at 2400×1800 for the README of `cofferdamxyz/lockkeeper` (at a glance, one session from start to landing, how it knows what is in flight, from open pull requests to advice). The article's rules hold: dark only, greyscale, the only colour in the logos, the single-ink lockup bottom left. One thing is marked wherever it appears, by a heavy white line or a lighter card: Lockkeeper's only write to GitHub, the advice comment. The PNGs are copied byte for byte into `lockkeeper/docs/diagrams/`; the text follows `lockkeeper/DESIGN.md`.
+- The builder is the XMTP article's, imported from `social/articles/xmtp-on-cloudflare/`. Two changes there let another diagram set use it, with the article's own output unchanged: `stack.ICON_DIRS` (a set appends its icon folder) and a legend line and footer a caller can set on `stack.canvas` and `render.frame`.
+- Icons (`social/diagrams/lockkeeper/icons/manifest.json`): GitHub's mark, copied byte for byte from the Cloudflare OS upstream checkout, never recoloured; lucide's `terminal` (ISC) with the stroke of the article's bell. The Cloudflare and Workers logos are the article's.
+
 ## 2026-11-23 — developer docs are the exception to zero jargon
 
 - `brand/README.md`, Voice: the developer docs and the engineering blog use the technical words (passkey, escrow, on-chain, chain id); the founder, 2026-11-23, workspace decision 0094 question 6. The app, the landing pages, store listings, notifications and support replies stay under the rule. No token changed.

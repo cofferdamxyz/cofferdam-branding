@@ -1,0 +1,19 @@
+{
+  "github": {
+    "source": "local copy",
+    "from": "cofferdam-os/cloudflare-os/packages/gatekeeper-github/src/github-logo.svg (Cloudflare OS, upstream)",
+    "file": "github.svg",
+    "bytes": 793,
+    "note": "GitHub's mark, byte for byte; used to name GitHub in a diagram (github.com/logos)"
+  },
+  "terminal": {
+    "source": "lucide",
+    "from": "lucide-react 1.73.0 (ISC), icons/terminal: the icon's two paths, with the stroke of the article's bell.svg",
+    "file": "terminal.svg",
+    "bytes": 330
+  },
+  "cloudflare, workers, cofferdam": {
+    "source": "the XMTP article's icons",
+    "from": "social/articles/xmtp-on-cloudflare/icons/ (its manifest.json names each source)"
+  }
+}
