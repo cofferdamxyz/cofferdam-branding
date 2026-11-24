@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-23 — the Built with strip is a film strip
+
+- `brand/sections/2-motion.md`: the founder chose the film-strip look for the website's Built with loop over a plain row of logos: each logo in a frame on a `surface-2` band, with sprocket holes punched through to the page ground, small squares with soft corners after the Square. Monochrome and hairlines; the motion is unchanged. No token or file changed.
+
 ## 2026-11-23 — the website's "Built with" marks, and the strip moves
 
 - New `assets/partners/zkpassport/`, `planetscale/`, `xmtp/`, `expo/` and `nextjs/`: each owner's own logo for dark and light grounds, byte for byte, renamed to `-on-black` / `-on-white`; `assets/partners/SOURCES.md` records where each came from and what its owner's terms say. XMTP is its "Secured by XMTP" badge (its plain lockup exists in black only, and XMTP asks integrations to use the badge); Expo's white wordmark is its PNG, the only white file Expo ships. Google DeepMind has no public kit and Google's rules keep its logo off a non-partner's page.
