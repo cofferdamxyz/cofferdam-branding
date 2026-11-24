@@ -35,6 +35,11 @@ const LOGOS = ['cofferdam-mark-v5.svg', 'cofferdam-mark-v5-on-dark.svg', 'coffer
 const LOCKUPS = ['horizontal', 'stacked'].flatMap((l) => ['on-dark', 'on-light', 'white', 'black'].map((v) => `cofferdam-lockup-${l}-${v}.svg`));
 const profileAssets = fs.readdirSync(path.join(ROOT, 'github/profile/assets'));
 const fonts = fs.readdirSync(path.join(ROOT, 'fonts')).filter((f) => /\.(woff2?|ttf|otf)$/.test(f));
+// The website's "Built with" strip (cofferdam-pages TrustStrip): each partner's own on-black and
+// on-white files, copied verbatim (assets/partners/SOURCES.md).
+const SITE_PARTNERS = ['zkpassport', 'planetscale', 'xmtp', 'expo', 'nextjs'];
+const partnerFiles = SITE_PARTNERS.flatMap((p) =>
+  fs.readdirSync(path.join(ROOT, 'assets/partners', p)).filter((f) => /-on-(black|white)\.(svg|png)$/.test(f)).map((f) => `${p}/${f}`));
 
 /** [repo, from (in this repo), to (in the consumer)] */
 const TARGETS = [
@@ -52,6 +57,7 @@ const TARGETS = [
   // The website sets one accent in Geist Serif (brand/README.md, Typography), which Google Fonts
   // does not serve: it loads the brand's file, with the licence beside it as OFL 1.1 asks.
   ...['GeistSerif-Regular.woff2', 'GeistSerif-OFL.txt'].map((f) => ['pages', `fonts/${f}`, `public/fonts/${f}`]),
+  ...partnerFiles.map((f) => ['pages', `assets/partners/${f}`, `public/partners/${f}`]),
   ['coworkers', 'dist/pages/brand.generated.css', 'src/cofferdam/brand/brand.generated.css'],
   ...fonts.map((f) => ['coworkers', `fonts/${f}`, `src/cofferdam/brand/fonts/${f}`]),
   ['github', 'github/profile/README.md', 'profile/README.md'],

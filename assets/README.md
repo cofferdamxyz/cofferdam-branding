@@ -7,7 +7,8 @@
 | `wallpapers/` | 1440×1440 PNG app wallpapers: obsidian, carbon, graphite (dark); marble, sand, ice (light) | Centre-cropped, cover |
 | `textures/` | 1080px WebP re-encodes of obsidian and marble for the website texture layer | Opacity 0.5 dark / 0.4 light |
 | `partners/base/` | Official Base Square, Basemark and lockup (blue, white, black, 2-colour) | White on dark; blue only on light |
-| `partners/self/` | Self.xyz logo (on black / on white) | Never restyle |
+| `partners/self/` | Self.xyz logo (on black / on white) | Never restyle; off the website since 2026-11-23 |
+| `partners/zkpassport/`, `planetscale/`, `xmtp/`, `expo/`, `nextjs/` | The website's "Built with" marks, each owner's own file for each theme (`-on-black`, `-on-white`); synced to `cofferdam-pages/public/partners/` | Sources and each owner's terms in `partners/SOURCES.md`; never recolour |
 | `social/` | The X profile header (1500×500) and picture (400×400), rendered by `scripts/render-social.py` from `social/x-header.html` | Upload as is; dark only |
 
 The full Base Brand Guidelines PDF stays in `cofferdam-app/assets/base/`.

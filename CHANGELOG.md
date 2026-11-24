@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-23 — the website's "Built with" marks, and the strip moves
+
+- New `assets/partners/zkpassport/`, `planetscale/`, `xmtp/`, `expo/` and `nextjs/`: each owner's own logo for dark and light grounds, byte for byte, renamed to `-on-black` / `-on-white`; `assets/partners/SOURCES.md` records where each came from and what its owner's terms say. XMTP is its "Secured by XMTP" badge (its plain lockup exists in black only, and XMTP asks integrations to use the badge); Expo's white wordmark is its PNG, the only white file Expo ships. Google DeepMind has no public kit and Google's rules keep its logo off a non-partner's page.
+- `scripts/sync.mjs`: the pages target copies those files into `cofferdam-pages/public/partners/`.
+- `brand/sections/2-motion.md`: the website may move one more thing, the Built with strip, a continuous right-to-left loop that pauses on hover or focus and stands still under Reduce Motion (the founder, 2026-11-23).
+
 ## 2026-11-23 — on the website, colour is kept for actions
 
 - `brand/README.md` (Principles) and `brand/sections/1-accents-and-wallpapers.md`: the website is monochrome and keeps the accent for where the reader acts, focus today (the founder, 2026-11-23: "we reserve the colors for certain actions"). The sample CV's "Proven" ticks and "Verified human" chip, which were the site's accent, are now `fg` with a word and an icon, and the developers' scene uses the single-ink mark instead of the dark colour tones. The app's rule (the accent marks proof) is unchanged. No token or file changed.

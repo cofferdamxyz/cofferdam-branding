@@ -46,6 +46,7 @@ What may move, and nothing else:
 | Scroll | Scroll moves containers, never the playhead of a video. A scene stage may grow from an inset card (`--cd-scroll-inset-radius`, the page gutter) to full width as it enters, and one layer per scene may drift against the scroll by up to `--cd-scroll-parallax-max`. Scroll-linked motion is CSS first: `animation-timeline: view()` driving a registered `@property`, with a script fallback only where the browser lacks it. Snapping, if used, is `y proximity`, never mandatory |
 | Scenes | The scene switcher (Workers · Hirers · Developers) swaps its stage with a cross-fade over `base`; captions swap in place in one grid cell, the old one out over `fast` with ease-in, the new one in over `base` with ease-out, so nothing below moves. No auto-advance |
 | Footage | Plays when its scene is on screen and selected, pauses when it is not; play-once films stop on their end frame, loops loop (`5-footage.md`) |
+| Built with | The partners' logo strip under the hero runs right to left in one continuous linear loop (about 48 s a lap), its edges faded into the page; hover or keyboard focus pauses it. CSS only |
 | Press and hover | Fade to 85% or move one property; never scale a card, never animate a shadow or a gradient |
 | Focus | The 2px accent outline appears instantly; it never animates |
 | Intro | On the first home-page visit of a browsing session, and never on an anchor deep link, the page opens with the launch splash: the `splash-bg` ground with its gradient sweep, the mark drawing itself exactly as in the app (`motion.splash`: A stem → A arm → B stem → B arm, 200ms each, 20ms apart, from 40ms), then the page revealed through the mark's own slanted rounded square, growing from the mark's size past the viewport edges over `slow` with ease-in-out; about 1.3 s in all, no settle and no hold. The page is fully rendered underneath from the first frame, the layer takes no pointer events and is hidden from assistive technology, and a click, key or scroll skips to the end. CSS only, from `--cd-intro-*`; a few lines of script decide whether it runs (`motion.webIntro`, workspace decision 0050) |
@@ -61,7 +62,7 @@ Every animation carries its own override, on top of any global switch.
 | App hero transitions | A `fast` cross-fade |
 | Launch splash | The finished mark for 400ms, then exit |
 | Website hero cascade, tile reveals | Opacity only, no movement |
-| Hero float, decorative loops | Not rendered |
+| Hero float, decorative loops | Not rendered; the Built with strip stands still, one copy, wrapped and centred |
 | Scroll-linked growth and parallax | Off: the stage sits at its final size, layers do not drift |
 | Scene swap | Instant, or a `fast` cross-fade |
 | Footage | Never autoplays: the poster shows, with a play control |
