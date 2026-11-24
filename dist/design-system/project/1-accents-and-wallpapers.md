@@ -13,7 +13,7 @@ Every option is a locked Base palette colour. The accent is the *proof* blue (or
 
 - Base Blue is absent from dark on purpose. Lime Green is dark-only.
 - On light, only Base Blue is safe as accent **text** (8.6:1). Cerulean (3.4:1), Red (3.6:1) and Self Teal (3.2:1) are kept for marks and icons. Yellow, Green, Pink and Tan were removed from the light picker in v4 (below 3:1 on white); a person who had picked one falls back to Base Blue.
-- The website follows the app's defaults: Cerulean on dark, Base Blue on light, on proof signals only. Its palette swatch row is the one place every accent shows at once.
+- The website follows the app's defaults, Cerulean on dark and Base Blue on light, and keeps the accent for actions only (focus; brand README, Colour, 2026-11-23): its proof illustrations are monochrome. Its palette swatch row is the one place every accent shows at once.
 
 ## Backgrounds
 

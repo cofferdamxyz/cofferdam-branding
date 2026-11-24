@@ -6,6 +6,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 
 - **Dark-first, monochrome canvas.** Pure black `bg` ground, white `fg`, greyscale structure (`surface`, `card`, `border`, `divider`). Every surface and CTA stays zero-chroma.
 - **One accent at a time, and it means something.** `accent` marks proof: verified ticks, the live/active state, the Ready chip, the current selection, focus. Never eyebrows, links, headings or decoration. The moment the accent lands on decoration it stops reading as *proven*.
+- **On the website, colour is kept for actions** (the founder, 2026-11-23). The site is monochrome: proof shown as an illustration (the sample CV's "Proven" lines and its "Verified human" chip) is set in `fg` with a word and an icon, and the mark is single ink, even in the developers' scene. The accent appears only where the reader acts: focus today, and a selected or live control if the site gains one. Partner logos keep their owners' colours only where the owner gives no single-ink version.
 - **The Square is the seed.** Base's Square is the atomic shape. The v5 brackets close into a slanted rounded square; avatars, tiles, cards and wallpapers rhyme with it through the `radius-*` scale.
 - **Calm, physical motion.** Purposeful, with mass, on the UI thread. Never decorative jitter.
 - **Plain, punchy voice.** Brief, human, active. "Your face is your key." not "Biometric authentication enrolment."

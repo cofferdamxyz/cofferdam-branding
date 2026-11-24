@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-23 — on the website, colour is kept for actions
+
+- `brand/README.md` (Principles) and `brand/sections/1-accents-and-wallpapers.md`: the website is monochrome and keeps the accent for where the reader acts, focus today (the founder, 2026-11-23: "we reserve the colors for certain actions"). The sample CV's "Proven" ticks and "Verified human" chip, which were the site's accent, are now `fg` with a word and an icon, and the developers' scene uses the single-ink mark instead of the dark colour tones. The app's rule (the accent marks proof) is unchanged. No token or file changed.
+
 ## 2026-11-23 — Geist Serif sets the manifesto's closing on the website
 
 - `brand/README.md`: the website's second use of Geist Serif is the closing three sentences of the landing page's manifesto ("Why Cofferdam exists"), upright, at the manifesto's one reading size, one sentence a line (the founder, 2026-11-23: every line of the manifesto at the same size, the last part in the serif). The headline accent stays as it was. No token or file changed.
