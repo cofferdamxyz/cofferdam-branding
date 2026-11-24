@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-23 — Geist Serif sets the manifesto's closing on the website
+
+- `brand/README.md`: the website's second use of Geist Serif is the closing three sentences of the landing page's manifesto ("Why Cofferdam exists"), upright, at the manifesto's one reading size, one sentence a line (the founder, 2026-11-23: every line of the manifesto at the same size, the last part in the serif). The headline accent stays as it was. No token or file changed.
+
 ## 2026-11-23 — the website's serif accent is italic, in two headlines
 
 - `brand/README.md`: the accent word is set in italic and appears twice, in the landing headline and in the closing headline that repeats the statement (the founder, 2026-11-23, replacing the same day's "one accent, upright"). Geist Serif has no italic: `geist` 1.9.2 ships Regular, three shape variants and a variable font whose only axis is `ELSH`, so the slant is the browser's synthesis. No token or file changed.
