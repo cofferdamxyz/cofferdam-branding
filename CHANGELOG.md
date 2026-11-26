@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-25 — a mark for Lockkeeper
+
+- New `assets/logos/lockkeeper/`: the mark and a horizontal lockup for `cofferdamxyz/lockkeeper`, each in white and in black, drawn on 2026-11-23 and accepted by the founder on 2026-11-25. The mark is a lock chamber: an L (one wall and the floor) holding one bar, the water level. It is drawn in the Cofferdam mark's vocabulary (one heavy stroke of 152 on the 1024 canvas, outer corners at 50, the stems' 10° lean) and is single ink only: Lockkeeper is a tool of Cofferdam's, not a second brand, so it has no toned or colour version, and where the two marks appear together the Cofferdam mark is the one that carries tone.
+- `scripts/make-lockkeeper-logo.py` writes the four SVGs; curves are polygons, as in the Cofferdam mark, and the lockup follows the Cofferdam lockup's rules through `make-logos.py`'s wordmark (Geist 700 at -0.03em, mark 1.4 cap heights, gap and clear space 0.5). `preview.png` and the four `*-on-black.png` / `*-on-white.png` files are renders of those SVGs for places that take no SVG.
+- No token, guideline or generated output changed: the mark is not part of the Design System, and `dist/` is as it was. Lockkeeper's monitor page draws the same two polygons inline.
+
 ## 2026-11-23 — diagrams for Lockkeeper's README, with the article's builder
 
 - New `social/diagrams/lockkeeper/`: `render.py` and four 4:3 diagrams at 2400×1800 for the README of `cofferdamxyz/lockkeeper` (at a glance, one session from start to landing, how it knows what is in flight, from open pull requests to advice). The article's rules hold: dark only, greyscale, the only colour in the logos, the single-ink lockup bottom left. One thing is marked wherever it appears, by a heavy white line or a lighter card: Lockkeeper's only write to GitHub, the advice comment. The PNGs are copied byte for byte into `lockkeeper/docs/diagrams/`; the text follows `lockkeeper/DESIGN.md`.

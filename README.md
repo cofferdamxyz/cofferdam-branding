@@ -7,13 +7,14 @@ tokens/tokens.json        colours (dark + light), type, spacing, radii, shadows,
 tokens/brand.json         accent options, wallpapers, motion, defaults, website accent/texture
 themes/seasonal/*.json    dated overlays (Christmas example included, disabled)
 brand/                    the brand book (README.md + sections/)
-assets/                   logos (v5 + legacy), wallpapers, website textures, partner marks (Base, Self), social profile art
+assets/                   logos (v5 + legacy, Lockkeeper's mark), wallpapers, website textures, partner marks (Base, Self), social profile art
 motion/splash/            the launch splash (Expo + Reanimated) and its preview renders
 fonts/                    Geist + Geist Mono
 components/               web reference renditions of the app's UI kit (for the design-system artifact)
 scripts/build.mjs         validate + generate dist/
 scripts/sync.mjs          copy dist/ into the consumer repos
 scripts/make-logos.py     black + mono marks and the lockups, from tokens + Geist
+scripts/make-lockkeeper-logo.py  Lockkeeper's mark and lockup (assets/logos/lockkeeper/), single ink
 scripts/render-previews.py icon previews, splash videos and keyframes in current tones
 scripts/render-github.py  GitHub avatars and the org-profile banners
 scripts/render-social.py  the X profile header and picture (assets/social/), from social/x-header.html
