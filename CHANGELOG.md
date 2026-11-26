@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-26 — the thread's closing picture says "End of thread"
+
+- `social/x-thread-end.html`, `assets/social/x-thread-end.png`: the line "End of thread" sits above the statement, in the eyebrow role (uppercase, 0.2em tracking), white and large enough to read in a timeline (the founder, 2026-11-26: "we need to add end of thread text somewhere in it"). The block moved up to make room; nothing else changed.
+
 ## 2026-11-26 — a picture that closes a thread on X
 
 - New `assets/social/x-thread-end.png` (3200×1800, 16:9) from the template `social/x-thread-end.html`: the brand statement as the sign-off on the Obsidian stone, the single-ink lockup, one sentence that says what Cofferdam is (the brand README's first, cut to its second half), and `cofferdam.xyz` and `@cofferdamxyz` in Geist Mono (the founder, 2026-11-26: "Create the end of thread picture for X based off our branding"). It takes the article cover's layout and names no post, so one picture closes every thread. Dark only, no accent, no token changed.
