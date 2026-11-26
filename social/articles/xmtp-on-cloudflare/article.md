@@ -9,11 +9,25 @@
   pattern, not our deployment: no costs, instance sizes, regions, hostnames, bucket or binding names, limits,
   dates, incidents or status of our own stack. Code is trimmed to the technique and carries no internal names.
 
+  "In short" (the founder, 2026-11-26) is the article in plain words for a reader who is not an engineer.
+  On the site the same four sentences are the post's `summary` frontmatter, shown in a box above the
+  contents list (cofferdam-pages, content/blog/xmtp-on-cloudflare.mdx): change both together.
+
+  Once the article is on X, `python3 publish.py --since <commit>` writes edit.html: only the parts that
+  changed since that commit of this file, each with where it goes and a button that copies it.
+
   Links: every URL below answered 200 on 2026-11-22. The XMTP ones (docs.xmtp.org, github.com/xmtp/libxmtp)
   are the general entry points; replace them with the exact XMTP 8 pages before posting if better ones exist.
 -->
 
 # Private messaging on Cloudflare: XMTP, inbound TCP and a server that stays blind
+
+## In short
+
+- Private messages need a server to pass them along, and that server usually learns who talks to whom.
+- This post shows one way to run that server so it carries messages it cannot read, without learning about the people sending them.
+- Messages are deleted after a set time, and a notification wakes the phone without telling Apple or Google which chat it was for.
+- The rest of the article is for engineers who want to build the same thing.
 
 End-to-end encrypted messaging needs a server, and the server is where privacy usually leaks: who talks to whom, from which address, at what time. This is a walk through one way to run [XMTP](https://docs.xmtp.org/) on Cloudflare so that the server carries messages without learning about the people sending them.
 

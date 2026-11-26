@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-26 — the XMTP article gains "In short", and an edit sheet for an article already on X
+
+- `social/articles/xmtp-on-cloudflare/article.md`: a section "In short" opens the body, four sentences in plain words for a reader who is not an engineer (the founder, 2026-11-26: "Update the X article as well"). They are the site post's `summary`, which `cofferdam-pages` shows in a box above the contents list; change both together. `paste.html` regenerated.
+- `publish.py --since <commit>` also writes `edit.html`: what changed in `article.md` since that commit, as edits to make by hand in X's editor, each with where it goes, what to delete and a button that copies the new text as rich text. `edit.html` here is against the first draft (`1a8fdf3`): two edits, the summary at the top and the new ending.
+
 ## 2026-11-26 — the XMTP article's ending, rewritten for an engineer
 
 - `social/articles/xmtp-on-cloudflare/article.md`: the two-line closing section "The shape" gives way to three (the founder, 2026-11-26: "This ending is not very good, imagine you were an engineer reading"). "What each part can see" lists every part with what it sees and keeps; "What a blind server does not give you" says what an operator can still observe (from XMTP's own security page, linked), which records are permanent, and that inbound TCP is a beta; "Where to start" gives a build order. Every statement is one the article already makes or XMTP's page does. `paste.html` regenerated. The site's copy in `cofferdam-pages` carries the same text.
