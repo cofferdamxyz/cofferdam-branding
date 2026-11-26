@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-26 — a picture that closes a thread on X
+
+- New `assets/social/x-thread-end.png` (3200×1800, 16:9) from the template `social/x-thread-end.html`: the brand statement as the sign-off on the Obsidian stone, the single-ink lockup, one sentence that says what Cofferdam is (the brand README's first, cut to its second half), and `cofferdam.xyz` and `@cofferdamxyz` in Geist Mono (the founder, 2026-11-26: "Create the end of thread picture for X based off our branding"). It takes the article cover's layout and names no post, so one picture closes every thread. Dark only, no accent, no token changed.
+- `scripts/render-social.py` renders it at 2x, renders only the pictures named on its command line, and falls back to the installed Chrome when Playwright's own browser is not downloaded. The header and the profile picture were not re-rendered.
+- `brand/asset-groups/Social.md`, `assets/README.md` and `README.md` describe it. The Design System artifact's Social group does not hold the file yet: that takes a republish.
+- `social/articles/xmtp-on-cloudflare/`: `article.md` and `launch-post.md` record that the article was published on 2026-11-26, with its post's link.
+
 ## 2026-11-26 — the XMTP article's edit sheet removed
 
 - `social/articles/xmtp-on-cloudflare/edit.html` is gone: the founder made its two edits in X's editor ("Done, you can remove the Edit html now"). The sheet is for one sitting, so `.gitignore` now keeps any later one out of the repository; `publish.py --since` still writes it. `article.md`'s header records the commit the text on X matches (`53d9f66`), which is the one to give `--since` next time.

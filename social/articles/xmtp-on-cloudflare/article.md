@@ -1,5 +1,6 @@
 <!--
-  X Article draft for the Cofferdam account. DRAFT: not posted, not reviewed by the founder.
+  X Article for the Cofferdam account. Published by the founder on 2026-11-26:
+  https://x.com/cofferdamxyz/status/2125959753180311628
   Cover: 00-cover.png (5:2). Each [image: …] line marks where a diagram goes; delete the marker after placing it.
   publish.py turns this file and launch-post.md into paste.html, a page to copy from for X's editor: the
   body as rich text, and each code sample for the editor's Insert > Code. Code lines stay within 60 columns

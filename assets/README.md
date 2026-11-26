@@ -9,7 +9,7 @@
 | `partners/base/` | Official Base Square, Basemark and lockup (blue, white, black, 2-colour) | White on dark; blue only on light |
 | `partners/self/` | Self.xyz logo (on black / on white) | Never restyle; off the website since 2026-11-23 |
 | `partners/zkpassport/`, `planetscale/`, `xmtp/`, `expo/`, `nextjs/` | The website's "Built with" marks, each owner's own file for each theme (`-on-black`, `-on-white`); synced to `cofferdam-pages/public/partners/` | Sources and each owner's terms in `partners/SOURCES.md`; never recolour |
-| `social/` | The X profile header (1500×500) and picture (400×400), rendered by `scripts/render-social.py` from `social/x-header.html` | Upload as is; dark only |
+| `social/` | The X profile header (1500×500) and picture (400×400), and the picture that closes a thread (`x-thread-end.png`, 16:9), rendered by `scripts/render-social.py` from `social/x-header.html` and `social/x-thread-end.html` | Upload as is; dark only |
 
 The full Base Brand Guidelines PDF stays in `cofferdam-app/assets/base/`.
 

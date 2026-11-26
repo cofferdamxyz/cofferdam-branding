@@ -1,5 +1,8 @@
 <!--
-  The post that announces the article on X. DRAFT: not posted, not reviewed by the founder.
+  The post that announces the article on X. The article went out on 2026-11-26 from X's Publish dialog
+  (https://x.com/cofferdamxyz/status/2125959753180311628), which posts it with a caption of at most 256
+  characters, adds the link itself and takes no picture; the caption was cut from this post. What follows
+  is the post as first drafted, for a post that links the article by hand.
   Everything outside this comment is the post, as it is pasted. Replace ARTICLE_LINK with the article's
   URL once it is published. Attach 01-architecture.png with its alt text from article.md.
   Same house rule as the article: the pattern, never our deployment. 280 characters at most with the

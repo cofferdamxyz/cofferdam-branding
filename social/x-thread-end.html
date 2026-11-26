@@ -1,0 +1,43 @@
+<!--
+  The picture that closes a thread on X, 1600x900 (16:9, the shape X shows whole in a timeline),
+  rendered at 2x by scripts/render-social.py with the brand tokens (dist/tokens.css) and fonts;
+  {{asset:…}} placeholders become file URLs at render time. Attach it to the last post of a thread.
+
+  blocks:  Obsidian stone ground, faded toward the left · the lockup · the brand statement ·
+           one sentence that says what Cofferdam is · the address and the account
+  arrange: the cover's layout (social/articles/*/render.py, d_cover), so an article's first and last
+           pictures read as a pair: lockup top left, the statement on the calm side of the stone,
+           the addresses on the bottom line
+  rules:   a sign-off, so the statement is the headline, as written. One picture for every thread:
+           nothing here names a post or a topic. Dark only: X shows one picture in both its themes.
+           No proof elements, no accent, no button drawn (a picture cannot be pressed).
+  type:    Geist 700 at -0.03em (the display tracking), Geist 500 for the sentence, Geist Mono for
+           the address and the account
+  words:   the sentence is the brand README's first, cut to its second half. It passes the voice
+           rules (no jargon, nothing held, no return); change it there first.
+-->
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .end { position: relative; width: 1600px; height: 900px; overflow: hidden;
+         background: var(--bg); color: var(--fg); font-family: var(--font-sans); }
+  .stone { position: absolute; inset: 0; background: url('{{asset:assets/textures/obsidian.webp}}') center / cover;
+           opacity: var(--opacity-texture-dark);
+           -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.55) 45%, #000 85%);
+                   mask-image: linear-gradient(90deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.55) 45%, #000 85%); }
+  .lockup { position: absolute; left: 109px; top: 76px; height: 52px; }  /* the file's clear space puts the mark's edge on the text's, at 120 */
+  .text { position: absolute; left: 120px; top: 268px; }
+  .statement { margin: 0 0 0 -6px; font-size: 136px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
+  .what { margin: 44px 0 0; max-width: 1060px; font-size: 36px; line-height: 48px; font-weight: 500;
+          color: var(--fg-muted); text-wrap: balance; }
+  .foot { position: absolute; left: 120px; right: 120px; bottom: 68px; display: flex; justify-content: space-between;
+          margin: 0; font-family: var(--font-mono); font-size: 28px; letter-spacing: 0.02em; color: var(--fg-muted); }
+</style>
+<div class="end">
+  <div class="stone"></div>
+  <img class="lockup" src="{{asset:assets/logos/lockups/cofferdam-lockup-horizontal-white.svg}}" alt="">
+  <div class="text">
+    <p class="statement">Work that<br>proves itself.</p>
+    <p class="what">The money is set aside before the job starts, and every finished job is signed off by someone who was there.</p>
+  </div>
+  <p class="foot"><span>cofferdam.xyz</span><span>@cofferdamxyz</span></p>
+</div>

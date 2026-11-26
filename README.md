@@ -17,7 +17,7 @@ scripts/make-logos.py     black + mono marks and the lockups, from tokens + Geis
 scripts/make-lockkeeper-logo.py  Lockkeeper's mark and lockup (assets/logos/lockkeeper/), single ink
 scripts/render-previews.py icon previews, splash videos and keyframes in current tones
 scripts/render-github.py  GitHub avatars and the org-profile banners
-scripts/render-social.py  the X profile header and picture (assets/social/), from social/x-header.html
+scripts/render-social.py  the X profile header and picture, and the picture that closes a thread (assets/social/), from social/x-header.html and social/x-thread-end.html
 github/profile/          the cofferdamxyz organisation profile README (synced to the .github repo)
 dist/                     generated — committed so consumers can diff it
 .claude/skills/           cofferdam-design · cofferdam-brand-update · cofferdam-seasonal-theme · cofferdam-brand-sync
