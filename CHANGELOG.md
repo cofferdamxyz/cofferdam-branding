@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-26 — USDC from Circle's brand kit
+
+- `assets/coins/usdc.svg` is Circle's official Token Logo from its brand kit (`usdc.zip`, `Token Logo/USDC Token.svg`); the file nora.finance serves is the same bytes, so nothing in it changed (the founder, 2026-11-26: "Use Circle's official USDC logo instead"). `assets/coins/SOURCES.md` names Circle's kit as the source and sums up its Brand Use Policy: no modification, nothing superimposed, the clear zone and the 32px minimum, and its clause against commercial use. The two coins are never shown overlapping.
+
 ## 2026-11-26 — the USDC and BRS coins
 
 - New `assets/coins/`: `usdc.svg` (nora.finance's file, byte for byte) and `brs.svg` (the BRS coin from nora.finance's landing page, Nora's five paths and colours in one file, since Nora publishes no static file) (the founder, 2026-11-26: "the logos for USDC and BRS (take from nora.finance)"). Sources and how `brs.svg` was put together are in `assets/coins/SOURCES.md`.
