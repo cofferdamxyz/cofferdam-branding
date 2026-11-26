@@ -41,6 +41,9 @@ const fonts = fs.readdirSync(path.join(ROOT, 'fonts')).filter((f) => /\.(woff2?|
 const SITE_PARTNERS = ['zkpassport', 'planetscale', 'xmtp', 'expo', 'nextjs', 'x'];
 const partnerFiles = SITE_PARTNERS.flatMap((p) =>
   fs.readdirSync(path.join(ROOT, 'assets/partners', p)).filter((f) => /-on-(black|white)\.(svg|png)$/.test(f)).map((f) => `${p}/${f}`));
+// The coins the app's money is in (assets/coins/SOURCES.md), one file each for both themes: the website's
+// hero names them beside the fee.
+const coins = fs.readdirSync(path.join(ROOT, 'assets/coins')).filter((f) => f.endsWith('.svg'));
 
 /** [repo, from (in this repo), to (in the consumer)] */
 const TARGETS = [
@@ -59,6 +62,7 @@ const TARGETS = [
   // does not serve: it loads the brand's file, with the licence beside it as OFL 1.1 asks.
   ...['GeistSerif-Regular.woff2', 'GeistSerif-OFL.txt'].map((f) => ['pages', `fonts/${f}`, `public/fonts/${f}`]),
   ...partnerFiles.map((f) => ['pages', `assets/partners/${f}`, `public/partners/${f}`]),
+  ...coins.map((f) => ['pages', `assets/coins/${f}`, `public/coins/${f}`]),
   ['coworkers', 'dist/pages/brand.generated.css', 'src/cofferdam/brand/brand.generated.css'],
   // The bots' faces (tokens/brand.json bots), which src/lib/types.ts gives the preset bots.
   ['coworkers', 'dist/bots/bot-looks.generated.ts', 'src/cofferdam/brand/bot-looks.generated.ts'],

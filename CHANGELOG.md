@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-26 — the USDC and BRS coins
+
+- New `assets/coins/`: `usdc.svg` (nora.finance's file, byte for byte) and `brs.svg` (the BRS coin from nora.finance's landing page, Nora's five paths and colours in one file, since Nora publishes no static file) (the founder, 2026-11-26: "the logos for USDC and BRS (take from nora.finance)"). Sources and how `brs.svg` was put together are in `assets/coins/SOURCES.md`.
+- `scripts/sync.mjs` copies both to `cofferdam-pages/public/coins/`, where the landing page's hero names the coins beside the fee. `assets/README.md` lists them. No token changed.
+
 ## 2026-11-26 — X's mark, for the link to the company's account
 
 - New `assets/partners/x/`: X's own files from its brand toolkit (`x-logo.zip`), byte for byte, under this folder's names: `x-logo-on-black.svg` (the white mark, the only vector X ships) and `x-logo-on-white.png` (the black mark) (the founder, 2026-11-26: "Add X logo to cofferdam-branding and wire it"). Source, the archive's hash and X's terms are in `assets/partners/SOURCES.md`.
