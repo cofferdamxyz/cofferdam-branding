@@ -260,9 +260,36 @@ The app sends one when a thread is opened and someone wrote since the last recei
 - **`sslrootcert=system` means two things.** libpq reads it as "the system trust store". The backend's Rust driver, sqlx, reads it as a file path and fails before it dials. End the URL at `sslmode=verify-full`.
 - **Certificate authorities rate-limit issuance.** A restart loop with an empty certificate store can use up a week's allowance in minutes. Restore the store before the proxy starts, and refuse to start if that read fails for any reason other than a first boot.
 
-## The shape
+## What each part can see
 
-One container running software you did not write, a few small Workers you did, one Postgres, and a protocol that keeps the keys on the devices. Every piece that touches a message is either unable to read it or built to forget it.
+That is the whole system: one container running software you did not write, a few small Workers you did, one Postgres and one bucket. The way to check a design like this is part by part, asking what each piece can see and what it keeps.
+
+- **Cloudflare's edge** sees the client's address and an encrypted stream. It cannot read the stream.
+- **The Worker and the Durable Object** see TLS bytes passing through. They read nothing and log nothing.
+- **The reverse proxy** sees gRPC frames around ciphertext, on a socket that carries no client address. It keeps no access log.
+- **The backend** sees the app's API key, opaque topic ids, sizes and timing. It never sees a client address, a contact list or a message.
+- **Postgres** holds ciphertext, a sealed push URL for each device that asked for one, and public identity records. Messages, welcomes and key packages stay for their retention and a grace period. Commits and identity updates stay for good.
+- **The cleanup Worker** can read and delete rows, and nothing else.
+- **The push relay** sees a device token for the length of one request and keeps nothing.
+- **Apple and Google** see that a device was woken, and when. They cannot tell which conversation it was for.
+- **The bucket** holds encrypted files named by their own hash, for as long as messages are kept.
+
+## What a blind server does not give you
+
+Blind is not anonymous, and the difference is worth stating exactly.
+
+- **Content is protected by cryptography. Metadata is protected by what you choose not to keep.** The server's operator cannot read a message, because it never holds a group key. But XMTP's [security notes](https://docs.xmtp.org/protocol/security) say what a backend operator can observe: topic ids, request timing, request size and connection metadata, and that query patterns can reveal relationships. This design keeps the client's address away from the backend and writes no log, so there is nothing to look up afterwards. An operator who turned logging back on would have it again. If you promise a blind server, the configuration is part of the promise: review a change to it the way you review code.
+- **Some records are permanent.** Commits and identity updates never expire, by XMTP's design. The identity log lists every inbox, the identifier it was created with and every device key it has had. Create inboxes with an identifier that says nothing else about the person, because it cannot be taken back.
+- **The raw-socket path is new.** Inbound TCP for Workers is a public beta, so expect its details to change.
+
+## Where to start
+
+1. **The pipe first.** Follow Cloudflare's bidirectional gRPC example until a gRPC health check answers through Spectrum, the Worker and the Durable Object. Add nothing else until it does.
+2. **Then the certificate store.** Save and restore it before the container has restarted more than a few times, or the issuance limit will stop you for days.
+3. **Then the cleanup, with its alert, before real messages exist.** A retention promise is only true once something deletes.
+4. **Push last.** Messaging works without it while the app is open, and the relay is the one part here with a design of its own.
+
+None of the parts is large. What makes the server blind is the sum: every piece that touches a message either cannot read it or is built to forget it.
 
 <!--
   Alt text, one per image (X takes up to 1,000 characters each):

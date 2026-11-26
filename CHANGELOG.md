@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-26 — the XMTP article's ending, rewritten for an engineer
+
+- `social/articles/xmtp-on-cloudflare/article.md`: the two-line closing section "The shape" gives way to three (the founder, 2026-11-26: "This ending is not very good, imagine you were an engineer reading"). "What each part can see" lists every part with what it sees and keeps; "What a blind server does not give you" says what an operator can still observe (from XMTP's own security page, linked), which records are permanent, and that inbound TCP is a beta; "Where to start" gives a build order. Every statement is one the article already makes or XMTP's page does. `paste.html` regenerated. The site's copy in `cofferdam-pages` carries the same text.
+
 ## 2026-11-26 — the bots' faces in the bots app, and a face for Marketing
 
 - New `bots` in `tokens/brand.json`: each company bot's head (Engineering rectangle, shell `accent`, trim `mark-a-stem`; Security hexagon, shell `mark-mono-a-stem`, trim `accent`; Ops square, shell `base-tan`, trim `accent`; Marketing circle, shell `base-pink`, trim `accent`), colours read from the base tokens in the dark theme, in both themes and every season, as a logo is. The first three are the GitHub pictures' looks of 2026-11-03 and 2026-11-04, until now written only in `render.sh`. The bots app still drew upstream's hub-assigned looks (Ops a green hexagon, Security a coral circle, Engineering a navy rectangle), off the Base palette; the founder asked on 2026-11-25 for the app to match the brand.
