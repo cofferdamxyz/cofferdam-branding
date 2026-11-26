@@ -36,8 +36,9 @@ const LOCKUPS = ['horizontal', 'stacked'].flatMap((l) => ['on-dark', 'on-light',
 const profileAssets = fs.readdirSync(path.join(ROOT, 'github/profile/assets'));
 const fonts = fs.readdirSync(path.join(ROOT, 'fonts')).filter((f) => /\.(woff2?|ttf|otf)$/.test(f));
 // The website's "Built with" strip (cofferdam-pages TrustStrip): each partner's own on-black and
-// on-white files, copied verbatim (assets/partners/SOURCES.md).
-const SITE_PARTNERS = ['zkpassport', 'planetscale', 'xmtp', 'expo', 'nextjs'];
+// on-white files, copied verbatim (assets/partners/SOURCES.md). `x` is not in the strip: it is X's
+// mark for the link to the company's account, in the site's nav and footer.
+const SITE_PARTNERS = ['zkpassport', 'planetscale', 'xmtp', 'expo', 'nextjs', 'x'];
 const partnerFiles = SITE_PARTNERS.flatMap((p) =>
   fs.readdirSync(path.join(ROOT, 'assets/partners', p)).filter((f) => /-on-(black|white)\.(svg|png)$/.test(f)).map((f) => `${p}/${f}`));
 

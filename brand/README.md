@@ -64,6 +64,7 @@ Cofferdam is a work-matching app and website: workers find jobs, hirers post the
 - **Website intro:** the first home-page visit of a session replays the splash's draw and opens the page through the mark's square (about 1.3 s, skippable, never under Reduce Motion). See *Motion*, On the website.
 - The previous coffer-and-seal mark is retired (`assets/logos/legacy/`). Don't use it in new work.
 - **Built on Base:** use the approved Base lockup or Basemark (white on dark, black or blue on light) with the copy "Built on Base." Never type the Base wordmark in our font.
+- **X:** the link to the company's account (`@cofferdamxyz`) uses X's own mark from `assets/partners/x/`, white on dark and black on light, at icon size beside or in place of the handle, with an accessible name that says where it goes. It is never an accent, never recoloured, and never set beside our mark as if the two were partners.
 
 ### Light mode: brand art and proof stay apart
 

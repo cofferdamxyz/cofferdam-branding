@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-26 — X's mark, for the link to the company's account
+
+- New `assets/partners/x/`: X's own files from its brand toolkit (`x-logo.zip`), byte for byte, under this folder's names: `x-logo-on-black.svg` (the white mark, the only vector X ships) and `x-logo-on-white.png` (the black mark) (the founder, 2026-11-26: "Add X logo to cofferdam-branding and wire it"). Source, the archive's hash and X's terms are in `assets/partners/SOURCES.md`.
+- `brand/README.md`, Logo: the mark is for one use, the link to `@cofferdamxyz`, white on dark and black on light, never recoloured and never as a partnership.
+- `scripts/sync.mjs` copies the two files to `cofferdam-pages/public/partners/x/`. `assets/README.md` lists them. No token changed; the Design System's Partners group is as it was (it holds Base and Self only).
+
 ## 2026-11-26 — the thread's closing picture loses its sentence
 
 - `social/x-thread-end.html`, `assets/social/x-thread-end.png`: the sentence under the statement ("The money is set aside before the job starts…") is gone (the founder, 2026-11-26: "not needed"; "Yes, remove it"). The picture is the lockup, "End of thread", the statement and the two addresses; the statement is a little larger (148px on the 1600 canvas) and centred in the space the sentence left.
