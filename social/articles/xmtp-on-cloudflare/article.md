@@ -13,8 +13,10 @@
   On the site the same four sentences are the post's `summary` frontmatter, shown in a box above the
   contents list (cofferdam-pages, content/blog/xmtp-on-cloudflare.mdx): change both together.
 
-  Once the article is on X, `python3 publish.py --since <commit>` writes edit.html: only the parts that
-  changed since that commit of this file, each with where it goes and a button that copies it.
+  The text in X's editor matches this file as of commit 53d9f66: the founder made the two edits there
+  on 2026-11-26 (the summary and the new ending). For a later change, `python3 publish.py --since 53d9f66`
+  writes edit.html: only the parts that changed since that commit, each with where it goes and a button
+  that copies it. edit.html is a throwaway and git-ignored; delete it once the edits are made.
 
   Links: every URL below answered 200 on 2026-11-22. The XMTP ones (docs.xmtp.org, github.com/xmtp/libxmtp)
   are the general entry points; replace them with the exact XMTP 8 pages before posting if better ones exist.

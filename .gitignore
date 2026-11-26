@@ -3,3 +3,6 @@ node_modules/
 
 # render-bots: built on the fly from ../coworkers
 scripts/render-bots/bundle.js
+
+# publish.py --since: the edit sheet for an article already on X, for one sitting
+social/articles/*/edit.html

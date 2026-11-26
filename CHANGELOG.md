@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-26 — the XMTP article's edit sheet removed
+
+- `social/articles/xmtp-on-cloudflare/edit.html` is gone: the founder made its two edits in X's editor ("Done, you can remove the Edit html now"). The sheet is for one sitting, so `.gitignore` now keeps any later one out of the repository; `publish.py --since` still writes it. `article.md`'s header records the commit the text on X matches (`53d9f66`), which is the one to give `--since` next time.
+
 ## 2026-11-26 — the XMTP article gains "In short", and an edit sheet for an article already on X
 
 - `social/articles/xmtp-on-cloudflare/article.md`: a section "In short" opens the body, four sentences in plain words for a reader who is not an engineer (the founder, 2026-11-26: "Update the X article as well"). They are the site post's `summary`, which `cofferdam-pages` shows in a box above the contents list; change both together. `paste.html` regenerated.

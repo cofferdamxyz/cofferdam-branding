@@ -12,6 +12,7 @@ that announces the article.
 
 An article on X is edited by hand, so `--since <commit>` also writes edit.html: what changed in article.md
 since that commit, as a list of edits, each saying where it goes, what to delete and what to paste.
+edit.html is git-ignored: it is for one sitting, and the commit to give next is in article.md's header.
 
 Nothing here posts anything. One source: edit article.md or launch-post.md and run this again. Standard
 library only; the page reads dist/tokens.css and the brand fonts by relative path.
