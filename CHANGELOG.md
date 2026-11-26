@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-26 — the thread's closing picture loses its sentence
+
+- `social/x-thread-end.html`, `assets/social/x-thread-end.png`: the sentence under the statement ("The money is set aside before the job starts…") is gone (the founder, 2026-11-26: "not needed"; "Yes, remove it"). The picture is the lockup, "End of thread", the statement and the two addresses; the statement is a little larger (148px on the 1600 canvas) and centred in the space the sentence left.
+
 ## 2026-11-26 — the thread's closing picture says "End of thread"
 
 - `social/x-thread-end.html`, `assets/social/x-thread-end.png`: the line "End of thread" sits above the statement, in the eyebrow role (uppercase, 0.2em tracking), white and large enough to read in a timeline (the founder, 2026-11-26: "we need to add end of thread text somewhere in it"). The block moved up to make room; nothing else changed.

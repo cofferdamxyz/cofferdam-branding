@@ -4,18 +4,18 @@
   {{asset:…}} placeholders become file URLs at render time. Attach it to the last post of a thread.
 
   blocks:  Obsidian stone ground, faded toward the left · the lockup · the line "End of thread" ·
-           the brand statement · one sentence that says what Cofferdam is · the address and the account
+           the brand statement · the address and the account
   arrange: the cover's layout (social/articles/*/render.py, d_cover), so an article's first and last
            pictures read as a pair: lockup top left, the statement on the calm side of the stone,
            the addresses on the bottom line
   rules:   a sign-off, so the statement is the headline, as written. One picture for every thread:
            nothing here names a post or a topic. Dark only: X shows one picture in both its themes.
            No proof elements, no accent, no button drawn (a picture cannot be pressed).
-  type:    Geist 700 at -0.03em (the display tracking), Geist 500 for the sentence, Geist Mono for
+  type:    Geist 700 at -0.03em (the display tracking), Geist Mono for
            the address and the account; "End of thread" is the eyebrow role (uppercase, 0.2em), in
            white and large enough to read in a timeline, since it is what the picture is for
-  words:   the sentence is the brand README's first, cut to its second half. It passes the voice
-           rules (no jargon, nothing held, no return); change it there first.
+  words:   the statement and nothing under it: a sentence saying what Cofferdam is stood there and
+           the founder removed it on 2026-11-26 ("not needed").
 -->
 <style>
   html, body { margin: 0; background: var(--bg); }
@@ -26,12 +26,10 @@
            -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.55) 45%, #000 85%);
                    mask-image: linear-gradient(90deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.55) 45%, #000 85%); }
   .lockup { position: absolute; left: 109px; top: 76px; height: 52px; }  /* the file's clear space puts the mark's edge on the text's, at 120 */
-  .text { position: absolute; left: 120px; top: 236px; }
+  .text { position: absolute; left: 120px; top: 282px; }
   .eyebrow { margin: 0 0 30px; font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: 0.2em;
              text-transform: uppercase; color: var(--fg); }
-  .statement { margin: 0 0 0 -6px; font-size: 136px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
-  .what { margin: 40px 0 0; max-width: 1060px; font-size: 36px; line-height: 48px; font-weight: 500;
-          color: var(--fg-muted); text-wrap: balance; }
+  .statement { margin: 0 0 0 -6px; font-size: 148px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
   .foot { position: absolute; left: 120px; right: 120px; bottom: 68px; display: flex; justify-content: space-between;
           margin: 0; font-family: var(--font-mono); font-size: 28px; letter-spacing: 0.02em; color: var(--fg-muted); }
 </style>
@@ -41,7 +39,6 @@
   <div class="text">
     <p class="eyebrow">End of thread</p>
     <p class="statement">Work that<br>proves itself.</p>
-    <p class="what">The money is set aside before the job starts, and every finished job is signed off by someone who was there.</p>
   </div>
   <p class="foot"><span>cofferdam.xyz</span><span>@cofferdamxyz</span></p>
 </div>
