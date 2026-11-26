@@ -121,6 +121,20 @@ for (const f of tokens.type.fonts) if (!fs.existsSync(path.join(ROOT, f.file))) 
 const tokenNames = new Set(tokens.color.tokens.map((t) => t.name));
 for (const a of brand.accents) if (!tokenNames.has(a.token)) errors.push(`accent ${a.id} points at unknown token ${a.token}`);
 for (const b of brand.backgrounds) for (const k of ['image', 'webTexture']) if (b[k] && !fs.existsSync(path.join(ROOT, b[k]))) errors.push(`background ${b.id}: missing ${b[k]}`);
+// The bots' faces (brand.json bots): robot-heads' four shapes, one per bot, colours from the
+// base tokens read in the dark theme (a bot's face is a logo: neither a theme nor a season changes it).
+let baseColors = {};
+try {
+  baseColors = resolveColors(baseTokens.color);
+} catch {}
+const BOT_SHAPES = ['rectangle', 'square', 'circle', 'hexagon'];
+const botLooks = {};
+for (const [id, b] of Object.entries(brand.bots ?? {}).filter(([k]) => !k.startsWith('$'))) {
+  if (!BOT_SHAPES.includes(b.shape)) errors.push(`bot ${id}: shape "${b.shape}" is not one of ${BOT_SHAPES.join(', ')}`);
+  if (Object.values(botLooks).some((o) => o.shape === b.shape)) errors.push(`bot ${id}: shape "${b.shape}" is taken by another bot`);
+  for (const k of ['shell', 'trim']) if (!tokenNames.has(b[k])) errors.push(`bot ${id}: ${k} points at unknown token ${b[k]}`);
+  botLooks[id] = { name: b.name, shape: b.shape, color: baseColors.dark?.[b.shell], trimColor: baseColors.dark?.[b.trim] };
+}
 
 // Contrast: text tokens on the grounds they are documented for. Pairs the
 // SOURCE already misses are known (kept exact, flagged in their usage notes);
@@ -345,8 +359,19 @@ const resolved = {
   web: effBrand.web,
   motion: effBrand.motion,
   accentAlpha: effBrand.accentAlpha,
+  bots: botLooks,
 };
 write('dist/brand.resolved.json', JSON.stringify(resolved, null, 2) + '\n');
+
+// 5a'. The bots' faces: the coworkers fork (src/cofferdam/brand/) passes these to robot-heads.
+const botsTs = `${HEADER('//')}
+// The company bots' faces, as RobotHead props (tokens/brand.json bots). The LEDs keep robot-heads' own white.
+
+export const BOT_LOOKS = ${JSON.stringify(botLooks, null, 2).replace(/"(\w+)":/g, '$1:')} as const;
+
+export type BotLookId = keyof typeof BOT_LOOKS;
+`;
+write('dist/bots/bot-looks.generated.ts', botsTs);
 
 // 5b. React Native module — keys match cofferdam-app/src/lib/theme.ts exactly.
 const APP_KEYS = ['bg', 'surface', 'surface-2', 'card', 'card-border', 'border', 'border-control', 'divider', 'fg', 'fg-muted', 'fg-muted-2', 'fg-dim', 'accent', 'accent-dim', 'accent-border', 'identity', 'danger', 'danger-dim', 'danger-border', 'warning', 'success', 'info', 'base-blue', 'overlay', 'scrim', 'glass-scrim', 'chain-tile', 'chain-tile-testnet', 'chain-tile-edge', 'chain-mark'];

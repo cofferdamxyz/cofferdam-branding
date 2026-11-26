@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-26 — the bots' faces in the bots app, and a face for Marketing
+
+- New `bots` in `tokens/brand.json`: each company bot's head (Engineering rectangle, shell `accent`, trim `mark-a-stem`; Security hexagon, shell `mark-mono-a-stem`, trim `accent`; Ops square, shell `base-tan`, trim `accent`; Marketing circle, shell `base-pink`, trim `accent`), colours read from the base tokens in the dark theme, in both themes and every season, as a logo is. The first three are the GitHub pictures' looks of 2026-11-03 and 2026-11-04, until now written only in `render.sh`. The bots app still drew upstream's hub-assigned looks (Ops a green hexagon, Security a coral circle, Engineering a navy rectangle), off the Base palette; the founder asked on 2026-11-25 for the app to match the brand.
+- The build validates them (a shape robot-heads draws, one shape per bot, known tokens), adds them to `dist/brand.resolved.json` as `bots`, and writes `dist/bots/bot-looks.generated.ts`, which `scripts/sync.mjs` copies to `coworkers/src/cofferdam/brand/`.
+- `scripts/render-bots/render.sh` reads each bot's look from `dist/brand.resolved.json` instead of its own table, takes `marketing`, and takes `COWORKERS=` for the folder whose `node_modules` it bundles from. Re-rendering the other three bots' idle pictures gives identical bytes.
+- New `assets/github/bot-marketing-{idle,working,happy}.png` and `bot-marketing-idle-transparent.png`: Marketing's GitHub App picture, Base Pink (`#fea8cd`) the founder's pick, for when the Marketing bot exists (the app runs three preset bots today).
+- No token value changed.
+
 ## 2026-11-25 — a mark for Lockkeeper
 
 - New `assets/logos/lockkeeper/`: the mark and a horizontal lockup for `cofferdamxyz/lockkeeper`, each in white and in black, drawn on 2026-11-23 and accepted by the founder on 2026-11-25. The mark is a lock chamber: an L (one wall and the floor) holding one bar, the water level. It is drawn in the Cofferdam mark's vocabulary (one heavy stroke of 152 on the 1024 canvas, outer corners at 50, the stems' 10° lean) and is single ink only: Lockkeeper is a tool of Cofferdam's, not a second brand, so it has no toned or colour version, and where the two marks appear together the Cofferdam mark is the one that carries tone.

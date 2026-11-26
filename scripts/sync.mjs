@@ -59,6 +59,8 @@ const TARGETS = [
   ...['GeistSerif-Regular.woff2', 'GeistSerif-OFL.txt'].map((f) => ['pages', `fonts/${f}`, `public/fonts/${f}`]),
   ...partnerFiles.map((f) => ['pages', `assets/partners/${f}`, `public/partners/${f}`]),
   ['coworkers', 'dist/pages/brand.generated.css', 'src/cofferdam/brand/brand.generated.css'],
+  // The bots' faces (tokens/brand.json bots), which src/lib/types.ts gives the preset bots.
+  ['coworkers', 'dist/bots/bot-looks.generated.ts', 'src/cofferdam/brand/bot-looks.generated.ts'],
   ...fonts.map((f) => ['coworkers', `fonts/${f}`, `src/cofferdam/brand/fonts/${f}`]),
   ['github', 'github/profile/README.md', 'profile/README.md'],
   ...profileAssets.map((f) => ['github', `github/profile/assets/${f}`, `profile/assets/${f}`]),

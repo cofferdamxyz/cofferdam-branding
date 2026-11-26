@@ -1,9 +1,9 @@
 {
   "brandVersion": 8,
   "tokensVersion": 8,
-  "commit": "d889d60",
+  "commit": "12b933f",
   "season": null,
-  "builtFor": "11-24",
+  "builtFor": "11-26",
   "colors": {
     "dark": {
       "bg": "#000000",
@@ -569,5 +569,31 @@
   "accentAlpha": {
     "dim": 0.14,
     "border": 0.32
+  },
+  "bots": {
+    "engineering": {
+      "name": "Engineering",
+      "shape": "rectangle",
+      "color": "#3c8aff",
+      "trimColor": "#b5cff7"
+    },
+    "security": {
+      "name": "Security",
+      "shape": "hexagon",
+      "color": "#c4c4ca",
+      "trimColor": "#3c8aff"
+    },
+    "ops": {
+      "name": "Ops",
+      "shape": "square",
+      "color": "#b8a581",
+      "trimColor": "#3c8aff"
+    },
+    "marketing": {
+      "name": "Marketing",
+      "shape": "circle",
+      "color": "#fea8cd",
+      "trimColor": "#3c8aff"
+    }
   }
 }

@@ -17,7 +17,7 @@ The consumers never hold brand values of their own: they import generated files.
 | cofferdam-pages | `src/app/brand.generated.css` | `dist/pages/brand.generated.css` |
 | cofferdam-app | `src/components/brand/splash/{CofferdamSplash.tsx,splashMath.ts,cofferdamMark.ts}`, `assets/brand/cofferdam-mark-v5*.svg`, `assets/brand/cofferdam-lockup-*.svg` | `motion/splash/`, `assets/logos/v5/`, `assets/logos/lockups/` |
 | cofferdam-pages | `public/textures/*.webp`, `public/brand/cofferdam-mark-v5*.svg`, `public/brand/cofferdam-lockup-*.svg` | `assets/` |
-| coworkers | `src/cofferdam/brand/brand.generated.css`, `src/cofferdam/brand/fonts/Geist*.woff2` | `dist/pages/brand.generated.css`, `fonts/` |
+| coworkers | `src/cofferdam/brand/brand.generated.css`, `src/cofferdam/brand/fonts/Geist*.woff2`, `src/cofferdam/brand/bot-looks.generated.ts` | `dist/pages/brand.generated.css`, `fonts/`, `dist/bots/bot-looks.generated.ts` |
 
 The bots fork (`coworkers`, bots.cofferdam.xyz) takes the website's sheet as it is: its `src/cofferdam/brand/theme.css` points upstream's `--brand-*` theme tokens at the `--cd-*` ones, and its `src/lib/theme.ts` sets the `.dark` class with `data-mode`. The `brand-sync` workflow does not open its pull requests; run `node scripts/sync.mjs --only=coworkers --write` on the Mac and commit in the fork. When `web-bg` changes, the fork's `docs/theming.md` lists what follows it (`THEME_COLORS`, the manifest, `public/sw.js`, the dark iOS stills).
 

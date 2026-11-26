@@ -3,30 +3,33 @@
 # package the bots app draws its faces with) in the brand's colours, on the
 # splash gradient, 1024 px, circle-safe for GitHub.
 #
-#   sh scripts/render-bots/render.sh [engineering|security|ops] [idle|working|happy|searching|idle-transparent ...]
+#   sh scripts/render-bots/render.sh [engineering|security|ops|marketing] [idle|working|happy|searching|idle-transparent ...]
 #
-# Each bot has its own shape and colours (below, from tokens):
-#   engineering  rectangle, shell accent #3c8aff, trim mark-a-stem #b5cff7
-#   security     hexagon, shell dark mark-mono-a-stem #c4c4ca, trim accent #3c8aff
-#   ops          square, shell base-tan #b8a581, trim accent #3c8aff
+# Each bot's shape and colours come from `bots` in tokens/brand.json, read
+# resolved from dist/brand.resolved.json (run `node scripts/build.mjs` first):
+#   engineering  rectangle, shell accent, trim mark-a-stem
+#   security     hexagon, shell mark-mono-a-stem (dark), trim accent
+#   ops          square, shell base-tan, trim accent
+#   marketing    circle, shell base-pink, trim accent
+# The bots app reads the same looks from dist/bots/bot-looks.generated.ts.
 # `idle-transparent` is the head alone on transparency, the GitHub App's logo.
 #
 # Bundles with the esbuild and robot-heads under ../coworkers/node_modules
-# (pnpm install there first) and screenshots with the Mac's Chrome. Writes
-# assets/github/bot-<bot>-<state>.png. Change the colours here from tokens;
-# never by hand in the PNG.
+# (pnpm install there first; COWORKERS=/path overrides the folder) and
+# screenshots with the Mac's Chrome. Writes assets/github/bot-<bot>-<state>.png.
+# Change the looks in tokens/brand.json; never by hand in the PNG.
 set -eu
-HERE=$(cd "$(dirname "$0")" && pwd); ROOT=$(cd "$HERE/../.." && pwd); CW=$ROOT/../coworkers
+HERE=$(cd "$(dirname "$0")" && pwd); ROOT=$(cd "$HERE/../.." && pwd); CW=${COWORKERS:-$ROOT/../coworkers}
 ESB=$(ls -d "$CW"/node_modules/.pnpm/esbuild@*/node_modules/esbuild/bin/esbuild | tail -1)
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 BOT=engineering
-case "${1:-}" in engineering|security|ops) BOT=$1; shift ;; esac
-case $BOT in
-  engineering) LOOK="shape=rectangle&color=%233c8aff&trim=%23b5cff7" ;;
-  security) LOOK="shape=hexagon&color=%23c4c4ca&trim=%233c8aff" ;;
-  ops) LOOK="shape=square&color=%23b8a581&trim=%233c8aff" ;;
-esac
+case "${1:-}" in engineering|security|ops|marketing) BOT=$1; shift ;; esac
+LOOK=$(node -e '
+  const b = require(process.argv[1]).bots?.[process.argv[2]];
+  if (!b) { console.error("no bot " + process.argv[2] + " in dist/brand.resolved.json; run node scripts/build.mjs"); process.exit(1); }
+  process.stdout.write(new URLSearchParams({ shape: b.shape, color: b.color, trim: b.trimColor }).toString());
+' "$ROOT/dist/brand.resolved.json" "$BOT")
 
 cd "$HERE" && NODE_PATH="$CW/node_modules" "$ESB" entry.tsx --bundle --outfile=bundle.js --jsx=automatic --define:process.env.NODE_ENV='"production"' --log-level=warning
 for st in "${@:-idle}"; do
