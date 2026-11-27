@@ -41,6 +41,11 @@ const fonts = fs.readdirSync(path.join(ROOT, 'fonts')).filter((f) => /\.(woff2?|
 const SITE_PARTNERS = ['zkpassport', 'planetscale', 'xmtp', 'expo', 'nextjs', 'x'];
 const partnerFiles = SITE_PARTNERS.flatMap((p) =>
   fs.readdirSync(path.join(ROOT, 'assets/partners', p)).filter((f) => /-on-(black|white)\.(svg|png)$/.test(f)).map((f) => `${p}/${f}`));
+// The app's credits, the same verbatim files: ZKPassport's at the foot of the Cofferdam Passport result (workspace
+// decision 0080 G7), on-white in the light theme and on-black in the dark.
+const APP_PARTNERS = ['zkpassport'];
+const appPartnerFiles = APP_PARTNERS.flatMap((p) =>
+  fs.readdirSync(path.join(ROOT, 'assets/partners', p)).filter((f) => /-on-(black|white)\.svg$/.test(f)).map((f) => `${p}/${f}`));
 // The coins the app's money is in (assets/coins/SOURCES.md), one file each for both themes: the website's
 // hero names them beside the fee.
 const coins = fs.readdirSync(path.join(ROOT, 'assets/coins')).filter((f) => f.endsWith('.svg'));
@@ -62,6 +67,7 @@ const TARGETS = [
   // does not serve: it loads the brand's file, with the licence beside it as OFL 1.1 asks.
   ...['GeistSerif-Regular.woff2', 'GeistSerif-OFL.txt'].map((f) => ['pages', `fonts/${f}`, `public/fonts/${f}`]),
   ...partnerFiles.map((f) => ['pages', `assets/partners/${f}`, `public/partners/${f}`]),
+  ...appPartnerFiles.map((f) => ['app', `assets/partners/${f}`, `assets/partners/${f}`]),
   ...coins.map((f) => ['pages', `assets/coins/${f}`, `public/coins/${f}`]),
   ['coworkers', 'dist/pages/brand.generated.css', 'src/cofferdam/brand/brand.generated.css'],
   // The bots' faces (tokens/brand.json bots), which src/lib/types.ts gives the preset bots.
