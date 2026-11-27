@@ -2,7 +2,7 @@
 
 ## 2026-11-26 — USDC from Circle's brand kit
 
-- `assets/coins/usdc.svg` is Circle's official Token Logo from its brand kit (`usdc.zip`, `Token Logo/USDC Token.svg`); the file nora.finance serves is the same bytes, so nothing in it changed (the founder, 2026-11-26: "Use Circle's official USDC logo instead"). `assets/coins/SOURCES.md` names Circle's kit as the source and sums up its Brand Use Policy: no modification, nothing superimposed, the clear zone and the 32px minimum, and its clause against commercial use. The two coins are never shown overlapping.
+- `assets/coins/usdc.svg` is Circle's official Token Logo from its brand kit (`usdc.zip`, `Token Logo/USDC Token.svg`); the file nora.finance serves is the same bytes, so nothing in it changed (the founder, 2026-11-26: "Use Circle's official USDC logo instead"). `assets/coins/SOURCES.md` names Circle's kit as the source and sums up its Brand Use Policy: no modification, nothing superimposed, the clear zone and the 32px minimum, and its clause against commercial use. The website shows the two coins overlapping (the founder, 2026-11-26), which the sources note records against Circle's no-superimposition rule, open with the commercial-use clause.
 
 ## 2026-11-26 — the USDC and BRS coins
 
