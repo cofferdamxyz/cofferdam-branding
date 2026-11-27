@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-27 — website footage in the Pixel's shape, and one push-in
+
+- `tokens/brand.json` `web.video`: the master is the Pixel 10's screen, 1080 × 2424, and the delivery half of it, 540 × 1212 (was the iPhone's 1179 × 2556 and 590 × 1278): the founder chose on 2026-11-27 to record the website's films on the Pixel, driven from the Mac, and to reshape the site's device frame rather than crop the films. `--cd-video-aspect` follows.
+- `brand/sections/5-footage.md`: capture on the Pixel (`cofferdam-footage`'s `yarn take`, Android's demo status bar, a made-up person and a test location); the edit allows one slow push-in per film onto its proof moment, at most 1.25×, the founder's one borrowing from Bleap's films; Open to work shows the listing going live and the CV's job history, not a funded job arriving, which is not built; AI chat names what the assistant understood.
+
 ## 2026-11-27 — Cofferdam Account, the second name beside the mark
 
 - `brand/README.md`, Typography: Geist Serif's lockup sets a product's name beside the mark, now two: Cofferdam Passport and Cofferdam Account (the founder, 2026-11-27: "Cofferdam (logo) Account", in the Passport's style, so the brand reads the same). The lockup's measures are written down: the mark's ink one cap height tall, 0.35 cap heights clear of the word, one ink; the word stays English in every language, as a name. `fonts/README.md` and the build's note on `fonts.serif` say the same. No token changed.

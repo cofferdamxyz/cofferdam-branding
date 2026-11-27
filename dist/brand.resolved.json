@@ -1,7 +1,7 @@
 {
   "brandVersion": 8,
   "tokensVersion": 8,
-  "commit": "1339245",
+  "commit": "1691997",
   "season": null,
   "builtFor": "11-27",
   "colors": {
@@ -476,13 +476,13 @@
     "video": {
       "$comment": "Website footage (brand/sections/5-footage.md): screen recordings of the app shown inside the site's device frame. Times in ms, sizes in px. scripts/build.mjs writes the delivery aspect to the website CSS as --cd-video-aspect.",
       "master": {
-        "width": 1179,
-        "height": 2556,
+        "width": 1080,
+        "height": 2424,
         "fps": 60
       },
       "delivery": {
-        "width": 590,
-        "height": 1278,
+        "width": 540,
+        "height": 1212,
         "fps": 30,
         "gop": 1000,
         "maxBytes": 1000000
