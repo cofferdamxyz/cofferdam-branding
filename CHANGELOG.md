@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-27 — Cofferdam Account, the second name beside the mark
+
+- `brand/README.md`, Typography: Geist Serif's lockup sets a product's name beside the mark, now two: Cofferdam Passport and Cofferdam Account (the founder, 2026-11-27: "Cofferdam (logo) Account", in the Passport's style, so the brand reads the same). The lockup's measures are written down: the mark's ink one cap height tall, 0.35 cap heights clear of the word, one ink; the word stays English in every language, as a name. `fonts/README.md` and the build's note on `fonts.serif` say the same. No token changed.
+
 ## 2026-11-26 — USDC from Circle's brand kit
 
 - `assets/coins/usdc.svg` is Circle's official Token Logo from its brand kit (`usdc.zip`, `Token Logo/USDC Token.svg`); the file nora.finance serves is the same bytes, so nothing in it changed (the founder, 2026-11-26: "Use Circle's official USDC logo instead"). `assets/coins/SOURCES.md` names Circle's kit as the source and sums up its Brand Use Policy: no modification, nothing superimposed, the clear zone and the 32px minimum, and its clause against commercial use. The website shows the two coins overlapping (the founder, 2026-11-26), which the sources note records against Circle's no-superimposition rule, open with the commercial-use clause.

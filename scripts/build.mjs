@@ -417,7 +417,7 @@ export const radii = {
 ${tokens.radius.tokens.filter((t) => t.name !== 'radius-web').map((t) => `  ${camel(t.name.replace('radius-', ''))}: ${px(t.value)},`).join('\n')}
 } as const;
 
-/** Geist is registered by expo-font under these family names (see fonts/README.md). Serif is Regular (400) only: names beside the mark (Passport). */
+/** Geist is registered by expo-font under these family names (see fonts/README.md). Serif is Regular (400) only: names beside the mark (Passport, Account). */
 export const fonts = {
   sans: '${familyName('sans')}',
   mono: Platform.select({ ios: '${familyName('mono')}', default: '${familyName('mono')}' }) as string,

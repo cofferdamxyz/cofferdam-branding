@@ -4,7 +4,7 @@
 |---|---|---|---|
 | `Geist-Variable-latin.woff2` | Geist | wght 100–900 | Everything (`sans`) |
 | `GeistMono-Variable-latin.woff2` | Geist Mono | wght 100–900 | Addresses, hashes, code (`mono`) |
-| `GeistSerif-Regular.woff2` | Geist Serif | Regular (400), static | A credential's name beside the mark (`serif`), such as "Passport" on the Cofferdam Passport card |
+| `GeistSerif-Regular.woff2` | Geist Serif | Regular (400), static | A product's name beside the mark (`serif`): "Passport" (Cofferdam Passport) and "Account" (Cofferdam Account) |
 
 These are the Latin-subset variable files the website already ships (from `next/font/google`), copied byte for byte. They cover Latin, not Latin Extended or Cyrillic. Before the app ships Geist, replace them with the full files from the official release (github.com/vercel/geist-font, OFL 1.1) under the same names, or add `-latin-ext` siblings and list them in `tokens/tokens.json` → `type.fonts`.
 
