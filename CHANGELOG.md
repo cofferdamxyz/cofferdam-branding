@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-27 — the website's phone in three.js; no push-in; shorter loops
+
+- `brand/sections/5-footage.md`, On the page: the films play on a plain phone the site draws in three.js (cofferdam-pages `PhoneStage`), on a studio stage, pale in light and near black in dark; as the page scrolls the camera moves in towards the screen and the phone turns to face it (the founder, 2026-11-27, after Bleap's films). The flat device frame and its tilt are gone. Edit: the push-in is set aside, nothing zooms inside the screen. What we film: the hero is the map opening on the live listing (the founder: "the biggest selling point"), Open to work the Work Profile and the job history, AI chat's reply shown by about 5 s.
+- `tokens/brand.json` `web.video.loop.duration`: 10,000 ms (was 15,000), at most three vignettes, so a loop's proof moment shows within 5 s; Open to work runs 9 s in two.
+- `brand/sections/2-motion.md`, On the website: the scroll moves the camera and the 3D phone, with a slow idle sway that stops when the film is paused, in place of the tilt.
+
 ## 2026-11-27 — website footage in the Pixel's shape, and one push-in
 
 - `tokens/brand.json` `web.video`: the master is the Pixel 10's screen, 1080 × 2424, and the delivery half of it, 540 × 1212 (was the iPhone's 1179 × 2556 and 590 × 1278): the founder chose on 2026-11-27 to record the website's films on the Pixel, driven from the Mac, and to reshape the site's device frame rather than crop the films. `--cd-video-aspect` follows.

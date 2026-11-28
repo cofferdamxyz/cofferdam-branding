@@ -1,9 +1,9 @@
 {
   "brandVersion": 8,
   "tokensVersion": 8,
-  "commit": "c249d00",
+  "commit": "612af58",
   "season": null,
-  "builtFor": "11-27",
+  "builtFor": "11-28",
   "colors": {
     "dark": {
       "bg": "#000000",
@@ -474,7 +474,7 @@
       }
     },
     "video": {
-      "$comment": "Website footage (brand/sections/5-footage.md): screen recordings of the app shown inside the site's device frame. Times in ms, sizes in px. scripts/build.mjs writes the delivery aspect to the website CSS as --cd-video-aspect.",
+      "$comment": "Website footage (brand/sections/5-footage.md): screen recordings of the app shown on the site's 3D phone. Times in ms, sizes in px. scripts/build.mjs writes the delivery aspect to the website CSS as --cd-video-aspect.",
       "master": {
         "width": 1080,
         "height": 2424,
@@ -492,7 +492,7 @@
         "settleBy": 3500
       },
       "loop": {
-        "duration": 15000,
+        "duration": 10000,
         "vignettes": 3,
         "maxChange": 520,
         "minHold": 2000
